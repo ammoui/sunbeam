@@ -6,7 +6,6 @@
 <meta name="theme-color" content="#7cc46b">
 <title>Солнечный зайчик</title>
 <style>*{box-sizing:border-box;margin:0;padding:0}html,body{width:100%;height:100%;overflow:hidden;background:#4f9a55;overscroll-behavior:none;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;font-family:"Trebuchet MS","Segoe UI",Roboto,"Helvetica Neue",system-ui,sans-serif;color:#5b3410}#app{position:fixed;inset:0;overflow:hidden}#cv{position:absolute;left:0;top:0;display:block;touch-action:none}button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;touch-action:manipulation}button:focus{outline:none}button:focus-visible{outline:3px solid #fff;outline-offset:2px}.screen{position:absolute;inset:0;display:none}.screen.show{display:block}#hud{pointer-events:none}#hud>*{pointer-events:auto}.ico{display:inline-block;width:1em;height:1em;vertical-align:middle}.ico svg{width:100%;height:100%;display:block}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:200px;padding:14px 30px;border-radius:999px;background:linear-gradient(#ffe07a,#ffab1f);color:#6b3200;font-size:24px;font-weight:bold;letter-spacing:0.5px;box-shadow:0 6px 0 #c9700d,0 10px 18px rgba(60,30,0,0.35),inset 0 2px 0 rgba(255,255,255,0.6);text-shadow:0 1px 0 rgba(255,255,255,0.6);transition:transform 0.08s,box-shadow 0.08s}.btn:active{transform:translateY(4px);box-shadow:0 2px 0 #c9700d,0 4px 10px rgba(60,30,0,0.3),inset 0 2px 0 rgba(255,255,255,0.6)}.btn.big{font-size:30px;padding:18px 44px;min-width:240px}.btn.green{background:linear-gradient(#a6ef7c,#4fb847);color:#1f4d12;box-shadow:0 6px 0 #2f7d2a,0 10px 18px rgba(0,40,0,0.3),inset 0 2px 0 rgba(255,255,255,0.55)}.btn.green:active{box-shadow:0 2px 0 #2f7d2a,inset 0 2px 0 rgba(255,255,255,0.55)}.btn.gray{background:linear-gradient(#fff6e2,#e6cfa8);color:#6b4520;box-shadow:0 6px 0 #b48a5a,0 8px 14px rgba(60,30,0,0.25),inset 0 2px 0 #fff}.btn.gray:active{box-shadow:0 2px 0 #b48a5a,inset 0 2px 0 #fff}.btn.small{min-width:0;font-size:19px;padding:11px 20px}.ibtn{width:52px;height:52px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:26px;background:linear-gradient(#fffaf0,#f0dcb8);color:#7a4a1c;box-shadow:0 4px 0 #b4874f,0 6px 12px rgba(50,25,0,0.3),inset 0 2px 0 #fff}.ibtn:active{transform:translateY(3px);box-shadow:0 1px 0 #b4874f,inset 0 2px 0 #fff}.ibtn.off{opacity:0.55}.ibtn[disabled]{opacity:0.4;pointer-events:none}.rbtn{position:absolute;border-radius:50%;font-size:34px;color:#fff;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 35% 30%,#ffd77a,#f08a12);box-shadow:0 5px 0 #b25b06,0 8px 14px rgba(60,30,0,0.35),inset 0 2px 0 rgba(255,255,255,0.6);transition:opacity 0.15s,transform 0.08s}.rbtn:active{transform:translateY(4px);box-shadow:0 1px 0 #b25b06,inset 0 2px 0 rgba(255,255,255,0.6)}.rbtn.dim{opacity:0.4}.rbtn .ico{filter:drop-shadow(0 2px 0 rgba(120,50,0,0.5))}#loading{background:#7cc46b;display:none;align-items:center;justify-content:center}#loading.show{display:flex}.spinner{width:54px;height:54px;border-radius:50%;border:6px solid rgba(255,255,255,0.35);border-top-color:#fff;animation:spin 0.9s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}#menu.show{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4vh}.logo{text-align:center;padding:0 16px}.logo-title{font-size:clamp(38px,9vmin,84px);font-weight:bold;line-height:1.05;color:#fff6c9;text-shadow:0 3px 0 #e08a12,0 6px 0 #a85a08,0 10px 20px rgba(80,40,0,0.45),0 0 40px rgba(255,240,160,0.9);animation:bob 3.2s ease-in-out infinite}.logo-sub{margin-top:10px;font-size:clamp(18px,3.6vmin,30px);font-weight:bold;color:#fff;text-shadow:0 2px 0 #2f7d2a,0 4px 10px rgba(0,40,0,0.4);letter-spacing:1px}@keyframes bob{50%{transform:translateY(-6px) rotate(-1deg)}}.menu-buttons{display:flex;flex-direction:column;align-items:center;gap:22px}.menu-stars,.lv-stars{display:flex;align-items:center;gap:6px;font-size:24px;font-weight:bold;color:#fff;text-shadow:0 2px 4px rgba(0,40,0,0.5);background:rgba(60,100,30,0.35);padding:6px 16px;border-radius:999px}.menu-stars .ico,.lv-stars .ico{color:#ffd23f;filter:drop-shadow(0 1px 1px rgba(120,60,0,0.6))}.menu-toggles{position:absolute;right:16px;bottom:16px;display:flex;gap:12px}#levels.show{display:flex;flex-direction:column;align-items:center}.lv-top{width:100%;display:flex;align-items:center;justify-content:space-between;padding:12px 14px;gap:10px}.lv-head{font-size:28px;font-weight:bold;color:#fff;text-shadow:0 2px 0 #2f7d2a,0 4px 10px rgba(0,40,0,0.4)}.lv-pager{display:flex;align-items:center;gap:14px;margin-top:auto}.lv-chapter{min-width:230px;text-align:center;padding:8px 18px;border-radius:18px;background:linear-gradient(#fff6e2,#f0dcb8);box-shadow:0 4px 0 #b4874f,0 8px 14px rgba(50,25,0,0.25)}#chNum{font-size:15px;color:#a0703c;font-weight:bold;text-transform:uppercase;letter-spacing:1px}#chName{font-size:24px;font-weight:bold}.lv-grid{margin:3vh 0 auto;padding-bottom:6vh;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;width:min(92vw,520px)}.lv-btn{position:relative;aspect-ratio:1;border-radius:22px;font-size:clamp(24px,6vmin,36px);font-weight:bold;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;background:linear-gradient(#f9d9a6,#d39a5c);color:#5b2f0c;box-shadow:0 5px 0 #8f5a2a,0 8px 14px rgba(40,20,0,0.35),inset 0 2px 0 rgba(255,255,255,0.6)}.lv-btn:active{transform:translateY(3px);box-shadow:0 2px 0 #8f5a2a,inset 0 2px 0 rgba(255,255,255,0.6)}.lv-btn.locked{background:linear-gradient(#cdbca3,#a8957a);color:#7a6a55;box-shadow:0 5px 0 #7a6a55,inset 0 2px 0 rgba(255,255,255,0.35)}.lv-btn.current{background:linear-gradient(#ffe58a,#ffb12e);box-shadow:0 5px 0 #c9700d,0 0 0 4px #fff7c8,0 8px 18px rgba(255,200,60,0.6)}.lv-btn .s{display:flex;gap:1px;font-size:clamp(13px,3vmin,18px)}.lv-btn .s .ico{color:rgba(90,50,20,0.3)}.lv-btn .s .ico.on{color:#ffd23f;filter:drop-shadow(0 1px 0 #a8650c)}.hud-bar{position:absolute;left:0;right:0;top:0;height:64px;padding:6px 10px;display:flex;align-items:center;gap:10px;pointer-events:none}.hud-bar>*{pointer-events:auto}.hud-title{flex:1;text-align:center;color:#fff;font-weight:bold;font-size:22px;line-height:1.1;text-shadow:0 2px 0 #2f7d2a,0 3px 8px rgba(0,40,0,0.5);pointer-events:none}.hud-flies{font-size:22px;display:flex;justify-content:center;gap:4px;margin-top:2px;min-height:22px}.hud-flies .ico{color:rgba(40,70,10,0.35)}.hud-flies .ico.on{color:#e9ff6a;filter:drop-shadow(0 0 5px #f6ffb0)}.tip{position:absolute;left:0;right:0;top:62px;margin:0 auto;width:max-content;max-width:min(94vw,640px);padding:6px 14px;border-radius:14px;font-size:15px;line-height:1.25;font-weight:bold;text-align:center;background:rgba(255,250,235,0.92);color:#6b3f12;box-shadow:0 3px 10px rgba(40,20,0,0.25);display:none;pointer-events:none}.tip.show{display:block;animation:pop 0.35s ease-out}.btn.done{position:absolute;display:none;min-width:0;font-size:22px;padding:12px 24px;z-index:3;white-space:nowrap}.btn.done #doneStars{display:inline-flex;gap:2px}.btn.done.show{display:inline-flex;animation:pulse 1.2s ease-in-out infinite}.btn.done .ico{color:#fff}.btn.done .ico.off{color:rgba(120,60,0,0.35)}@keyframes pulse{50%{transform:translate(-50%,-50%) scale(1.06)}}@keyframes pop{from{transform:scale(0.85);opacity:0}}.overlay{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:rgba(30,20,5,0.5);z-index:10;padding:16px}.overlay.show{display:flex}.dlg{width:min(92vw,440px);padding:24px 22px 26px;border-radius:28px;text-align:center;background:linear-gradient(#fffaf0,#f6e4c2);border:6px solid #c48a52;box-shadow:0 10px 0 #8f5a2a,0 20px 40px rgba(20,10,0,0.5);animation:dlgIn 0.3s cubic-bezier(.2,1.4,.4,1)}@keyframes dlgIn{from{transform:scale(0.7);opacity:0}}.dlg-title{font-size:30px;font-weight:bold;color:#c25b0a;text-shadow:0 2px 0 #fff}.dlg-stars{display:flex;justify-content:center;gap:8px;font-size:58px;margin:10px 0 4px}.dlg-stars:empty{display:none}.dlg-stars .ico{color:rgba(120,70,20,0.2);transform:scale(0.6);transition:transform 0.35s cubic-bezier(.2,1.6,.4,1),color 0.2s}.dlg-stars .ico.on{color:#ffcc22;transform:scale(1);filter:drop-shadow(0 3px 0 #c27a0a) drop-shadow(0 0 10px rgba(255,220,90,0.8))}.dlg-stars .ico:nth-child(2){margin-top:-14px}.dlg-text{margin:12px 0 4px;font-size:18px;line-height:1.35;color:#6b4520}.dlg-text:empty{display:none}.dlg-buttons{margin-top:20px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center}.dlg-row{display:flex;gap:12px;justify-content:center;width:100%}.toast{position:absolute;left:50%;bottom:18%;transform:translateX(-50%);z-index:20;padding:10px 18px;border-radius:14px;background:rgba(40,25,10,0.88);color:#fff;font-size:16px;font-weight:bold;text-align:center;max-width:90vw;opacity:0;transition:opacity 0.25s;pointer-events:none}.toast.show{opacity:1}@media (max-height:520px){.hud-bar{height:50px;padding:4px 8px}.hud-bar .ibtn{width:42px;height:42px;font-size:21px}.hud-title{font-size:18px}.hud-flies{font-size:17px;min-height:17px}.tip{top:48px;font-size:13px;padding:4px 10px}.btn.big{font-size:24px;padding:12px 34px}.lv-grid{grid-template-columns:repeat(8,1fr);width:min(94vw,900px);gap:10px;margin-top:2vh}.dlg{padding:10px 16px 14px;width:min(94vw,560px)}.dlg-title{font-size:24px}.dlg-stars{font-size:44px;margin:4px 0 0}.dlg-text{font-size:15px;margin-top:6px}.dlg-buttons{margin-top:10px;gap:10px}.dlg-buttons .btn{font-size:16px;padding:8px 14px;box-shadow:0 4px 0 rgba(120,70,20,0.45),inset 0 2px 0 rgba(255,255,255,0.6)}.dlg-buttons .btn.green{font-size:18px}#menu.show{gap:2.5vh}}</style>
-
 </head>
 <body>
 <div id="app">
@@ -129,12 +128,15 @@ return { DATA };
 })();
 __m['src/levels/levels.js'] = (() => {
 const { DATA } = __m['src/levels/data.js'];
-const CHAPTERS = DATA.map((ch) => ({
+const MUST_FLY_FROM = 1;
+const CHAPTERS = DATA.map((ch, c) => ({
 key: ch.key,
-levels: ch.levels.map((L) => ({ fixed: [], fly: [], walls: [], tray: [], ...L })),
+levels: ch.levels.map((L) => ({ fixed: [], fly: [], walls: [], tray: [], ...L, mustFly: c >= MUST_FLY_FROM })),
 }));
 const LEVELS = [].concat(...CHAPTERS.map((ch) => ch.levels));
-return { CHAPTERS, LEVELS };
+const firstMust = LEVELS.find((L) => L.mustFly && L.fly.length);
+if (firstMust && !firstMust.tip) firstMust.tip = 'tutFlyMust';
+return { MUST_FLY_FROM, CHAPTERS, LEVELS };
 })();
 __m['src/core/optics.js'] = (() => {
 const STEPS = 16;
@@ -1690,7 +1692,7 @@ o.stop(t + dur + 0.1);
 return { initAudio, unlockAudio, setPaused, setSfx, setMusic, click, tap, place, pick, ui, lit, firefly, win, star, deny };
 })();
 __m['src/ui/game.js'] = (() => {
-const { buildScene, trace, PIECE, W } = __m['src/core/optics.js'];
+const { buildScene, trace, PIECE, W, STEP } = __m['src/core/optics.js'];
 const { basePieces, blockedCells } = __m['src/core/solver.js'];
 const { makeBackground, makeBoard, drawToken, drawOptic, drawSource, drawFlower, drawLantern, drawFly, drawRotateMark, glowSprite, LIGHT_RGB, roundRect, drawBunny, makeCanvas } = __m['src/render/art.js'];
 const { bundles, drawBeams, makeMotes, drawMotes } = __m['src/render/beam.js'];
@@ -1713,6 +1715,7 @@ this.view = null;
 this.selected = null;
 this.drag = null;
 this.press = null;
+this.dial = null;
 this.hint = null;
 this.fx = [];
 this.time = 0;
@@ -1732,6 +1735,7 @@ this.tray = level.tray.map((e) => ({ t: e.t, c: e.c, n: e.n }));
 this.selected = null;
 this.drag = null;
 this.press = null;
+this.dial = null;
 this.hint = null;
 this.locked = false;
 this.noWin = false;
@@ -1867,14 +1871,14 @@ if (on && !prev.flies[i]) { sfx.firefly(); this.burst(this.level.fly[i], [220, 2
 this.res = res;
 this.viewDirty = true;
 if (this.locked) return;
-const won = res.win && !d;
+const won = res.win && !d && !this.dial;
 const full = won && res.stars === this.level.fly.length;
 if (full) {
 if (!this.solvedAt) this.solvedAt = this.time + 1e-6;
 this.hooks.onDone(false, res.stars);
 } else {
 this.solvedAt = 0;
-this.hooks.onDone(won, res.stars);
+this.hooks.onDone(won && !this.level.mustFly, res.stars);
 }
 this.hooks.onFlies(res.stars, this.level.fly.length);
 }
@@ -1902,13 +1906,15 @@ drawBeams(g, this.view.groups, L.frame, L.frame, L.cs, 0);
 }
 finish() {
 if (this.locked || !this.res || !this.res.win) return;
+const missed = this.level.fly.length - this.res.stars;
+if (missed && this.level.mustFly) return;
 this.locked = true;
 this.selected = null;
+this.dial = null;
 sfx.win();
 for (const t of this.level.tgt) this.burst(t, [255, 236, 170], 16);
-const stars = 3 - (this.level.fly.length - this.res.stars);
 this.hooks.onDone(false, this.res.stars);
-setTimeout(() => this.hooks.onWin(stars), 900);
+setTimeout(() => this.hooks.onWin(missed), 900);
 }
 pieceAt(x, y) {
 return this.pieces.find((p) => p.x === x && p.y === y) || null;
@@ -1955,6 +1961,10 @@ pos(e) {
 const r = this.cv.getBoundingClientRect();
 return [e.clientX - r.left, e.clientY - r.top];
 }
+center(p) {
+const L = this.L;
+return [L.ox + (p.x + 0.5) * L.cs, L.oy + (p.y + 0.5) * L.cs];
+}
 cellAt(px, py) {
 const L = this.L;
 const x = Math.floor((px - L.ox) / L.cs), y = Math.floor((py - L.oy) / L.cs);
@@ -1970,7 +1980,7 @@ return px >= T.x - 10 && px <= T.x + T.w + 10 && py >= T.y - 10 && py <= T.y + T
 }
 down(e) {
 sfx.unlockAudio();
-if (!this.active || this.locked || this.drag || this.press) return;
+if (!this.active || this.locked || this.drag || this.press || this.dial) return;
 const [px, py] = this.pos(e);
 const slot = this.slotAt(px, py);
 if (slot >= 0) {
@@ -1985,18 +1995,55 @@ return;
 }
 const c = this.cellAt(px, py);
 const p = c && this.pieceAt(c.x, c.y);
+const touch = e.pointerType !== 'mouse';
+const sel = this.selected;
+if (sel && (!p || p === sel)) {
+const [cx, cy] = this.center(sel);
+const r = Math.hypot(px - cx, py - cy) / this.L.cs;
+if (r < 0.85 && (r > 0.36 || sel.fixed)) {
+this.press = { piece: sel, x0: px, y0: py, id: e.pointerId, touch, dial: true, inCell: p === sel };
+return;
+}
+}
 if (p && (!p.fixed || p.rot)) {
-this.press = { piece: p, x0: px, y0: py, id: e.pointerId, touch: e.pointerType !== 'mouse' };
+this.press = { piece: p, x0: px, y0: py, id: e.pointerId, touch, dial: p.fixed, inCell: true };
 return;
 }
 if (this.selected) this.select(null);
 }
+startDial(pr, px, py) {
+const p = pr.piece;
+this.press = null;
+if (this.selected !== p) this.select(p);
+const [cx, cy] = this.center(p);
+const near = Math.hypot(pr.x0 - cx, pr.y0 - cy) < this.L.cs * 0.15;
+const [ax, ay] = near ? [px, py] : [pr.x0, pr.y0];
+this.dial = { piece: p, id: pr.id, cx, cy, a: Math.atan2(ay - cy, ax - cx), acc: 0, r0: p.r };
+this.dialMove(px, py);
+}
+dialMove(px, py) {
+const dl = this.dial;
+if (Math.hypot(px - dl.cx, py - dl.cy) < this.L.cs * 0.15) return;
+const a = Math.atan2(py - dl.cy, px - dl.cx);
+let da = a - dl.a;
+if (da > Math.PI) da -= TAU;
+else if (da < -Math.PI) da += TAU;
+dl.a = a;
+dl.acc += da;
+const target = dl.r0 + Math.round(dl.acc / STEP);
+while (dl.piece.r !== target && this.rotate(Math.sign(target - dl.piece.r)));
+}
 move(e) {
 if (!this.active) return;
 const [px, py] = this.pos(e);
+if (this.dial && e.pointerId === this.dial.id) {
+this.dialMove(px, py);
+return;
+}
 if (this.press && e.pointerId === this.press.id) {
 const pr = this.press;
-if (!pr.piece.fixed && Math.hypot(px - pr.x0, py - pr.y0) > 8) {
+if (pr.dial && Math.hypot(px - pr.x0, py - pr.y0) > 8) this.startDial(pr, px, py);
+else if (!pr.piece.fixed && Math.hypot(px - pr.x0, py - pr.y0) > 8) {
 const p = pr.piece;
 this.pieces.splice(this.pieces.indexOf(p), 1);
 this.drag = { piece: p, slot: -1, from: { x: p.x, y: p.y }, px, py, touch: pr.touch, id: pr.id, cell: null };
@@ -2023,11 +2070,17 @@ this.evaluate(true);
 }
 }
 up(e, cancel) {
+if (this.dial && e.pointerId === this.dial.id) {
+this.dial = null;
+this.evaluate();
+return;
+}
 if (this.press && e.pointerId === this.press.id) {
-const p = this.press.piece;
+const pr = this.press, p = pr.piece;
 this.press = null;
 if (cancel || this.locked) return;
-if (this.selected === p) this.rotate(1);
+if (!pr.inCell) this.select(null);
+else if (this.selected === p) this.rotate(1);
 else { this.select(p); sfx.tap(); }
 return;
 }
@@ -2202,15 +2255,29 @@ ctx.restore();
 });
 const sel = this.selected;
 if (sel && !this.locked) {
+const R = cs * 0.5, held = !!this.dial;
 ctx.save();
 ctx.translate(C(sel.x), Cy(sel.y));
-ctx.strokeStyle = 'rgba(255,255,255,0.95)';
-ctx.lineWidth = Math.max(2, cs * 0.05);
-ctx.setLineDash([cs * 0.1, cs * 0.07]);
-ctx.lineDashOffset = -t * cs * 0.3;
+ctx.shadowColor = 'rgba(60,35,10,0.45)';
+ctx.shadowBlur = cs * 0.06;
+ctx.strokeStyle = ctx.fillStyle = held ? '#fff' : 'rgba(255,255,255,0.9)';
+ctx.lineWidth = Math.max(2, cs * 0.04);
 ctx.beginPath();
-ctx.arc(0, 0, cs * 0.5, 0, TAU);
+ctx.arc(0, 0, R, 0, TAU);
 ctx.stroke();
+ctx.rotate(sel.ra * STEP);
+ctx.lineWidth = Math.max(1.5, cs * 0.025);
+ctx.lineCap = 'round';
+ctx.beginPath();
+for (let k = 0; k < 16; k++) {
+const a = k * STEP, l = R + cs * (k % 4 ? 0.05 : 0.09);
+ctx.moveTo(Math.cos(a) * R, Math.sin(a) * R);
+ctx.lineTo(Math.cos(a) * l, Math.sin(a) * l);
+}
+ctx.stroke();
+ctx.beginPath();
+ctx.arc(R, 0, cs * (held ? 0.095 : 0.075), 0, TAU);
+ctx.fill();
 ctx.restore();
 }
 if (this.hint) this.drawHintGhost(ctx, C(this.hint.x), Cy(this.hint.y), cs, t);
@@ -2444,10 +2511,12 @@ complete: 'Уровень пройден!',
 chapterDone: 'Глава пройдена!',
 next: 'Далее',
 replay: 'Ещё раз',
-allDone: 'Вы прошли все уровни! Соберите всех светлячков, чтобы получить все звёзды.',
+allDone: 'Вы прошли все уровни! Проходите их без подсказок, чтобы собрать все звёзды.',
 flyHint: 'Проведите луч через светлячков, чтобы получить больше звёзд',
+hintStars: 'Пройдите уровень без подсказок, чтобы получить 3 звезды',
+hintFree: 'Первая подсказка бесплатно! Каждая подсказка стоит одну звезду',
 hintTitle: 'Подсказка',
-hintText: 'Посмотрите рекламу — покажем, куда поставить одну фигуру.',
+hintText: 'Посмотрите рекламу — покажем, куда поставить одну фигуру. Каждая подсказка стоит одну звезду.',
 skipTitle: 'Пропустить уровень',
 skipText: 'Посмотрите рекламу, чтобы пропустить уровень и открыть следующий.',
 watch: 'Смотреть рекламу',
@@ -2457,7 +2526,7 @@ noHint: 'Все фигуры уже стоят верно — поверните
 stars: 'Звёзды',
 tut1: 'Нажмите на зеркало, чтобы повернуть его. Направьте луч на цветок',
 tut2: 'Перетащите зеркало с лотка на доску',
-tut3: 'Крутите кнопками ⟲ ⟳ или нажатием на фигуру',
+tut3: 'Крутите нажатием на фигуру, кнопками ⟲ ⟳ или тяните за кольцо',
 tutLens: 'Собирающая линза фокусирует луч. Фонарику нужен яркий сфокусированный свет',
 tutDlens: 'Рассеивающая линза расширяет пучок — так можно осветить несколько цветков',
 tutSplit: 'Светоделитель пропускает половину света и половину отражает',
@@ -2465,6 +2534,7 @@ tutFilter: 'Цветной фильтр пропускает только сво
 tutPrism: 'Призма преломляет свет и раскладывает белый луч на цвета',
 tutColor: 'Красный и зелёный свет вместе дают жёлтый',
 tutFly: 'Светлячки дают звёзды: проведите через них луч',
+tutFlyMust: 'Теперь светлячки обязательны: проведите луч через всех',
 howTo: 'Перетаскивайте фигуры с лотка на доску, крутите их и направьте свет на все цветы и фонарики.',
 },
 en: {
@@ -2484,10 +2554,12 @@ complete: 'Level complete!',
 chapterDone: 'Chapter complete!',
 next: 'Next',
 replay: 'Replay',
-allDone: 'You have finished every level! Catch all the fireflies to earn every star.',
+allDone: 'You have finished every level! Solve them without hints to earn every star.',
 flyHint: 'Guide the beam through the fireflies to earn more stars',
+hintStars: 'Solve the level without hints to earn 3 stars',
+hintFree: 'Your first hint is free! Each hint costs one star',
 hintTitle: 'Hint',
-hintText: 'Watch an ad and we will show where one piece goes.',
+hintText: 'Watch an ad and we will show where one piece goes. Each hint costs one star.',
 skipTitle: 'Skip level',
 skipText: 'Watch an ad to skip this level and unlock the next one.',
 watch: 'Watch ad',
@@ -2497,7 +2569,7 @@ noHint: 'Every piece is already in place — just rotate them!',
 stars: 'Stars',
 tut1: 'Tap the mirror to rotate it. Aim the beam at the flower',
 tut2: 'Drag the mirror from the tray onto the board',
-tut3: 'Rotate with the ⟲ ⟳ buttons or by tapping the piece',
+tut3: 'Rotate by tapping the piece, with the ⟲ ⟳ buttons or by dragging the ring',
 tutLens: 'A converging lens focuses the beam. Lanterns need bright, focused light',
 tutDlens: 'A diverging lens widens the beam so it can reach several flowers',
 tutSplit: 'A beam splitter lets half of the light through and reflects the other half',
@@ -2505,6 +2577,7 @@ tutFilter: 'A colour filter only passes its own colour. Flowers need light of th
 tutPrism: 'A prism bends light and splits white light into colours',
 tutColor: 'Red and green light together make yellow',
 tutFly: 'Fireflies give stars: guide the beam through them',
+tutFlyMust: 'From now on every firefly counts: guide the beam through all of them',
 howTo: 'Drag pieces from the tray onto the board, rotate them and send the light to every flower and lantern.',
 },
 tr: {
@@ -2524,10 +2597,12 @@ complete: 'Bölüm tamamlandı!',
 chapterDone: 'Kısım tamamlandı!',
 next: 'Sonraki',
 replay: 'Tekrar',
-allDone: 'Tüm bölümleri bitirdin! Tüm yıldızlar için bütün ateşböceklerini topla.',
+allDone: 'Tüm bölümleri bitirdin! Tüm yıldızlar için bölümleri ipucusuz geç.',
 flyHint: 'Daha fazla yıldız için ışını ateşböceklerinden geçir',
+hintStars: '3 yıldız için bölümü ipucusuz geç',
+hintFree: 'İlk ipucu ücretsiz! Her ipucu bir yıldıza mal olur',
 hintTitle: 'İpucu',
-hintText: 'Reklam izle, bir parçanın nereye gideceğini gösterelim.',
+hintText: 'Reklam izle, bir parçanın nereye gideceğini gösterelim. Her ipucu bir yıldıza mal olur.',
 skipTitle: 'Bölümü atla',
 skipText: 'Bu bölümü atlayıp sonrakini açmak için reklam izle.',
 watch: 'Reklam izle',
@@ -2537,7 +2612,7 @@ noHint: 'Tüm parçalar yerinde — sadece döndür!',
 stars: 'Yıldızlar',
 tut1: 'Aynayı döndürmek için ona dokun. Işını çiçeğe yönelt',
 tut2: 'Aynayı tepsiden tahtaya sürükle',
-tut3: '⟲ ⟳ düğmeleriyle ya da parçaya dokunarak döndür',
+tut3: 'Parçaya dokunarak, ⟲ ⟳ düğmeleriyle ya da halkayı sürükleyerek döndür',
 tutLens: 'İnce kenarlı mercek ışını odaklar. Fenerlerin parlak, odaklanmış ışığa ihtiyacı var',
 tutDlens: 'Kalın kenarlı mercek ışını genişletir, böylece birkaç çiçeğe ulaşır',
 tutSplit: 'Işın bölücü ışığın yarısını geçirir, yarısını yansıtır',
@@ -2545,6 +2620,7 @@ tutFilter: 'Renk filtresi yalnızca kendi rengini geçirir. Çiçeklere kendi re
 tutPrism: 'Prizma ışığı kırar ve beyaz ışığı renklere ayırır',
 tutColor: 'Kırmızı ve yeşil ışık birlikte sarı olur',
 tutFly: 'Ateşböcekleri yıldız verir: ışını onlardan geçir',
+tutFlyMust: 'Artık tüm ateşböcekleri gerekli: ışını hepsinden geçir',
 howTo: 'Parçaları tepsiden tahtaya sürükle, döndür ve ışığı tüm çiçeklere ve fenerlere ulaştır.',
 },
 };
@@ -2709,7 +2785,7 @@ __m['src/platform/storage.js'] = (() => {
 const { cloudLoad, cloudSave } = __m['src/platform/sdk.js'];
 const KEY = 'sunbeam-save-v1';
 function fresh() {
-return { v: 1, t: 0, lv: {}, sk: {}, set: { sfx: 1, mus: 1 } };
+return { v: 1, t: 0, lv: {}, sk: {}, hf: 0, set: { sfx: 1, mus: 1 } };
 }
 function sane(d) {
 const s = fresh();
@@ -2719,6 +2795,7 @@ if (d.lv && typeof d.lv === 'object') {
 for (const k in d.lv) s.lv[k] = Math.max(0, Math.min(3, Number(d.lv[k]) || 0));
 }
 if (d.sk && typeof d.sk === 'object') for (const k in d.sk) s.sk[k] = 1;
+s.hf = d.hf ? 1 : 0;
 if (d.set && typeof d.set === 'object') {
 s.set.sfx = d.set.sfx === 0 ? 0 : 1;
 s.set.mus = d.set.mus === 0 ? 0 : 1;
@@ -2735,6 +2812,7 @@ m.lv[k] = Math.max(k in a.lv ? a.lv[k] : -1, k in b.lv ? b.lv[k] : -1);
 }
 Object.assign(m.sk, a.sk, b.sk);
 for (const k in m.lv) delete m.sk[k];
+m.hf = a.hf || b.hf;
 m.set = { ...(b.t > a.t ? b.set : a.set) };
 return m;
 }
@@ -2817,6 +2895,8 @@ let pagerChapter = 0;
 let dialogOpen = false;
 let won = false;
 let hintUsed = false;
+let hintLevel = -1;
+const hintSeen = new Set();
 const game = new Game(cv, {
 onLayout: placeControls,
 onDone: showDone,
@@ -2937,7 +3017,11 @@ grid.appendChild(b);
 function startLevel(i) {
 current = i;
 won = false;
+if (i !== hintLevel) {
+hintLevel = i;
 hintUsed = false;
+hintSeen.clear();
+}
 closeDialog();
 const L = LEVELS[i];
 const [c, k] = chapterOf(i);
@@ -2948,7 +3032,7 @@ tip.classList.toggle('show', !!L.tip);
 show('hud');
 game.tipH = L.tip ? tip.offsetHeight + 6 : 0;
 game.load(L);
-updateRotateButtons(null);
+updateRotateButtons(game.selected);
 }
 function placeControls(L) {
 const set = (el, r) => {
@@ -2977,17 +3061,22 @@ let s = '';
 for (let q = 0; q < total; q++) s += icon('fly', q < got ? 'on' : '');
 el.innerHTML = s;
 }
+function starsFor(missed) {
+return Math.max(1, 3 - missed - hintSeen.size);
+}
 function showDone(visible, got) {
 const b = $('btnDone');
 b.classList.toggle('show', visible && !won);
 if (visible) {
-const total = game.level.fly.length;
+const n = starsFor(game.level.fly.length - got);
 let s = '';
-for (let q = 0; q < 3; q++) s += icon('star', q < 1 + got || q >= 1 + total ? '' : 'off');
+for (let q = 0; q < 3; q++) s += icon('star', q < n ? '' : 'off');
 $('doneStars').innerHTML = s;
 }
 }
-function levelWon(stars) {
+function levelWon(missed) {
+const stars = starsFor(missed);
+hintLevel = -1;
 won = true;
 syncGameplay();
 const L = LEVELS[current];
@@ -3003,7 +3092,7 @@ const chapterEnd = k === CHAPTERS[c].levels.length - 1;
 openDialog({
 title: chapterEnd ? t('chapterDone') : t('complete'),
 stars,
-text: last ? t('allDone') : stars < 3 ? t('flyHint') : '',
+text: last ? t('allDone') : missed ? t('flyHint') : stars < 3 ? t('hintStars') : '',
 buttons: [
 { label: t('replay'), cls: 'gray small', icon: 'restart', fn: () => startLevel(current) },
 { label: last ? t('menu') : t('next'), cls: 'small', icon: last ? 'home' : 'play', fn: () => goNext() },
@@ -3084,7 +3173,15 @@ function askHint() {
 if (won) return;
 const h = findHint();
 if (!h) { toast(t('noHint')); return; }
-if (hintUsed) { game.setHint(h); return; }
+const p = progress();
+if (hintUsed || hintSeen.has(hintKey(h))) { giveHint(h); return; }
+if (!p.hf) {
+p.hf = 1;
+saveProgress();
+toast(t('hintFree'));
+giveHint(h);
+return;
+}
 openDialog({
 title: t('hintTitle'),
 text: t('hintText'),
@@ -3095,10 +3192,18 @@ closeDialog();
 const ok = await rewarded();
 if (!ok) { toast(t('adFail')); return; }
 hintUsed = true;
-game.setHint(findHint());
+giveHint(findHint());
 } },
 ],
 });
+}
+function hintKey(h) {
+return `${h.t}:${h.x}:${h.y}:${h.r}`;
+}
+function giveHint(h) {
+if (!h) return;
+hintSeen.add(hintKey(h));
+game.setHint(h);
 }
 function findHint() {
 const L = game.level;
