@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="theme-color" content="#7cc46b">
 <title>Солнечный зайчик</title>
-<style>*{box-sizing:border-box;margin:0;padding:0}html,body{width:100%;height:100%;overflow:hidden;background:#4f9a55;overscroll-behavior:none;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;font-family:"Trebuchet MS","Segoe UI",Roboto,"Helvetica Neue",system-ui,sans-serif;color:#5b3410}#app{position:fixed;inset:0;overflow:hidden}#cv{position:absolute;left:0;top:0;display:block;touch-action:none}button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;touch-action:manipulation}button:focus{outline:none}button:focus-visible{outline:3px solid #fff;outline-offset:2px}.screen{position:absolute;inset:0;display:none}.screen.show{display:block}#hud{pointer-events:none}#hud>*{pointer-events:auto}.ico{display:inline-block;width:1em;height:1em;vertical-align:middle}.ico svg{width:100%;height:100%;display:block}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:200px;padding:14px 30px;border-radius:999px;background:linear-gradient(#ffe07a,#ffab1f);color:#6b3200;font-size:24px;font-weight:bold;letter-spacing:0.5px;box-shadow:0 6px 0 #c9700d,0 10px 18px rgba(60,30,0,0.35),inset 0 2px 0 rgba(255,255,255,0.6);text-shadow:0 1px 0 rgba(255,255,255,0.6);transition:transform 0.08s,box-shadow 0.08s}.btn:active{transform:translateY(4px);box-shadow:0 2px 0 #c9700d,0 4px 10px rgba(60,30,0,0.3),inset 0 2px 0 rgba(255,255,255,0.6)}.btn.big{font-size:30px;padding:18px 44px;min-width:240px}.btn.green{background:linear-gradient(#a6ef7c,#4fb847);color:#1f4d12;box-shadow:0 6px 0 #2f7d2a,0 10px 18px rgba(0,40,0,0.3),inset 0 2px 0 rgba(255,255,255,0.55)}.btn.green:active{box-shadow:0 2px 0 #2f7d2a,inset 0 2px 0 rgba(255,255,255,0.55)}.btn.gray{background:linear-gradient(#fff6e2,#e6cfa8);color:#6b4520;box-shadow:0 6px 0 #b48a5a,0 8px 14px rgba(60,30,0,0.25),inset 0 2px 0 #fff}.btn.gray:active{box-shadow:0 2px 0 #b48a5a,inset 0 2px 0 #fff}.btn.small{min-width:0;font-size:19px;padding:11px 20px}.btn .sw{width:1.1em;height:1.1em;border-radius:50%;flex:none;box-shadow:inset 0 0 0 2px rgba(255,255,255,0.75),0 1px 2px rgba(60,30,0,0.4)}.btn.locked{opacity:0.72}.ibtn{width:52px;height:52px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:26px;background:linear-gradient(#fffaf0,#f0dcb8);color:#7a4a1c;box-shadow:0 4px 0 #b4874f,0 6px 12px rgba(50,25,0,0.3),inset 0 2px 0 #fff}.ibtn:active{transform:translateY(3px);box-shadow:0 1px 0 #b4874f,inset 0 2px 0 #fff}.ibtn.off{opacity:0.55}.ibtn[disabled]{opacity:0.4;pointer-events:none}.rbtn{position:absolute;border-radius:50%;font-size:34px;color:#fff;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 35% 30%,#ffd77a,#f08a12);box-shadow:0 5px 0 #b25b06,0 8px 14px rgba(60,30,0,0.35),inset 0 2px 0 rgba(255,255,255,0.6);transition:opacity 0.15s,transform 0.08s}.rbtn:active{transform:translateY(4px);box-shadow:0 1px 0 #b25b06,inset 0 2px 0 rgba(255,255,255,0.6)}.rbtn.dim{opacity:0.4}.rbtn .ico{filter:drop-shadow(0 2px 0 rgba(120,50,0,0.5))}#loading{background:#7cc46b;display:none;align-items:center;justify-content:center}#loading.show{display:flex}.spinner{width:54px;height:54px;border-radius:50%;border:6px solid rgba(255,255,255,0.35);border-top-color:#fff;animation:spin 0.9s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}#menu.show{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4vh}.logo{text-align:center;padding:0 16px}.logo-title{font-size:clamp(38px,9vmin,84px);font-weight:bold;line-height:1.05;color:#fff6c9;text-shadow:0 3px 0 #e08a12,0 6px 0 #a85a08,0 10px 20px rgba(80,40,0,0.45),0 0 40px rgba(255,240,160,0.9);animation:bob 3.2s ease-in-out infinite}.logo-sub{margin-top:10px;font-size:clamp(18px,3.6vmin,30px);font-weight:bold;color:#fff;text-shadow:0 2px 0 var(--shade,#2f7d2a),0 4px 10px rgba(0,40,0,0.4);letter-spacing:1px}@keyframes bob{50%{transform:translateY(-6px) rotate(-1deg)}}.menu-buttons{display:flex;flex-direction:column;align-items:center;gap:22px}.menu-row{display:flex;gap:14px}.menu-row .btn{min-width:120px}.btn.daily{min-width:240px;font-size:22px;background:linear-gradient(#ffd9b0,#ff9a66);color:#5a1e00;box-shadow:0 6px 0 #c4532e,0 10px 18px rgba(80,20,0,0.3),inset 0 2px 0 rgba(255,255,255,0.6)}.btn.daily:active{box-shadow:0 2px 0 #c4532e,inset 0 2px 0 rgba(255,255,255,0.6)}.btn.daily>.ico{color:#fff3b0;filter:drop-shadow(0 1px 1px rgba(150,50,0,0.6))}.btn.daily .streak{display:inline-flex;align-items:center;gap:2px;padding:2px 10px 2px 6px;border-radius:999px;background:rgba(255,255,255,0.55);font-size:18px}.btn.daily .streak:empty{display:none}.btn.daily .streak .ico{color:#ff5a1f}.btn.daily:not(.done)::after{content:'';position:absolute;top:-4px;right:10px;width:14px;height:14px;border-radius:50%;background:#ff3b30;box-shadow:0 0 0 3px #fff;animation:pulse 1.2s ease-in-out infinite}.btn.daily{position:relative}.btn.daily.done{background:linear-gradient(#fff1de,#f2d2ad);color:#8a4a20}[hidden]{display:none !important}.menu-stars,.lv-stars{display:flex;align-items:center;gap:6px;font-size:24px;font-weight:bold;color:#fff;text-shadow:0 2px 4px rgba(0,40,0,0.5);background:var(--chip,rgba(60,100,30,0.35));padding:6px 16px;border-radius:999px}.menu-stars .ico,.lv-stars .ico{color:#ffd23f;filter:drop-shadow(0 1px 1px rgba(120,60,0,0.6))}.menu-toggles{position:absolute;right:16px;bottom:16px;display:flex;gap:12px}#levels.show{display:flex;flex-direction:column;align-items:center}.lv-top{width:100%;display:flex;align-items:center;justify-content:space-between;padding:12px 14px;gap:10px}.lv-head{font-size:28px;font-weight:bold;color:#fff;text-shadow:0 2px 0 var(--shade,#2f7d2a),0 4px 10px rgba(0,40,0,0.4)}.lv-pager{display:flex;align-items:center;gap:14px;margin-top:auto}.lv-chapter{min-width:230px;text-align:center;padding:8px 18px;border-radius:18px;background:linear-gradient(#fff6e2,#f0dcb8);box-shadow:0 4px 0 #b4874f,0 8px 14px rgba(50,25,0,0.25)}#chNum{font-size:15px;color:#a0703c;font-weight:bold;text-transform:uppercase;letter-spacing:1px}#chName{font-size:24px;font-weight:bold}.lv-grid{margin:3vh 0 auto;padding-bottom:6vh;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;width:min(92vw,520px)}.lv-btn{position:relative;aspect-ratio:1;border-radius:22px;font-size:clamp(24px,6vmin,36px);font-weight:bold;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;background:linear-gradient(#f9d9a6,#d39a5c);color:#5b2f0c;box-shadow:0 5px 0 #8f5a2a,0 8px 14px rgba(40,20,0,0.35),inset 0 2px 0 rgba(255,255,255,0.6)}.lv-btn:active{transform:translateY(3px);box-shadow:0 2px 0 #8f5a2a,inset 0 2px 0 rgba(255,255,255,0.6)}.lv-btn.locked{background:linear-gradient(#cdbca3,#a8957a);color:#7a6a55;box-shadow:0 5px 0 #7a6a55,inset 0 2px 0 rgba(255,255,255,0.35)}.lv-btn.current{background:linear-gradient(#ffe58a,#ffb12e);box-shadow:0 5px 0 #c9700d,0 0 0 4px #fff7c8,0 8px 18px rgba(255,200,60,0.6)}.lv-btn .s{display:flex;gap:1px;font-size:clamp(13px,3vmin,18px)}.lv-btn .s .ico{color:rgba(90,50,20,0.3)}.lv-btn .s .ico.on{color:#ffd23f;filter:drop-shadow(0 1px 0 #a8650c)}.hud-bar{position:absolute;left:0;right:0;top:0;height:64px;padding:6px 10px;display:flex;align-items:center;gap:10px;pointer-events:none}.hud-bar>*{pointer-events:auto}.hud-title{flex:1;text-align:center;color:#fff;font-weight:bold;font-size:22px;line-height:1.1;text-shadow:0 2px 0 var(--shade,#2f7d2a),0 3px 8px rgba(0,40,0,0.5);pointer-events:none}.hud-flies{font-size:22px;display:flex;justify-content:center;gap:4px;margin-top:2px;min-height:22px}.hud-flies .ico{color:rgba(255,255,235,0.4);filter:drop-shadow(0 1px 1px rgba(0,0,0,0.3))}.hud-flies .ico.on{color:#e9ff6a;filter:drop-shadow(0 0 5px #f6ffb0)}.tip{position:absolute;left:0;right:0;top:62px;margin:0 auto;width:max-content;max-width:min(94vw,640px);padding:6px 14px;border-radius:14px;font-size:15px;line-height:1.25;font-weight:bold;text-align:center;background:rgba(255,250,235,0.92);color:#6b3f12;box-shadow:0 3px 10px rgba(40,20,0,0.25);display:none;pointer-events:none}.tip.show{display:block;animation:pop 0.35s ease-out}.btn.done{position:absolute;display:none;min-width:0;font-size:22px;padding:12px 24px;z-index:3;white-space:nowrap}.btn.done #doneStars{display:inline-flex;gap:2px}.btn.done.show{display:inline-flex;animation:pulse 1.2s ease-in-out infinite}.btn.done .ico{color:#fff}.btn.done .ico.off{color:rgba(120,60,0,0.35)}@keyframes pulse{50%{transform:translate(-50%,-50%) scale(1.06)}}@keyframes pop{from{transform:scale(0.85);opacity:0}}.overlay{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:rgba(30,20,5,0.5);z-index:10;padding:16px}.overlay.show{display:flex}.dlg{width:min(92vw,440px);padding:24px 22px 26px;border-radius:28px;text-align:center;max-height:calc(100% - 20px);overflow-y:auto;overscroll-behavior:contain;background:linear-gradient(#fffaf0,#f6e4c2);border:6px solid #c48a52;box-shadow:0 10px 0 #8f5a2a,0 20px 40px rgba(20,10,0,0.5);animation:dlgIn 0.3s cubic-bezier(.2,1.4,.4,1)}@keyframes dlgIn{from{transform:scale(0.7);opacity:0}}.dlg-title{font-size:30px;font-weight:bold;color:#c25b0a;text-shadow:0 2px 0 #fff}.dlg-stars{display:flex;justify-content:center;gap:8px;font-size:58px;margin:10px 0 4px}.dlg-stars:empty{display:none}.dlg-stars .ico{color:rgba(120,70,20,0.2);transform:scale(0.6);transition:transform 0.35s cubic-bezier(.2,1.6,.4,1),color 0.2s}.dlg-stars .ico.on{color:#ffcc22;transform:scale(1);filter:drop-shadow(0 3px 0 #c27a0a) drop-shadow(0 0 10px rgba(255,220,90,0.8))}.dlg-stars .ico:nth-child(2){margin-top:-14px}.dlg-text{margin:12px 0 4px;font-size:18px;line-height:1.35;color:#6b4520;white-space:pre-line}.dlg-text.board{text-align:left;font-variant-numeric:tabular-nums;max-height:46vh;overflow:auto;padding:0 6px}.dlg-text:empty{display:none}.dlg-buttons{margin-top:20px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center}.dlg-row{display:flex;gap:12px;justify-content:center;width:100%}.toast{position:absolute;left:50%;bottom:18%;transform:translateX(-50%);z-index:20;padding:10px 18px;border-radius:14px;background:rgba(40,25,10,0.88);color:#fff;font-size:16px;font-weight:bold;text-align:center;max-width:90vw;opacity:0;transition:opacity 0.25s;pointer-events:none}.toast.show{opacity:1}@media (max-height:520px){.hud-bar{height:50px;padding:4px 8px}.hud-bar .ibtn{width:42px;height:42px;font-size:21px}.hud-title{font-size:18px}.hud-flies{font-size:17px;min-height:17px}.tip{top:48px;font-size:13px;padding:4px 10px}.btn.big{font-size:24px;padding:12px 34px}.lv-grid{grid-template-columns:repeat(8,1fr);width:min(94vw,900px);gap:10px;margin-top:2vh}.dlg{padding:10px 16px 14px;width:min(94vw,560px)}.dlg-title{font-size:24px}.dlg-stars{font-size:44px;margin:4px 0 0}.dlg-text{font-size:15px;margin-top:6px}.dlg-buttons{margin-top:10px;gap:10px}.dlg-buttons .btn{font-size:16px;padding:8px 14px;box-shadow:0 4px 0 rgba(120,70,20,0.45),inset 0 2px 0 rgba(255,255,255,0.6)}.dlg-buttons .btn.green{font-size:18px}#menu.show{gap:2.5vh}.menu-buttons{gap:14px}.btn.daily{font-size:18px;padding:10px 26px}}@media (max-width:400px){.dlg{padding:16px 12px 18px}.dlg-title{font-size:26px}.dlg-text{font-size:16px}.dlg-buttons{gap:10px;margin-top:14px}.dlg-buttons .btn{font-size:15px;padding:8px 12px;gap:6px}.dlg-buttons .btn.green{font-size:18px}.hud-title{font-size:18px}.lv-top{padding:10px 10px;gap:6px}.lv-head{font-size:22px}.lv-stars{font-size:18px;padding:4px 12px;white-space:nowrap}.lv-pager{gap:8px}.lv-chapter{min-width:0;padding:6px 14px}#chName{font-size:20px}.lv-grid{gap:12px}}@media (max-height:520px){.menu-toggles{flex-direction:column;top:50%;bottom:auto;right:12px;transform:translateY(-50%);gap:8px}.menu-toggles .ibtn{width:42px;height:42px;font-size:20px}}</style>
+<style>*{box-sizing:border-box;margin:0;padding:0}html,body{width:100%;height:100%;overflow:hidden;background:#4f9a55;overscroll-behavior:none;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;font-family:"Trebuchet MS","Segoe UI",Roboto,"Helvetica Neue",system-ui,sans-serif;color:#5b3410}#app{position:fixed;inset:0;overflow:hidden}#cv{position:absolute;left:0;top:0;display:block;touch-action:none}button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;touch-action:manipulation}button:focus{outline:none}button:focus-visible{outline:3px solid #fff;outline-offset:2px}.screen{position:absolute;inset:0;display:none}.screen.show{display:block}#hud{pointer-events:none}#hud>*{pointer-events:auto}.ico{display:inline-block;width:1em;height:1em;vertical-align:middle}.ico svg{width:100%;height:100%;display:block}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:200px;padding:14px 30px;border-radius:999px;background:linear-gradient(#ffe07a,#ffab1f);color:#6b3200;font-size:24px;font-weight:bold;letter-spacing:0.5px;box-shadow:0 6px 0 #c9700d,0 10px 18px rgba(60,30,0,0.35),inset 0 2px 0 rgba(255,255,255,0.6);text-shadow:0 1px 0 rgba(255,255,255,0.6);transition:transform 0.08s,box-shadow 0.08s}.btn:active{transform:translateY(4px);box-shadow:0 2px 0 #c9700d,0 4px 10px rgba(60,30,0,0.3),inset 0 2px 0 rgba(255,255,255,0.6)}.btn.big{font-size:30px;padding:18px 44px;min-width:240px}.btn.green{background:linear-gradient(#a6ef7c,#4fb847);color:#1f4d12;box-shadow:0 6px 0 #2f7d2a,0 10px 18px rgba(0,40,0,0.3),inset 0 2px 0 rgba(255,255,255,0.55)}.btn.green:active{box-shadow:0 2px 0 #2f7d2a,inset 0 2px 0 rgba(255,255,255,0.55)}.btn.gray{background:linear-gradient(#fff6e2,#e6cfa8);color:#6b4520;box-shadow:0 6px 0 #b48a5a,0 8px 14px rgba(60,30,0,0.25),inset 0 2px 0 #fff}.btn.gray:active{box-shadow:0 2px 0 #b48a5a,inset 0 2px 0 #fff}.btn.small{min-width:0;font-size:19px;padding:11px 20px}.btn .sw{width:1.1em;height:1.1em;border-radius:50%;flex:none;box-shadow:inset 0 0 0 2px rgba(255,255,255,0.75),0 1px 2px rgba(60,30,0,0.4)}.btn.locked{opacity:0.72}.btn .cur{width:1em;height:1em;flex:none}.ibtn{width:52px;height:52px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:26px;background:linear-gradient(#fffaf0,#f0dcb8);color:#7a4a1c;box-shadow:0 4px 0 #b4874f,0 6px 12px rgba(50,25,0,0.3),inset 0 2px 0 #fff}.ibtn:active{transform:translateY(3px);box-shadow:0 1px 0 #b4874f,inset 0 2px 0 #fff}.ibtn.off{opacity:0.55}.ibtn[disabled]{opacity:0.4;pointer-events:none}.rbtn{position:absolute;border-radius:50%;font-size:34px;color:#fff;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 35% 30%,#ffd77a,#f08a12);box-shadow:0 5px 0 #b25b06,0 8px 14px rgba(60,30,0,0.35),inset 0 2px 0 rgba(255,255,255,0.6);transition:opacity 0.15s,transform 0.08s}.rbtn:active{transform:translateY(4px);box-shadow:0 1px 0 #b25b06,inset 0 2px 0 rgba(255,255,255,0.6)}.rbtn.dim{opacity:0.4}.rbtn .ico{filter:drop-shadow(0 2px 0 rgba(120,50,0,0.5))}#loading{background:#7cc46b;display:none;align-items:center;justify-content:center}#loading.show{display:flex}.spinner{width:54px;height:54px;border-radius:50%;border:6px solid rgba(255,255,255,0.35);border-top-color:#fff;animation:spin 0.9s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}#menu.show{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4vh}.logo{text-align:center;padding:0 16px}.logo-title{font-size:clamp(38px,9vmin,84px);font-weight:bold;line-height:1.05;color:#fff6c9;text-shadow:0 3px 0 #e08a12,0 6px 0 #a85a08,0 10px 20px rgba(80,40,0,0.45),0 0 40px rgba(255,240,160,0.9);animation:bob 3.2s ease-in-out infinite}.logo-sub{margin-top:10px;font-size:clamp(18px,3.6vmin,30px);font-weight:bold;color:#fff;text-shadow:0 2px 0 var(--shade,#2f7d2a),0 4px 10px rgba(0,40,0,0.4);letter-spacing:1px}@keyframes bob{50%{transform:translateY(-6px) rotate(-1deg)}}.menu-buttons{display:flex;flex-direction:column;align-items:center;gap:22px}.menu-row{display:flex;gap:14px}.menu-row .btn{min-width:120px}.btn.daily{min-width:240px;font-size:22px;background:linear-gradient(#ffd9b0,#ff9a66);color:#5a1e00;box-shadow:0 6px 0 #c4532e,0 10px 18px rgba(80,20,0,0.3),inset 0 2px 0 rgba(255,255,255,0.6)}.btn.daily:active{box-shadow:0 2px 0 #c4532e,inset 0 2px 0 rgba(255,255,255,0.6)}.btn.daily>.ico{color:#fff3b0;filter:drop-shadow(0 1px 1px rgba(150,50,0,0.6))}.btn.daily .streak{display:inline-flex;align-items:center;gap:2px;padding:2px 10px 2px 6px;border-radius:999px;background:rgba(255,255,255,0.55);font-size:18px}.btn.daily .streak:empty{display:none}.btn.daily .streak .ico{color:#ff5a1f}.btn.daily:not(.done)::after{content:'';position:absolute;top:-4px;right:10px;width:14px;height:14px;border-radius:50%;background:#ff3b30;box-shadow:0 0 0 3px #fff;animation:pulse 1.2s ease-in-out infinite}.btn.daily{position:relative}.btn.daily.done{background:linear-gradient(#fff1de,#f2d2ad);color:#8a4a20}[hidden]{display:none !important}.menu-stars,.lv-stars{display:flex;align-items:center;gap:6px;font-size:24px;font-weight:bold;color:#fff;text-shadow:0 2px 4px rgba(0,40,0,0.5);background:var(--chip,rgba(60,100,30,0.35));padding:6px 16px;border-radius:999px}.menu-stars .ico,.lv-stars .ico{color:#ffd23f;filter:drop-shadow(0 1px 1px rgba(120,60,0,0.6))}.menu-toggles{position:absolute;right:16px;bottom:16px;display:flex;gap:12px}#levels.show{display:flex;flex-direction:column;align-items:center}.lv-top{width:100%;display:flex;align-items:center;justify-content:space-between;padding:12px 14px;gap:10px}.lv-head{font-size:28px;font-weight:bold;color:#fff;text-shadow:0 2px 0 var(--shade,#2f7d2a),0 4px 10px rgba(0,40,0,0.4)}.lv-pager{display:flex;align-items:center;gap:14px;margin-top:auto}.lv-chapter{min-width:230px;text-align:center;padding:8px 18px;border-radius:18px;background:linear-gradient(#fff6e2,#f0dcb8);box-shadow:0 4px 0 #b4874f,0 8px 14px rgba(50,25,0,0.25)}#chNum{font-size:15px;color:#a0703c;font-weight:bold;text-transform:uppercase;letter-spacing:1px}#chName{font-size:24px;font-weight:bold}.lv-grid{margin:3vh 0 auto;padding-bottom:6vh;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;width:min(92vw,520px)}.lv-btn{position:relative;aspect-ratio:1;border-radius:22px;font-size:clamp(24px,6vmin,36px);font-weight:bold;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;background:linear-gradient(#f9d9a6,#d39a5c);color:#5b2f0c;box-shadow:0 5px 0 #8f5a2a,0 8px 14px rgba(40,20,0,0.35),inset 0 2px 0 rgba(255,255,255,0.6)}.lv-btn:active{transform:translateY(3px);box-shadow:0 2px 0 #8f5a2a,inset 0 2px 0 rgba(255,255,255,0.6)}.lv-btn.locked{background:linear-gradient(#cdbca3,#a8957a);color:#7a6a55;box-shadow:0 5px 0 #7a6a55,inset 0 2px 0 rgba(255,255,255,0.35)}.lv-btn.current{background:linear-gradient(#ffe58a,#ffb12e);box-shadow:0 5px 0 #c9700d,0 0 0 4px #fff7c8,0 8px 18px rgba(255,200,60,0.6)}.lv-btn .s{display:flex;gap:1px;font-size:clamp(13px,3vmin,18px)}.lv-btn .s .ico{color:rgba(90,50,20,0.3)}.lv-btn .s .ico.on{color:#ffd23f;filter:drop-shadow(0 1px 0 #a8650c)}.hud-bar{position:absolute;left:0;right:0;top:0;height:64px;padding:6px 10px;display:flex;align-items:center;gap:10px;pointer-events:none}.hud-bar>*{pointer-events:auto}.hud-title{flex:1;text-align:center;color:#fff;font-weight:bold;font-size:22px;line-height:1.1;text-shadow:0 2px 0 var(--shade,#2f7d2a),0 3px 8px rgba(0,40,0,0.5);pointer-events:none}.hud-flies{font-size:22px;display:flex;justify-content:center;gap:4px;margin-top:2px;min-height:22px}.hud-flies .ico{color:rgba(255,255,235,0.4);filter:drop-shadow(0 1px 1px rgba(0,0,0,0.3))}.hud-flies .ico.on{color:#e9ff6a;filter:drop-shadow(0 0 5px #f6ffb0)}.tip{position:absolute;left:0;right:0;top:62px;margin:0 auto;width:max-content;max-width:min(94vw,640px);padding:6px 14px;border-radius:14px;font-size:15px;line-height:1.25;font-weight:bold;text-align:center;background:rgba(255,250,235,0.92);color:#6b3f12;box-shadow:0 3px 10px rgba(40,20,0,0.25);display:none;pointer-events:none}.tip.show{display:block;animation:pop 0.35s ease-out}.btn.done{position:absolute;display:none;min-width:0;font-size:22px;padding:12px 24px;z-index:3;white-space:nowrap}.btn.done #doneStars{display:inline-flex;gap:2px}.btn.done.show{display:inline-flex;animation:pulse 1.2s ease-in-out infinite}.btn.done .ico{color:#fff}.btn.done .ico.off{color:rgba(120,60,0,0.35)}@keyframes pulse{50%{transform:translate(-50%,-50%) scale(1.06)}}@keyframes pop{from{transform:scale(0.85);opacity:0}}.overlay{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:rgba(30,20,5,0.5);z-index:10;padding:16px}.overlay.show{display:flex}.dlg{width:min(92vw,440px);padding:24px 22px 26px;border-radius:28px;text-align:center;max-height:calc(100% - 20px);overflow-y:auto;overscroll-behavior:contain;background:linear-gradient(#fffaf0,#f6e4c2);border:6px solid #c48a52;box-shadow:0 10px 0 #8f5a2a,0 20px 40px rgba(20,10,0,0.5);animation:dlgIn 0.3s cubic-bezier(.2,1.4,.4,1)}@keyframes dlgIn{from{transform:scale(0.7);opacity:0}}.dlg-title{font-size:30px;font-weight:bold;color:#c25b0a;text-shadow:0 2px 0 #fff}.dlg-stars{display:flex;justify-content:center;gap:8px;font-size:58px;margin:10px 0 4px}.dlg-stars:empty{display:none}.dlg-stars .ico{color:rgba(120,70,20,0.2);transform:scale(0.6);transition:transform 0.35s cubic-bezier(.2,1.6,.4,1),color 0.2s}.dlg-stars .ico.on{color:#ffcc22;transform:scale(1);filter:drop-shadow(0 3px 0 #c27a0a) drop-shadow(0 0 10px rgba(255,220,90,0.8))}.dlg-stars .ico:nth-child(2){margin-top:-14px}.dlg-text{margin:12px 0 4px;font-size:18px;line-height:1.35;color:#6b4520;white-space:pre-line}.dlg-text.board{text-align:left;font-variant-numeric:tabular-nums;max-height:46vh;overflow:auto;padding:0 6px}.dlg-text:empty{display:none}.dlg-buttons{margin-top:20px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center}.dlg-row{display:flex;gap:12px;justify-content:center;width:100%}.toast{position:absolute;left:50%;bottom:18%;transform:translateX(-50%);z-index:20;padding:10px 18px;border-radius:14px;background:rgba(40,25,10,0.88);color:#fff;font-size:16px;font-weight:bold;text-align:center;max-width:90vw;opacity:0;transition:opacity 0.25s;pointer-events:none}.toast.show{opacity:1}@media (max-height:520px){.hud-bar{height:50px;padding:4px 8px}.hud-bar .ibtn{width:42px;height:42px;font-size:21px}.hud-title{font-size:18px}.hud-flies{font-size:17px;min-height:17px}.tip{top:48px;font-size:13px;padding:4px 10px}.btn.big{font-size:24px;padding:12px 34px}.lv-grid{grid-template-columns:repeat(8,1fr);width:min(94vw,900px);gap:10px;margin-top:2vh}.dlg{padding:10px 16px 14px;width:min(94vw,560px)}.dlg-title{font-size:24px}.dlg-stars{font-size:44px;margin:4px 0 0}.dlg-text{font-size:15px;margin-top:6px}.dlg-buttons{margin-top:10px;gap:10px}.dlg-buttons .btn{font-size:16px;padding:8px 14px;box-shadow:0 4px 0 rgba(120,70,20,0.45),inset 0 2px 0 rgba(255,255,255,0.6)}.dlg-buttons .btn.green{font-size:18px}#menu.show{gap:2.5vh}.menu-buttons{gap:14px}.btn.daily{font-size:18px;padding:10px 26px}}@media (max-width:400px){.dlg{padding:16px 12px 18px}.dlg-title{font-size:26px}.dlg-text{font-size:16px}.dlg-buttons{gap:10px;margin-top:14px}.dlg-buttons .btn{font-size:15px;padding:8px 12px;gap:6px}.dlg-buttons .btn.green{font-size:18px}.hud-title{font-size:18px}.lv-top{padding:10px 10px;gap:6px}.lv-head{font-size:22px}.lv-stars{font-size:18px;padding:4px 12px;white-space:nowrap}.lv-pager{gap:8px}.lv-chapter{min-width:0;padding:6px 14px}#chName{font-size:20px}.lv-grid{gap:12px}}@media (max-height:520px){.menu-toggles{flex-direction:column;top:50%;bottom:auto;right:12px;transform:translateY(-50%);gap:8px}.menu-toggles .ibtn{width:42px;height:42px;font-size:20px}}</style>
 </head>
 <body>
 <div id="app">
@@ -30,6 +30,7 @@
     <div class="menu-toggles">
       <button class="ibtn" id="menuShortcut" hidden><i class="ico" data-i="pin"></i></button>
       <button class="ibtn" id="menuTop" hidden><i class="ico" data-i="trophy"></i></button>
+      <button class="ibtn" id="menuShop" hidden><i class="ico" data-i="cart"></i></button>
       <button class="ibtn" id="menuSfx"></button>
       <button class="ibtn" id="menuMus"></button>
     </div>
@@ -138,6 +139,196 @@ const DATA = [
 {"id":"6-6","n":8,"src":[{"x":0,"y":1,"r":0}],"tgt":[{"x":7,"y":6}],"fly":[{"x":6,"y":0},{"x":5,"y":7}],"walls":[[6,5],[7,3],[1,0],[7,5],[2,7],[7,2],[0,0],[0,5],[5,5],[2,6],[4,6]],"portals":[[7,0,0,4],[6,4,3,7]],"tray":[{"t":"mirror","n":4}],"sol":{"base":[0],"placed":[{"t":"mirror","x":6,"y":1,"r":7},{"t":"mirror","x":4,"y":0,"r":7},{"t":"mirror","x":6,"y":7,"r":7}]},"seed":605074},
 {"id":"6-7","n":8,"src":[{"x":5,"y":0,"r":4}],"tgt":[{"x":7,"y":7},{"x":7,"y":5},{"x":6,"y":6}],"fly":[{"x":1,"y":4},{"x":3,"y":4}],"walls":[[7,1],[3,3],[7,0],[7,3],[0,7],[4,1],[6,1],[6,0],[0,2]],"portals":[[4,4,2,6]],"tray":[{"t":"mirror","n":2},{"t":"dlens","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":5,"y":5,"r":7},{"t":"mirror","x":0,"y":4,"r":5},{"t":"dlens","x":4,"y":6,"r":4}]},"seed":606185},
 {"id":"6-8","n":8,"src":[{"x":7,"y":3,"r":8}],"tgt":[{"x":4,"y":0},{"x":2,"y":0}],"fly":[{"x":3,"y":1},{"x":2,"y":4}],"walls":[[7,1],[6,4],[7,7],[1,5],[1,7],[6,0],[6,1],[5,4],[0,5],[0,4],[4,2]],"portals":[[2,2,3,5]],"tray":[{"t":"mirror","n":3},{"t":"splitter","n":1}],"sol":{"base":[8],"placed":[{"t":"mirror","x":3,"y":3,"r":1},{"t":"mirror","x":0,"y":2,"r":4},{"t":"splitter","x":1,"y":1,"r":7},{"t":"mirror","x":5,"y":1,"r":5}]},"seed":607222},
+] },
+{ key: 'ch7', levels: [
+{"id":"7-1","n":7,"src":[{"x":1,"y":6,"r":12}],"tgt":[{"x":5,"y":0}],"fly":[{"x":3,"y":0},{"x":0,"y":1}],"walls":[[5,6],[1,2],[1,1],[6,1],[4,5],[4,2],[6,3],[4,1],[2,4],[5,3]],"tray":[{"t":"mirror","n":3}],"sol":{"base":[12],"placed":[{"t":"mirror","x":1,"y":3,"r":1},{"t":"mirror","x":0,"y":4,"r":1},{"t":"mirror","x":0,"y":0,"r":6}]},"seed":700037},
+{"id":"7-2","n":7,"src":[{"x":3,"y":0,"r":4}],"tgt":[{"x":5,"y":6}],"fly":[{"x":5,"y":1},{"x":6,"y":3}],"walls":[[1,0],[2,5],[0,0],[1,6],[4,4],[2,0],[1,1],[3,4],[4,0],[0,5],[5,3]],"fixed":[{"t":"mirror","x":3,"y":3,"r":15,"rot":true}],"tray":[{"t":"mirror","n":2}],"sol":{"base":[4,1],"placed":[{"t":"mirror","x":6,"y":0,"r":1},{"t":"mirror","x":6,"y":5,"r":5}]},"seed":701074},
+{"id":"7-3","n":7,"src":[{"x":5,"y":6,"r":12}],"tgt":[{"x":0,"y":3}],"fly":[{"x":6,"y":3},{"x":4,"y":0}],"walls":[[0,5],[1,4],[3,5],[3,6],[3,4],[1,5],[1,6],[5,2],[4,3],[0,4],[5,3]],"tray":[{"t":"mirror","n":4}],"sol":{"base":[12],"placed":[{"t":"mirror","x":5,"y":4,"r":7},{"t":"mirror","x":6,"y":5,"r":7},{"t":"mirror","x":6,"y":0,"r":2},{"t":"mirror","x":3,"y":0,"r":7}]},"seed":702037},
+{"id":"7-4","n":8,"src":[{"x":4,"y":7,"r":12}],"tgt":[{"x":6,"y":0}],"fly":[{"x":5,"y":4},{"x":5,"y":2}],"walls":[[7,1],[1,0],[1,1],[3,5],[6,7],[0,5],[2,2],[5,7],[2,5],[5,6],[4,0],[4,2],[4,3],[6,2]],"tray":[{"t":"mirror","n":3}],"sol":{"base":[12],"placed":[{"t":"mirror","x":4,"y":4,"r":7},{"t":"mirror","x":5,"y":5,"r":7},{"t":"mirror","x":5,"y":1,"r":5}]},"seed":703000},
+{"id":"7-5","n":8,"src":[{"x":5,"y":0,"r":4}],"tgt":[{"x":6,"y":7}],"fly":[{"x":3,"y":6},{"x":4,"y":7}],"walls":[[5,6],[1,2],[6,6],[2,4],[3,3],[3,4],[3,2],[5,5],[7,3],[7,1],[7,4],[5,4],[0,1]],"tray":[{"t":"mirror","n":4}],"sol":{"base":[4],"placed":[{"t":"mirror","x":5,"y":2,"r":7},{"t":"mirror","x":4,"y":1,"r":7},{"t":"mirror","x":4,"y":5,"r":5},{"t":"mirror","x":2,"y":7,"r":3}]},"seed":704111},
+{"id":"7-6","n":8,"src":[{"x":0,"y":6,"r":0}],"tgt":[{"x":4,"y":0}],"fly":[{"x":4,"y":5},{"x":3,"y":3}],"walls":[[1,0],[5,2],[2,7],[5,7],[3,7],[1,4],[4,3],[6,0],[7,2],[2,0],[7,1],[6,5]],"fixed":[{"t":"mirror","x":5,"y":6,"r":15,"rot":true}],"tray":[{"t":"mirror","n":3}],"sol":{"base":[0,5],"placed":[{"t":"mirror","x":3,"y":4,"r":3},{"t":"mirror","x":3,"y":1,"r":5}]},"seed":705000},
+{"id":"7-7","n":9,"src":[{"x":4,"y":8,"r":12}],"tgt":[{"x":4,"y":0}],"fly":[{"x":2,"y":6},{"x":1,"y":3}],"walls":[[3,5],[7,7],[8,3],[6,3],[6,2],[7,1],[5,2],[4,2],[5,8],[7,0],[3,3],[1,8],[4,4]],"tray":[{"t":"mirror","n":4}],"sol":{"base":[12],"placed":[{"t":"mirror","x":4,"y":6,"r":1},{"t":"mirror","x":3,"y":7,"r":0},{"t":"mirror","x":0,"y":4,"r":4}]},"seed":706000},
+{"id":"7-8","n":9,"src":[{"x":2,"y":8,"r":14}],"tgt":[{"x":8,"y":5}],"fly":[{"x":5,"y":2},{"x":0,"y":5}],"walls":[[5,5],[6,0],[4,3],[4,5],[2,0],[6,5],[3,4],[2,4],[1,2],[3,3],[5,4],[7,0],[2,5],[8,6],[7,6]],"tray":[{"t":"mirror","n":5}],"sol":{"base":[14],"placed":[{"t":"mirror","x":4,"y":6,"r":3},{"t":"mirror","x":0,"y":6,"r":2},{"t":"mirror","x":0,"y":1,"r":6},{"t":"mirror","x":4,"y":1,"r":1}]},"seed":707000},
+] },
+{ key: 'ch8', levels: [
+{"id":"8-1","n":7,"src":[{"x":4,"y":0,"r":4}],"tgt":[{"x":6,"y":6,"focus":true}],"fly":[{"x":5,"y":2},{"x":6,"y":5}],"walls":[[3,6],[6,1],[4,6],[3,0],[0,4],[1,6],[5,1],[2,1],[3,1],[5,5]],"tray":[{"t":"mirror","n":2},{"t":"lens","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":4,"y":2,"r":2},{"t":"mirror","x":6,"y":2,"r":2},{"t":"lens","x":6,"y":4,"r":0}]},"seed":800074},
+{"id":"8-2","n":7,"src":[{"x":2,"y":0,"r":4}],"tgt":[{"x":6,"y":3},{"x":6,"y":1},{"x":4,"y":2}],"fly":[{"x":1,"y":3},{"x":3,"y":2}],"walls":[[4,6],[0,5],[3,0],[6,2],[0,4],[6,4],[5,4],[5,0],[0,6],[4,5]],"tray":[{"t":"mirror","n":2},{"t":"dlens","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":2,"y":4,"r":7},{"t":"mirror","x":0,"y":2,"r":5},{"t":"dlens","x":2,"y":2,"r":4}]},"seed":801000},
+{"id":"8-3","n":7,"src":[{"x":6,"y":1,"r":8}],"tgt":[{"x":6,"y":3,"focus":true}],"fly":[{"x":3,"y":3},{"x":5,"y":3}],"walls":[[0,2],[5,2],[6,0],[1,0],[0,4],[2,0],[0,6],[1,6],[2,5],[5,6],[0,5]],"tray":[{"t":"mirror","n":2},{"t":"lens","n":1}],"sol":{"base":[8],"placed":[{"t":"mirror","x":4,"y":1,"r":7},{"t":"mirror","x":2,"y":3,"r":3},{"t":"lens","x":4,"y":3,"r":4}]},"seed":802000},
+{"id":"8-4","n":8,"src":[{"x":2,"y":7,"r":14}],"tgt":[{"x":0,"y":5,"focus":true}],"fly":[{"x":4,"y":1},{"x":2,"y":1}],"walls":[[6,7],[7,7],[2,4],[4,2],[3,2],[1,5],[1,6],[3,4],[2,3],[3,0]],"tray":[{"t":"mirror","n":3},{"t":"lens","n":1}],"sol":{"base":[14],"placed":[{"t":"mirror","x":5,"y":4,"r":5},{"t":"mirror","x":5,"y":1,"r":2},{"t":"mirror","x":0,"y":1,"r":6},{"t":"lens","x":0,"y":4,"r":0}]},"seed":803074},
+{"id":"8-5","n":8,"src":[{"x":3,"y":0,"r":4}],"tgt":[{"x":1,"y":1},{"x":0,"y":2},{"x":0,"y":0}],"fly":[{"x":2,"y":1},{"x":4,"y":2}],"walls":[[1,6],[7,7],[7,6],[5,4],[6,7],[6,3],[0,4],[4,5],[6,4],[4,7],[5,0]],"tray":[{"t":"mirror","n":2},{"t":"dlens","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":3,"y":3,"r":1},{"t":"mirror","x":5,"y":1,"r":3},{"t":"dlens","x":3,"y":1,"r":4}]},"seed":804000},
+{"id":"8-6","n":8,"src":[{"x":6,"y":7,"r":12}],"tgt":[{"x":0,"y":5,"focus":true}],"fly":[{"x":1,"y":0},{"x":0,"y":3}],"walls":[[3,3],[4,2],[7,6],[2,2],[2,1],[3,1],[3,4],[7,7],[5,1],[2,3],[2,4],[7,5],[1,5]],"tray":[{"t":"mirror","n":3},{"t":"lens","n":1}],"sol":{"base":[12],"placed":[{"t":"mirror","x":6,"y":0,"r":2},{"t":"mirror","x":0,"y":0,"r":6},{"t":"lens","x":0,"y":4,"r":0}]},"seed":805000},
+{"id":"8-7","n":9,"src":[{"x":0,"y":4,"r":0}],"tgt":[{"x":2,"y":0,"focus":true}],"fly":[{"x":4,"y":0},{"x":6,"y":1}],"walls":[[4,3],[3,6],[8,1],[0,7],[7,1],[3,3],[6,5],[4,8],[4,5],[1,0],[1,7],[2,6],[2,1]],"tray":[{"t":"mirror","n":4},{"t":"lens","n":1}],"sol":{"base":[0],"placed":[{"t":"mirror","x":7,"y":4,"r":5},{"t":"mirror","x":6,"y":3,"r":3},{"t":"mirror","x":6,"y":0,"r":2},{"t":"lens","x":3,"y":0,"r":4}]},"seed":806074},
+{"id":"8-8","n":9,"src":[{"x":8,"y":4,"r":8}],"tgt":[{"x":6,"y":7},{"x":5,"y":6},{"x":4,"y":7}],"fly":[{"x":3,"y":2},{"x":4,"y":1}],"walls":[[8,0],[0,3],[7,5],[0,4],[3,8],[7,7],[2,1],[2,8],[2,5],[3,5],[6,3],[2,0],[0,1]],"tray":[{"t":"mirror","n":3},{"t":"dlens","n":1}],"sol":{"base":[8],"placed":[{"t":"mirror","x":1,"y":4,"r":3},{"t":"mirror","x":5,"y":0,"r":1},{"t":"dlens","x":5,"y":3,"r":0}]},"seed":807074},
+] },
+{ key: 'ch9', levels: [
+{"id":"9-1","n":7,"src":[{"x":0,"y":4,"r":0}],"tgt":[{"x":0,"y":6},{"x":2,"y":0}],"fly":[{"x":4,"y":5},{"x":2,"y":3}],"walls":[[1,3],[6,0],[6,1],[3,0],[1,2],[1,5],[0,2],[0,5],[3,2]],"tray":[{"t":"splitter","n":1},{"t":"mirror","n":2}],"sol":{"base":[0],"placed":[{"t":"splitter","x":2,"y":4,"r":6},{"t":"mirror","x":5,"y":4,"r":3},{"t":"mirror","x":3,"y":6,"r":7}]},"seed":900000},
+{"id":"9-2","n":7,"src":[{"x":0,"y":4,"r":0}],"tgt":[{"x":6,"y":2},{"x":6,"y":1}],"fly":[{"x":5,"y":1},{"x":3,"y":3}],"walls":[[4,2],[1,5],[6,5],[0,5],[1,6],[5,5],[6,3],[5,4],[0,6],[2,6],[2,5]],"tray":[{"t":"mirror","n":3},{"t":"splitter","n":1}],"sol":{"base":[0],"placed":[{"t":"mirror","x":4,"y":4,"r":5},{"t":"splitter","x":2,"y":2,"r":4},{"t":"mirror","x":4,"y":0,"r":0},{"t":"mirror","x":1,"y":1,"r":5}]},"seed":901000},
+{"id":"9-3","n":7,"src":[{"x":2,"y":0,"r":4}],"tgt":[{"x":6,"y":2},{"x":1,"y":3},{"x":6,"y":6}],"fly":[{"x":4,"y":4},{"x":3,"y":3}],"walls":[[0,5],[5,1],[1,6],[1,2],[0,4],[5,0],[0,3],[0,2],[1,4],[1,0],[6,4]],"tray":[{"t":"splitter","n":2},{"t":"mirror","n":1}],"sol":{"base":[4],"placed":[{"t":"splitter","x":2,"y":2,"r":3},{"t":"mirror","x":2,"y":6,"r":1},{"t":"splitter","x":5,"y":3,"r":3}]},"seed":902037},
+{"id":"9-4","n":8,"src":[{"x":2,"y":7,"r":12}],"tgt":[{"x":7,"y":1},{"x":1,"y":7}],"fly":[{"x":6,"y":3},{"x":7,"y":2}],"walls":[[4,1],[5,1],[5,0],[0,4],[5,5],[0,0],[4,6],[3,1],[0,5],[6,2],[7,4]],"tray":[{"t":"mirror","n":3},{"t":"splitter","n":1}],"sol":{"base":[12],"placed":[{"t":"mirror","x":2,"y":2,"r":3},{"t":"mirror","x":1,"y":1,"r":7},{"t":"splitter","x":1,"y":3,"r":2},{"t":"mirror","x":7,"y":3,"r":6}]},"seed":903037},
+{"id":"9-5","n":8,"src":[{"x":2,"y":0,"r":4}],"tgt":[{"x":0,"y":6},{"x":7,"y":5}],"fly":[{"x":4,"y":5},{"x":1,"y":1}],"walls":[[1,3],[7,7],[1,6],[3,6],[1,4],[6,4],[4,4],[2,7],[3,1],[5,4],[4,3]],"tray":[{"t":"splitter","n":1},{"t":"mirror","n":2}],"sol":{"base":[4],"placed":[{"t":"splitter","x":2,"y":2,"r":7},{"t":"mirror","x":2,"y":5,"r":2},{"t":"mirror","x":0,"y":0,"r":7}]},"seed":904037},
+{"id":"9-6","n":8,"src":[{"x":0,"y":6,"r":0}],"tgt":[{"x":7,"y":2},{"x":0,"y":1}],"fly":[{"x":5,"y":4},{"x":1,"y":4}],"walls":[[7,5],[1,3],[4,3],[6,5],[3,3],[3,2],[1,1],[2,7],[2,1],[2,3],[5,1],[4,1]],"tray":[{"t":"mirror","n":4},{"t":"splitter","n":1}],"sol":{"base":[0],"placed":[{"t":"mirror","x":3,"y":6,"r":7},{"t":"splitter","x":6,"y":3,"r":0},{"t":"mirror","x":7,"y":4,"r":5},{"t":"mirror","x":0,"y":4,"r":2}]},"seed":905074},
+{"id":"9-7","n":9,"src":[{"x":4,"y":0,"r":4}],"tgt":[{"x":8,"y":7},{"x":5,"y":8},{"x":1,"y":5}],"fly":[{"x":2,"y":5},{"x":5,"y":7}],"walls":[[0,7],[0,8],[3,8],[3,3],[0,3],[3,4],[1,2],[7,1],[7,8],[8,1],[8,0],[1,0]],"tray":[{"t":"splitter","n":2},{"t":"mirror","n":2}],"sol":{"base":[4],"placed":[{"t":"splitter","x":4,"y":5,"r":6},{"t":"mirror","x":4,"y":7,"r":2},{"t":"splitter","x":6,"y":7,"r":3}]},"seed":906000},
+{"id":"9-8","n":9,"src":[{"x":8,"y":5,"r":8}],"tgt":[{"x":0,"y":8},{"x":1,"y":1}],"fly":[{"x":2,"y":1},{"x":4,"y":7}],"walls":[[3,0],[6,1],[4,0],[2,3],[8,1],[4,2],[8,8],[3,2],[6,7],[2,4],[8,2],[1,0],[0,4],[1,5]],"tray":[{"t":"mirror","n":4},{"t":"splitter","n":1}],"sol":{"base":[8],"placed":[{"t":"mirror","x":2,"y":5,"r":5},{"t":"mirror","x":5,"y":8,"r":7},{"t":"splitter","x":5,"y":3,"r":1},{"t":"mirror","x":5,"y":1,"r":2}]},"seed":907074},
+] },
+{ key: 'ch10', levels: [
+{"id":"10-1","n":8,"src":[{"x":5,"y":7,"r":12}],"tgt":[{"x":3,"y":4,"c":1},{"x":4,"y":6,"c":2}],"fly":[{"x":4,"y":3},{"x":4,"y":5}],"walls":[[1,5],[1,3],[7,6],[1,2],[6,6],[0,6],[4,7],[6,5],[3,5],[7,2]],"tray":[{"t":"mirror","n":1},{"t":"prism","n":1}],"sol":{"base":[12],"placed":[{"t":"mirror","x":5,"y":0,"r":1},{"t":"prism","x":4,"y":1,"r":3}]},"seed":1000000},
+{"id":"10-2","n":8,"src":[{"x":6,"y":0,"r":4}],"tgt":[{"x":0,"y":3,"c":2},{"x":4,"y":6,"c":1}],"fly":[{"x":4,"y":5},{"x":5,"y":4}],"walls":[[1,6],[2,2],[4,4],[6,7],[3,2],[2,1],[1,2],[3,7],[0,2],[3,4],[5,1]],"tray":[{"t":"prism","n":1},{"t":"mirror","n":1}],"sol":{"base":[4],"placed":[{"t":"prism","x":6,"y":3,"r":15},{"t":"mirror","x":3,"y":6,"r":0}]},"seed":1001037},
+{"id":"10-3","n":7,"src":[{"x":1,"y":0,"r":4}],"tgt":[{"x":5,"y":0,"c":4}],"fly":[{"x":5,"y":2},{"x":2,"y":6}],"walls":[[3,1],[0,6],[6,1],[4,5],[4,4],[3,5],[3,4],[2,2],[4,1],[2,4],[0,1]],"tray":[{"t":"mirror","n":2},{"t":"filter","n":1,"c":4}],"sol":{"base":[4],"placed":[{"t":"mirror","x":1,"y":6,"r":2},{"t":"filter","x":3,"y":6,"r":4,"c":4},{"t":"mirror","x":5,"y":6,"r":6}]},"seed":1002074},
+{"id":"10-4","n":8,"src":[{"x":7,"y":6,"r":8}],"tgt":[{"x":0,"y":2,"c":2},{"x":0,"y":1,"c":1}],"fly":[{"x":2,"y":5},{"x":1,"y":3}],"walls":[[2,1],[3,1],[4,7],[7,4],[5,7],[7,7],[4,0],[2,2],[0,4],[6,5]],"tray":[{"t":"mirror","n":1},{"t":"prism","n":1}],"sol":{"base":[8],"placed":[{"t":"mirror","x":2,"y":6,"r":2},{"t":"prism","x":2,"y":4,"r":9}]},"seed":1003074},
+{"id":"10-5","n":8,"src":[{"x":0,"y":4,"r":0}],"tgt":[{"x":1,"y":0,"c":2},{"x":7,"y":1,"c":1}],"fly":[{"x":3,"y":3},{"x":5,"y":1}],"walls":[[2,6],[3,2],[7,5],[6,4],[5,5],[7,4],[0,7],[7,6],[0,5],[2,2],[7,7]],"tray":[{"t":"prism","n":1},{"t":"mirror","n":1}],"sol":{"base":[0],"placed":[{"t":"prism","x":2,"y":4,"r":13},{"t":"mirror","x":6,"y":0,"r":3}]},"seed":1004037},
+{"id":"10-6","n":8,"src":[{"x":7,"y":5,"r":8}],"tgt":[{"x":1,"y":3,"c":4}],"fly":[{"x":4,"y":3},{"x":3,"y":1}],"walls":[[3,3],[3,4],[1,5],[1,4],[0,6],[6,4],[5,2],[1,6],[7,2],[0,7],[6,3],[7,1]],"tray":[{"t":"mirror","n":3},{"t":"filter","n":1,"c":4}],"sol":{"base":[8],"placed":[{"t":"mirror","x":4,"y":5,"r":2},{"t":"filter","x":4,"y":2,"r":0,"c":4},{"t":"mirror","x":4,"y":0,"r":1}]},"seed":1005037},
+{"id":"10-7","n":9,"src":[{"x":6,"y":0,"r":4}],"tgt":[{"x":7,"y":0,"c":2},{"x":8,"y":3,"c":1}],"fly":[{"x":7,"y":3},{"x":7,"y":1}],"walls":[[5,2],[1,1],[4,2],[5,3],[4,4],[5,6],[3,1],[4,6],[4,3],[5,8],[2,1],[2,0]],"tray":[{"t":"mirror","n":2},{"t":"prism","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":6,"y":8,"r":1},{"t":"prism","x":7,"y":7,"r":11}]},"seed":1006000},
+{"id":"10-8","n":9,"src":[{"x":8,"y":1,"r":8}],"tgt":[{"x":1,"y":3,"c":1},{"x":2,"y":7,"c":2}],"fly":[{"x":1,"y":6},{"x":1,"y":4}],"walls":[[8,2],[0,0],[6,2],[3,4],[3,7],[8,4],[3,5],[2,4],[2,5],[4,4],[7,2],[5,7],[8,3]],"tray":[{"t":"prism","n":1},{"t":"mirror","n":2}],"sol":{"base":[8],"placed":[{"t":"prism","x":4,"y":1,"r":5},{"t":"mirror","x":0,"y":5,"r":4}]},"seed":1007000},
+] },
+{ key: 'ch11', levels: [
+{"id":"11-1","n":7,"src":[{"x":5,"y":6,"r":12}],"tgt":[{"x":0,"y":0}],"fly":[{"x":0,"y":4},{"x":3,"y":0}],"walls":[[4,5],[2,3],[4,4],[3,4],[3,5],[6,2],[2,2],[3,3],[6,4]],"portals":[[1,0,2,6]],"tray":[{"t":"mirror","n":2}],"sol":{"base":[12],"placed":[{"t":"mirror","x":5,"y":0,"r":2},{"t":"mirror","x":0,"y":6,"r":2}]},"seed":1100000},
+{"id":"11-2","n":7,"src":[{"x":6,"y":5,"r":8}],"tgt":[{"x":0,"y":4}],"fly":[{"x":4,"y":3},{"x":2,"y":3}],"walls":[[1,2],[3,2],[1,6],[0,5],[2,6],[3,1],[0,2],[4,1],[2,0],[6,2],[1,5],[2,5]],"portals":[[5,6,4,4],[2,4,6,3]],"tray":[{"t":"mirror","n":3}],"sol":{"base":[8],"placed":[{"t":"mirror","x":4,"y":5,"r":5},{"t":"mirror","x":6,"y":6,"r":5},{"t":"mirror","x":1,"y":3,"r":7}]},"seed":1101000},
+{"id":"11-3","n":7,"src":[{"x":1,"y":0,"r":4}],"tgt":[{"x":4,"y":0,"focus":true}],"fly":[{"x":2,"y":5},{"x":3,"y":4}],"walls":[[3,1],[0,0],[0,3],[2,2],[4,5],[2,3],[3,2],[0,5],[5,4],[4,6],[4,1]],"portals":[[4,3,0,2]],"tray":[{"t":"mirror","n":2},{"t":"lens","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":1,"y":6,"r":1},{"t":"mirror","x":2,"y":0,"r":7},{"t":"lens","x":3,"y":0,"r":4}]},"seed":1102074},
+{"id":"11-4","n":8,"src":[{"x":0,"y":3,"r":0}],"tgt":[{"x":0,"y":6}],"fly":[{"x":5,"y":5},{"x":3,"y":6}],"walls":[[5,2],[6,2],[5,0],[2,2],[2,5],[4,2],[7,2],[3,5],[1,5],[5,7]],"portals":[[7,4,4,4]],"tray":[{"t":"mirror","n":2}],"sol":{"base":[0],"placed":[{"t":"mirror","x":6,"y":3,"r":1},{"t":"mirror","x":6,"y":6,"r":5}]},"seed":1103074},
+{"id":"11-5","n":8,"src":[{"x":0,"y":4,"r":0}],"tgt":[{"x":0,"y":7},{"x":4,"y":1}],"fly":[{"x":6,"y":6},{"x":5,"y":7}],"walls":[[0,5],[2,5],[7,0],[3,6],[3,5],[1,5],[7,2],[4,0],[4,5],[2,6],[2,3]],"portals":[[5,6,6,0]],"tray":[{"t":"splitter","n":1},{"t":"mirror","n":2}],"sol":{"base":[0],"placed":[{"t":"splitter","x":5,"y":4,"r":2},{"t":"mirror","x":6,"y":7,"r":6},{"t":"mirror","x":7,"y":4,"r":5}]},"seed":1104037},
+{"id":"11-6","n":8,"src":[{"x":2,"y":0,"r":4}],"tgt":[{"x":7,"y":4}],"fly":[{"x":0,"y":6},{"x":1,"y":7}],"walls":[[7,1],[1,1],[6,6],[5,5],[1,0],[4,5],[5,7],[1,4],[5,3],[4,6],[1,2],[4,4],[4,1],[7,2],[5,2]],"portals":[[0,7,3,5],[3,7,6,0]],"tray":[{"t":"mirror","n":4}],"sol":{"base":[4],"placed":[{"t":"mirror","x":2,"y":7,"r":6},{"t":"mirror","x":0,"y":5,"r":6},{"t":"mirror","x":6,"y":5,"r":1}]},"seed":1105037},
+{"id":"11-7","n":9,"src":[{"x":7,"y":0,"r":4}],"tgt":[{"x":2,"y":7},{"x":4,"y":8},{"x":3,"y":6}],"fly":[{"x":2,"y":3},{"x":3,"y":5}],"walls":[[8,4],[7,8],[0,0],[0,4],[4,4],[0,8],[0,3],[1,0],[3,0],[7,6],[8,7],[0,7]],"portals":[[8,2,1,4]],"tray":[{"t":"mirror","n":3},{"t":"dlens","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":7,"y":3,"r":1},{"t":"mirror","x":3,"y":2,"r":1},{"t":"dlens","x":3,"y":4,"r":0}]},"seed":1106037},
+{"id":"11-8","n":9,"src":[{"x":0,"y":4,"r":0}],"tgt":[{"x":3,"y":7},{"x":1,"y":7}],"fly":[{"x":3,"y":3},{"x":7,"y":5}],"walls":[[6,1],[6,2],[4,8],[6,8],[5,7],[4,0],[8,1],[5,8],[2,8],[0,5],[5,1],[1,8],[8,4],[1,5],[3,5],[2,7]],"portals":[[2,3,8,6]],"tray":[{"t":"mirror","n":4},{"t":"splitter","n":1}],"sol":{"base":[0],"placed":[{"t":"mirror","x":3,"y":4,"r":5},{"t":"mirror","x":5,"y":3,"r":1},{"t":"splitter","x":4,"y":6,"r":7},{"t":"mirror","x":0,"y":6,"r":5}]},"seed":1107074},
+] },
+{ key: 'ch12', levels: [
+{"id":"12-1","n":7,"src":[{"x":2,"y":0,"r":4}],"tgt":[{"x":5,"y":5},{"x":0,"y":5}],"fly":[{"x":5,"y":3},{"x":0,"y":3}],"walls":[[3,5],[5,0],[1,5],[3,2],[3,0],[5,6],[2,5],[6,4],[3,4]],"tray":[{"t":"mirror","n":3},{"t":"splitter","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":2,"y":2,"r":7},{"t":"splitter","x":1,"y":1,"r":5},{"t":"mirror","x":0,"y":0,"r":7},{"t":"mirror","x":5,"y":1,"r":2}]},"seed":1200000},
+{"id":"12-2","n":7,"src":[{"x":6,"y":1,"r":8}],"tgt":[{"x":3,"y":6,"focus":true}],"fly":[{"x":5,"y":2},{"x":5,"y":4}],"walls":[[0,4],[3,4],[2,4],[2,1],[0,5],[1,5],[1,2],[3,3],[1,0],[0,3]],"tray":[{"t":"mirror","n":2},{"t":"lens","n":1}],"sol":{"base":[8],"placed":[{"t":"mirror","x":4,"y":1,"r":5},{"t":"mirror","x":6,"y":3,"r":4},{"t":"lens","x":4,"y":5,"r":2}]},"seed":1201037},
+{"id":"12-3","n":7,"src":[{"x":3,"y":0,"r":4}],"tgt":[{"x":0,"y":1},{"x":1,"y":2},{"x":0,"y":3}],"fly":[{"x":2,"y":2},{"x":4,"y":2}],"walls":[[4,1],[4,5],[4,6],[1,0],[4,0],[2,0],[3,6],[5,6],[0,0],[6,3],[2,5]],"tray":[{"t":"mirror","n":2},{"t":"dlens","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":3,"y":4,"r":1},{"t":"mirror","x":5,"y":2,"r":3},{"t":"dlens","x":3,"y":2,"r":4}]},"seed":1202074},
+{"id":"12-4","n":8,"src":[{"x":2,"y":0,"r":4}],"tgt":[{"x":7,"y":5},{"x":5,"y":0}],"fly":[{"x":5,"y":1},{"x":4,"y":6}],"walls":[[6,3],[3,4],[7,2],[3,5],[3,0],[7,3],[7,1],[1,2],[3,1],[4,2]],"tray":[{"t":"mirror","n":3},{"t":"splitter","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":2,"y":6,"r":3},{"t":"mirror","x":3,"y":7,"r":0},{"t":"splitter","x":5,"y":5,"r":5},{"t":"mirror","x":6,"y":4,"r":0}]},"seed":1203000},
+{"id":"12-5","n":8,"src":[{"x":5,"y":0,"r":4}],"tgt":[{"x":1,"y":6,"focus":true}],"fly":[{"x":4,"y":4},{"x":2,"y":6}],"walls":[[3,2],[5,4],[5,7],[4,7],[7,3],[2,7],[6,4],[6,5],[0,4],[1,4],[1,7],[2,5]],"tray":[{"t":"mirror","n":3},{"t":"lens","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":5,"y":3,"r":7},{"t":"mirror","x":4,"y":2,"r":7},{"t":"mirror","x":4,"y":6,"r":6},{"t":"lens","x":3,"y":6,"r":4}]},"seed":1204000},
+{"id":"12-6","n":8,"src":[{"x":3,"y":0,"r":4}],"tgt":[{"x":6,"y":2},{"x":1,"y":1},{"x":7,"y":7}],"fly":[{"x":5,"y":3},{"x":5,"y":7}],"walls":[[0,1],[4,6],[4,0],[7,3],[6,6],[4,1],[7,2],[6,5],[4,2],[2,4],[0,0],[5,5]],"tray":[{"t":"splitter","n":2},{"t":"mirror","n":2}],"sol":{"base":[4],"placed":[{"t":"splitter","x":3,"y":5,"r":1},{"t":"mirror","x":3,"y":7,"r":2},{"t":"splitter","x":4,"y":4,"r":4}]},"seed":1205037},
+{"id":"12-7","n":9,"src":[{"x":0,"y":7,"r":0}],"tgt":[{"x":8,"y":2},{"x":5,"y":0}],"fly":[{"x":7,"y":3},{"x":7,"y":6}],"walls":[[8,3],[1,4],[6,8],[7,8],[2,2],[4,1],[3,2],[1,8],[5,4],[1,3],[8,4],[4,2]],"tray":[{"t":"mirror","n":4},{"t":"splitter","n":1}],"sol":{"base":[0],"placed":[{"t":"mirror","x":7,"y":7,"r":6},{"t":"splitter","x":7,"y":4,"r":3},{"t":"mirror","x":5,"y":2,"r":3},{"t":"mirror","x":7,"y":0,"r":1}]},"seed":1206074},
+{"id":"12-8","n":9,"src":[{"x":8,"y":3,"r":8}],"tgt":[{"x":1,"y":2},{"x":1,"y":0},{"x":0,"y":1}],"fly":[{"x":2,"y":1},{"x":5,"y":1}],"walls":[[5,0],[7,2],[1,6],[7,8],[6,8],[2,3],[1,5],[6,4],[8,4],[0,5],[2,5],[5,8],[0,7]],"tray":[{"t":"mirror","n":3},{"t":"dlens","n":1}],"sol":{"base":[8],"placed":[{"t":"mirror","x":6,"y":3,"r":2},{"t":"mirror","x":6,"y":1,"r":2},{"t":"dlens","x":4,"y":1,"r":4}]},"seed":1207037},
+] },
+{ key: 'ch13', levels: [
+{"id":"13-1","n":7,"src":[{"x":4,"y":0,"r":4}],"tgt":[{"x":0,"y":0,"focus":true}],"fly":[{"x":0,"y":1},{"x":2,"y":1}],"walls":[[5,3],[5,1],[1,0],[2,5],[2,3],[0,6],[0,5],[5,6],[1,4]],"portals":[[3,4,3,0]],"tray":[{"t":"mirror","n":2},{"t":"lens","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":4,"y":3,"r":5},{"t":"mirror","x":0,"y":3,"r":1},{"t":"lens","x":0,"y":2,"r":0}]},"seed":1300000},
+{"id":"13-2","n":7,"src":[{"x":6,"y":5,"r":8}],"tgt":[{"x":5,"y":3},{"x":6,"y":2},{"x":6,"y":4}],"fly":[{"x":4,"y":2},{"x":4,"y":4}],"walls":[[2,4],[2,5],[3,0],[0,1],[1,6],[3,1],[4,0],[2,2],[6,0],[5,0]],"portals":[[4,1,0,5]],"tray":[{"t":"mirror","n":2},{"t":"dlens","n":1}],"sol":{"base":[8],"placed":[{"t":"mirror","x":4,"y":5,"r":2},{"t":"mirror","x":0,"y":3,"r":6},{"t":"dlens","x":3,"y":3,"r":4}]},"seed":1301000},
+{"id":"13-3","n":7,"src":[{"x":0,"y":5,"r":0}],"tgt":[{"x":5,"y":0}],"fly":[{"x":4,"y":3},{"x":5,"y":4}],"walls":[[3,6],[1,1],[0,3],[0,0],[6,1],[1,0],[2,0],[2,6],[6,0],[2,1],[6,5]],"portals":[[5,1,4,6]],"tray":[{"t":"mirror","n":2}],"sol":{"base":[0],"placed":[{"t":"mirror","x":5,"y":5,"r":6},{"t":"mirror","x":4,"y":1,"r":5}]},"seed":1302037},
+{"id":"13-4","n":8,"src":[{"x":1,"y":0,"r":4}],"tgt":[{"x":7,"y":7},{"x":5,"y":7}],"fly":[{"x":2,"y":4},{"x":3,"y":5}],"walls":[[0,0],[4,7],[3,1],[2,1],[3,0],[2,0],[7,0],[4,0],[4,4],[3,2]],"portals":[[4,6,5,3]],"tray":[{"t":"splitter","n":1},{"t":"mirror","n":2}],"sol":{"base":[4],"placed":[{"t":"splitter","x":1,"y":3,"r":3},{"t":"mirror","x":1,"y":5,"r":2},{"t":"mirror","x":7,"y":5,"r":3}]},"seed":1303074},
+{"id":"13-5","n":8,"src":[{"x":5,"y":7,"r":12}],"tgt":[{"x":7,"y":2,"focus":true}],"fly":[{"x":4,"y":1},{"x":6,"y":6}],"walls":[[0,1],[0,2],[0,0],[3,6],[0,3],[2,2],[3,5],[2,3],[6,3],[2,6],[4,6],[6,2]],"portals":[[3,0,7,7]],"tray":[{"t":"mirror","n":2},{"t":"lens","n":1}],"sol":{"base":[12],"placed":[{"t":"mirror","x":5,"y":2,"r":3},{"t":"mirror","x":3,"y":3,"r":3},{"t":"lens","x":7,"y":3,"r":0}]},"seed":1304074},
+{"id":"13-6","n":8,"src":[{"x":2,"y":0,"r":4}],"tgt":[{"x":7,"y":0},{"x":6,"y":2},{"x":5,"y":1}],"fly":[{"x":4,"y":5},{"x":1,"y":3}],"walls":[[3,6],[2,6],[2,5],[4,1],[0,0],[2,7],[3,7],[1,5],[0,7],[6,5],[0,5],[3,2]],"portals":[[0,2,6,7]],"tray":[{"t":"mirror","n":3},{"t":"dlens","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":2,"y":4,"r":7},{"t":"mirror","x":3,"y":4,"r":4},{"t":"dlens","x":4,"y":3,"r":2}]},"seed":1305074},
+{"id":"13-7","n":9,"src":[{"x":1,"y":8,"r":12}],"tgt":[{"x":1,"y":0}],"fly":[{"x":6,"y":0},{"x":2,"y":6}],"walls":[[3,1],[8,1],[0,2],[7,7],[7,5],[1,3],[8,2],[6,2],[6,3],[1,5],[1,2],[8,8],[4,3]],"portals":[[6,6,3,7],[3,3,7,2]],"tray":[{"t":"mirror","n":4}],"sol":{"base":[12],"placed":[{"t":"mirror","x":1,"y":6,"r":6},{"t":"mirror","x":6,"y":7,"r":6},{"t":"mirror","x":7,"y":0,"r":2}]},"seed":1306037},
+{"id":"13-8","n":9,"src":[{"x":2,"y":8,"r":12}],"tgt":[{"x":7,"y":4},{"x":7,"y":5}],"fly":[{"x":4,"y":2},{"x":3,"y":5}],"walls":[[7,7],[5,8],[4,6],[8,1],[2,4],[5,7],[1,4],[0,1],[6,0],[0,8],[0,3],[6,1],[5,1],[2,5]],"portals":[[0,6,3,7]],"tray":[{"t":"mirror","n":4},{"t":"splitter","n":1}],"sol":{"base":[12],"placed":[{"t":"mirror","x":2,"y":6,"r":2},{"t":"mirror","x":0,"y":7,"r":2},{"t":"splitter","x":3,"y":4,"r":6},{"t":"mirror","x":3,"y":1,"r":7}]},"seed":1307074},
+] },
+{ key: 'ch14', levels: [
+{"id":"14-1","n":8,"src":[{"x":3,"y":0,"r":4}],"tgt":[{"x":7,"y":1,"c":2},{"x":5,"y":6,"c":1}],"fly":[{"x":4,"y":4},{"x":6,"y":6}],"walls":[[4,0],[4,1],[1,0],[2,2],[6,5],[0,2],[3,7],[1,3],[6,2],[2,6]],"tray":[{"t":"prism","n":1},{"t":"mirror","n":1}],"sol":{"base":[4],"placed":[{"t":"prism","x":3,"y":3,"r":1},{"t":"mirror","x":7,"y":7,"r":7}]},"seed":1400037},
+{"id":"14-2","n":8,"src":[{"x":7,"y":6,"r":8}],"tgt":[{"x":7,"y":5,"c":2},{"x":5,"y":4,"c":1}],"fly":[{"x":4,"y":5},{"x":6,"y":5}],"walls":[[3,0],[3,7],[5,7],[7,7],[6,7],[5,1],[5,2],[5,0],[0,7],[4,2],[3,1]],"tray":[{"t":"mirror","n":1},{"t":"prism","n":1}],"sol":{"base":[8],"placed":[{"t":"mirror","x":0,"y":6,"r":3},{"t":"prism","x":1,"y":5,"r":9}]},"seed":1401000},
+{"id":"14-3","n":7,"src":[{"x":0,"y":1,"r":2}],"tgt":[{"x":6,"y":0}],"fly":[{"x":5,"y":1},{"x":2,"y":5}],"walls":[[3,0],[4,6],[5,4],[5,5],[1,0],[1,6],[3,1],[3,2],[3,6],[6,2],[3,4],[3,3]],"tray":[{"t":"mirror","n":4}],"sol":{"base":[2],"placed":[{"t":"mirror","x":2,"y":3,"r":4},{"t":"mirror","x":0,"y":5,"r":3},{"t":"mirror","x":4,"y":5,"r":6},{"t":"mirror","x":4,"y":2,"r":5}]},"seed":1402074},
+{"id":"14-4","n":8,"src":[{"x":0,"y":6,"r":0}],"tgt":[{"x":7,"y":7,"c":2},{"x":5,"y":4,"c":1}],"fly":[{"x":3,"y":5},{"x":5,"y":5}],"walls":[[2,4],[5,3],[3,3],[6,0],[5,0],[5,2],[0,0],[6,3],[3,4],[1,0]],"tray":[{"t":"prism","n":1},{"t":"mirror","n":1}],"sol":{"base":[0],"placed":[{"t":"prism","x":2,"y":6,"r":13},{"t":"mirror","x":4,"y":4,"r":0}]},"seed":1403037},
+{"id":"14-5","n":8,"src":[{"x":7,"y":6,"r":8}],"tgt":[{"x":4,"y":4,"c":1},{"x":7,"y":5,"c":2}],"fly":[{"x":5,"y":5},{"x":3,"y":5}],"walls":[[2,7],[5,7],[4,0],[2,1],[4,7],[2,0],[7,7],[5,0],[0,7],[7,3],[2,2]],"tray":[{"t":"mirror","n":1},{"t":"prism","n":1}],"sol":{"base":[8],"placed":[{"t":"mirror","x":0,"y":6,"r":3},{"t":"prism","x":1,"y":5,"r":9}]},"seed":1404037},
+{"id":"14-6","n":8,"src":[{"x":0,"y":3,"r":0}],"tgt":[{"x":7,"y":7,"c":4}],"fly":[{"x":5,"y":5},{"x":5,"y":7}],"walls":[[2,4],[2,1],[7,6],[3,4],[7,0],[6,6],[3,1],[2,5],[1,0],[0,5],[7,1],[3,0]],"tray":[{"t":"mirror","n":3},{"t":"filter","n":1,"c":4}],"sol":{"base":[0],"placed":[{"t":"mirror","x":7,"y":3,"r":3},{"t":"filter","x":4,"y":6,"r":2,"c":4},{"t":"mirror","x":3,"y":7,"r":3}]},"seed":1405000},
+{"id":"14-7","n":9,"src":[{"x":1,"y":8,"r":12}],"tgt":[{"x":3,"y":1,"c":1},{"x":4,"y":8,"c":2}],"fly":[{"x":4,"y":3},{"x":4,"y":6}],"walls":[[2,6],[8,4],[2,7],[5,2],[1,0],[5,0],[4,0],[5,4],[8,2],[8,1],[5,3],[3,3]],"tray":[{"t":"prism","n":1},{"t":"mirror","n":2}],"sol":{"base":[12],"placed":[{"t":"prism","x":1,"y":4,"r":7},{"t":"mirror","x":4,"y":1,"r":1}]},"seed":1406074},
+{"id":"14-8","n":9,"src":[{"x":8,"y":6,"r":8}],"tgt":[{"x":4,"y":8,"c":1},{"x":8,"y":7,"c":2}],"fly":[{"x":5,"y":7},{"x":7,"y":7}],"walls":[[5,1],[8,3],[3,4],[8,2],[8,8],[6,8],[6,2],[8,0],[2,1],[4,4],[0,3],[4,3],[4,2]],"tray":[{"t":"mirror","n":2},{"t":"prism","n":1}],"sol":{"base":[8],"placed":[{"t":"mirror","x":0,"y":6,"r":5},{"t":"prism","x":1,"y":7,"r":15}]},"seed":1407074},
+] },
+{ key: 'ch15', levels: [
+{"id":"15-1","n":7,"src":[{"x":3,"y":0,"r":4}],"tgt":[{"x":0,"y":0,"c":4}],"fly":[{"x":0,"y":1},{"x":0,"y":5}],"walls":[[4,1],[2,2],[2,1],[6,2],[1,0],[1,2],[5,2],[5,6],[1,3]],"tray":[{"t":"mirror","n":2},{"t":"filter","n":1,"c":4}],"sol":{"base":[4],"placed":[{"t":"mirror","x":3,"y":3,"r":5},{"t":"filter","x":1,"y":5,"r":2,"c":4},{"t":"mirror","x":0,"y":6,"r":1}]},"seed":1500000},
+{"id":"15-2","n":7,"src":[{"x":0,"y":2,"r":0}],"tgt":[{"x":0,"y":6},{"x":0,"y":0}],"fly":[{"x":3,"y":3},{"x":5,"y":1}],"walls":[[5,3],[5,4],[1,3],[6,3],[0,3],[6,6],[0,4],[1,1],[4,6],[5,5]],"tray":[{"t":"splitter","n":1},{"t":"mirror","n":2}],"sol":{"base":[0],"placed":[{"t":"splitter","x":4,"y":2,"r":3},{"t":"mirror","x":6,"y":2,"r":5},{"t":"mirror","x":4,"y":0,"r":1}]},"seed":1501037},
+{"id":"15-3","n":7,"src":[{"x":4,"y":0,"r":4}],"tgt":[{"x":0,"y":0,"c":4}],"fly":[{"x":0,"y":1},{"x":0,"y":4}],"walls":[[0,6],[6,0],[1,6],[1,3],[3,1],[5,0],[1,4],[2,1],[1,0],[1,1],[6,3]],"tray":[{"t":"mirror","n":2},{"t":"filter","n":1,"c":4}],"sol":{"base":[4],"placed":[{"t":"mirror","x":4,"y":5,"r":6},{"t":"filter","x":2,"y":5,"r":4,"c":4},{"t":"mirror","x":0,"y":5,"r":2}]},"seed":1502000},
+{"id":"15-4","n":8,"src":[{"x":0,"y":2,"r":0}],"tgt":[{"x":6,"y":3},{"x":7,"y":1}],"fly":[{"x":6,"y":1},{"x":5,"y":3}],"walls":[[5,2],[1,5],[6,4],[6,5],[7,5],[6,7],[7,7],[1,6],[7,4],[6,0],[6,2]],"tray":[{"t":"mirror","n":3},{"t":"splitter","n":1}],"sol":{"base":[0],"placed":[{"t":"mirror","x":4,"y":2,"r":5},{"t":"splitter","x":3,"y":1,"r":5},{"t":"mirror","x":2,"y":0,"r":7},{"t":"mirror","x":2,"y":3,"r":2}]},"seed":1503037},
+{"id":"15-5","n":8,"src":[{"x":1,"y":0,"r":4}],"tgt":[{"x":5,"y":7,"c":4}],"fly":[{"x":2,"y":6},{"x":4,"y":6}],"walls":[[0,2],[4,5],[3,0],[5,4],[3,5],[5,5],[2,7],[3,3],[0,1],[0,3],[5,2]],"tray":[{"t":"mirror","n":2},{"t":"filter","n":1,"c":4}],"sol":{"base":[4],"placed":[{"t":"mirror","x":1,"y":6,"r":2},{"t":"filter","x":3,"y":6,"r":4,"c":4},{"t":"mirror","x":6,"y":6,"r":3}]},"seed":1504074},
+{"id":"15-6","n":8,"src":[{"x":0,"y":3,"r":0}],"tgt":[{"x":6,"y":3},{"x":7,"y":3},{"x":6,"y":6}],"fly":[{"x":4,"y":4},{"x":5,"y":5}],"walls":[[3,0],[2,4],[4,1],[3,4],[5,2],[0,7],[0,2],[2,5],[3,2],[1,1],[0,0],[2,2]],"tray":[{"t":"splitter","n":2},{"t":"mirror","n":2}],"sol":{"base":[0],"placed":[{"t":"splitter","x":4,"y":3,"r":2},{"t":"mirror","x":4,"y":6,"r":1},{"t":"splitter","x":6,"y":4,"r":1}]},"seed":1505000},
+{"id":"15-7","n":9,"src":[{"x":1,"y":8,"r":12}],"tgt":[{"x":8,"y":7,"c":4}],"fly":[{"x":7,"y":5},{"x":5,"y":5}],"walls":[[8,3],[2,6],[6,0],[8,2],[5,8],[4,3],[2,7],[5,4],[6,3],[4,4],[6,4],[7,8]],"tray":[{"t":"mirror","n":3},{"t":"filter","n":1,"c":4}],"sol":{"base":[12],"placed":[{"t":"mirror","x":1,"y":5,"r":6},{"t":"filter","x":6,"y":5,"r":4,"c":4},{"t":"mirror","x":8,"y":5,"r":2}]},"seed":1506037},
+{"id":"15-8","n":9,"src":[{"x":7,"y":0,"r":4}],"tgt":[{"x":6,"y":0},{"x":0,"y":3}],"fly":[{"x":2,"y":5},{"x":3,"y":6}],"walls":[[4,8],[4,3],[3,2],[3,1],[8,0],[3,8],[8,7],[1,8],[0,7],[2,1],[5,8],[4,2],[2,7]],"tray":[{"t":"mirror","n":4},{"t":"splitter","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":7,"y":8,"r":7},{"t":"mirror","x":6,"y":7,"r":3},{"t":"splitter","x":6,"y":5,"r":1},{"t":"mirror","x":4,"y":7,"r":0}]},"seed":1507074},
+] },
+{ key: 'ch16', levels: [
+{"id":"16-1","n":7,"src":[{"x":4,"y":0,"r":4}],"tgt":[{"x":1,"y":0}],"fly":[{"x":3,"y":5},{"x":3,"y":3}],"walls":[[6,6],[1,2],[6,5],[5,5],[3,0],[2,3],[2,1],[6,3],[2,2]],"portals":[[5,3,1,4],[3,2,0,3]],"tray":[{"t":"mirror","n":3}],"sol":{"base":[4],"placed":[{"t":"mirror","x":4,"y":2,"r":3},{"t":"mirror","x":3,"y":6,"r":7},{"t":"mirror","x":0,"y":1,"r":5}]},"seed":1600037},
+{"id":"16-2","n":7,"src":[{"x":6,"y":1,"r":8}],"tgt":[{"x":1,"y":6}],"fly":[{"x":2,"y":6},{"x":3,"y":2}],"walls":[[1,2],[6,0],[0,2],[1,1],[6,4],[1,0],[5,0],[0,0],[4,0],[0,6]],"portals":[[5,4,0,3]],"tray":[{"t":"mirror","n":2}],"sol":{"base":[8],"placed":[{"t":"mirror","x":2,"y":1,"r":5},{"t":"mirror","x":3,"y":6,"r":5}]},"seed":1601037},
+{"id":"16-3","n":7,"src":[{"x":0,"y":5,"r":0}],"tgt":[{"x":0,"y":0}],"fly":[{"x":0,"y":1},{"x":5,"y":1}],"walls":[[2,0],[2,2],[3,0],[3,3],[2,4],[2,1],[6,3],[5,0],[3,1],[1,1],[1,4],[0,4]],"portals":[[6,4,4,3],[4,1,2,3]],"tray":[{"t":"mirror","n":4}],"sol":{"base":[0],"placed":[{"t":"mirror","x":5,"y":5,"r":7},{"t":"mirror","x":6,"y":1,"r":3},{"t":"mirror","x":0,"y":3,"r":2}]},"seed":1602037},
+{"id":"16-4","n":8,"src":[{"x":3,"y":0,"r":4}],"tgt":[{"x":7,"y":1},{"x":7,"y":7}],"fly":[{"x":7,"y":2},{"x":4,"y":5}],"walls":[[0,1],[1,2],[6,4],[5,7],[1,7],[0,0],[5,1],[1,3],[5,2],[6,3]],"portals":[[2,4,4,2]],"tray":[{"t":"mirror","n":4},{"t":"splitter","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":3,"y":3,"r":5},{"t":"mirror","x":3,"y":5,"r":2},{"t":"splitter","x":5,"y":5,"r":1},{"t":"mirror","x":7,"y":5,"r":6}]},"seed":1603000},
+{"id":"16-5","n":8,"src":[{"x":7,"y":6,"r":8}],"tgt":[{"x":0,"y":2}],"fly":[{"x":6,"y":3},{"x":7,"y":2}],"walls":[[3,3],[2,5],[5,0],[7,0],[6,1],[2,4],[3,2],[3,5],[5,7],[5,1],[6,0],[0,6],[1,6]],"portals":[[4,7,5,2],[7,1,1,3]],"tray":[{"t":"mirror","n":4}],"sol":{"base":[8],"placed":[{"t":"mirror","x":3,"y":6,"r":5},{"t":"mirror","x":7,"y":4,"r":7},{"t":"mirror","x":1,"y":1,"r":1}]},"seed":1604074},
+{"id":"16-6","n":8,"src":[{"x":2,"y":0,"r":4}],"tgt":[{"x":7,"y":6},{"x":0,"y":0}],"fly":[{"x":3,"y":6},{"x":4,"y":5}],"walls":[[4,1],[3,0],[0,6],[3,1],[4,7],[4,2],[0,4],[6,6],[6,1],[7,1],[0,3],[0,5]],"portals":[[1,3,5,5]],"tray":[{"t":"splitter","n":1},{"t":"mirror","n":3}],"sol":{"base":[4],"placed":[{"t":"splitter","x":2,"y":4,"r":7},{"t":"mirror","x":2,"y":7,"r":1},{"t":"mirror","x":7,"y":2,"r":1}]},"seed":1605037},
+{"id":"16-7","n":9,"src":[{"x":0,"y":2,"r":0}],"tgt":[{"x":7,"y":8}],"fly":[{"x":2,"y":1},{"x":5,"y":0}],"walls":[[3,6],[0,6],[3,8],[7,3],[5,8],[1,4],[7,4],[5,5],[6,4],[8,3],[2,6],[0,5]],"portals":[[5,1,0,3],[6,0,6,7]],"tray":[{"t":"mirror","n":4}],"sol":{"base":[0],"placed":[{"t":"mirror","x":4,"y":2,"r":7},{"t":"mirror","x":3,"y":0,"r":7},{"t":"mirror","x":8,"y":7,"r":3}]},"seed":1606074},
+{"id":"16-8","n":9,"src":[{"x":0,"y":1,"r":0}],"tgt":[{"x":7,"y":8},{"x":8,"y":7}],"fly":[{"x":7,"y":5},{"x":7,"y":7}],"walls":[[4,5],[7,2],[8,8],[5,0],[0,3],[1,2],[1,3],[4,7],[8,0],[0,6],[3,2],[0,4],[7,3],[8,6]],"portals":[[7,0,5,6]],"tray":[{"t":"mirror","n":4},{"t":"splitter","n":1}],"sol":{"base":[0],"placed":[{"t":"mirror","x":6,"y":1,"r":7},{"t":"mirror","x":7,"y":4,"r":1},{"t":"splitter","x":7,"y":6,"r":5},{"t":"mirror","x":6,"y":7,"r":3}]},"seed":1607037},
+] },
+{ key: 'ch17', levels: [
+{"id":"17-1","n":7,"src":[{"x":5,"y":6,"r":6,"rot":true}],"tgt":[{"x":5,"y":1}],"fly":[{"x":1,"y":4},{"x":3,"y":4}],"walls":[[2,5],[4,2],[4,6],[1,0],[6,5],[5,2],[5,0],[2,0],[3,3]],"tray":[{"t":"mirror","n":3}],"sol":{"base":[12],"placed":[{"t":"mirror","x":5,"y":4,"r":2},{"t":"mirror","x":0,"y":4,"r":2},{"t":"mirror","x":0,"y":1,"r":6}]},"seed":1700037},
+{"id":"17-2","n":7,"src":[{"x":1,"y":0,"r":10,"rot":true}],"tgt":[{"x":5,"y":1}],"fly":[{"x":5,"y":4},{"x":2,"y":4}],"walls":[[4,6],[3,6],[0,6],[0,2],[3,1],[2,6],[4,0],[5,0],[5,6],[3,5],[1,5],[2,0],[3,2],[2,3]],"tray":[{"t":"mirror","n":3}],"sol":{"base":[4],"placed":[{"t":"mirror","x":1,"y":4,"r":2},{"t":"mirror","x":6,"y":4,"r":3},{"t":"mirror","x":5,"y":5,"r":1}]},"seed":1701074},
+{"id":"17-3","n":7,"src":[{"x":0,"y":2,"r":2}],"tgt":[{"x":1,"y":0}],"fly":[{"x":5,"y":0},{"x":5,"y":4}],"walls":[[3,1],[6,2],[3,3],[4,4],[0,6],[2,2],[4,1],[4,2],[0,1],[1,1],[2,1]],"tray":[{"t":"mirror","n":5}],"sol":{"base":[2],"placed":[{"t":"mirror","x":4,"y":6,"r":0},{"t":"mirror","x":5,"y":5,"r":5},{"t":"mirror","x":5,"y":1,"r":5},{"t":"mirror","x":6,"y":0,"r":3}]},"seed":1702000},
+{"id":"17-4","n":8,"src":[{"x":6,"y":0,"r":10,"rot":true}],"tgt":[{"x":0,"y":3}],"fly":[{"x":4,"y":7},{"x":1,"y":5}],"walls":[[3,5],[3,4],[4,2],[2,0],[3,6],[5,1],[5,0],[2,6],[2,3],[4,3],[0,7]],"tray":[{"t":"mirror","n":4}],"sol":{"base":[4],"placed":[{"t":"mirror","x":6,"y":7,"r":6},{"t":"mirror","x":1,"y":7,"r":2},{"t":"mirror","x":1,"y":2,"r":1}]},"seed":1703111},
+{"id":"17-5","n":8,"src":[{"x":7,"y":3,"r":8}],"tgt":[{"x":7,"y":7}],"fly":[{"x":7,"y":6},{"x":3,"y":5}],"walls":[[3,7],[3,6],[5,6],[4,6],[2,0],[1,5],[5,4],[2,7],[5,1],[0,5],[0,4]],"fixed":[{"t":"mirror","x":4,"y":3,"r":5,"rot":true}],"tray":[{"t":"mirror","n":3}],"sol":{"base":[8,7],"placed":[{"t":"mirror","x":2,"y":5,"r":3},{"t":"mirror","x":7,"y":5,"r":2}]},"seed":1704000},
+{"id":"17-6","n":8,"src":[{"x":2,"y":7,"r":0,"rot":true}],"tgt":[{"x":0,"y":0}],"fly":[{"x":5,"y":4},{"x":6,"y":1}],"walls":[[2,1],[7,3],[4,2],[1,1],[6,5],[0,1],[6,7],[1,3],[5,3],[3,1],[4,6],[5,5]],"tray":[{"t":"mirror","n":4}],"sol":{"base":[12],"placed":[{"t":"mirror","x":2,"y":4,"r":6},{"t":"mirror","x":6,"y":4,"r":6},{"t":"mirror","x":6,"y":0,"r":2}]},"seed":1705074},
+{"id":"17-7","n":9,"src":[{"x":8,"y":5,"r":8}],"tgt":[{"x":3,"y":8}],"fly":[{"x":6,"y":2},{"x":5,"y":1}],"walls":[[4,7],[2,1],[0,7],[1,8],[4,6],[2,8],[2,7],[8,7],[1,1],[4,8],[5,6],[7,1],[3,5]],"tray":[{"t":"mirror","n":5}],"sol":{"base":[8],"placed":[{"t":"mirror","x":6,"y":5,"r":2},{"t":"mirror","x":6,"y":0,"r":1},{"t":"mirror","x":0,"y":6,"r":3},{"t":"mirror","x":3,"y":6,"r":2}]},"seed":1706074},
+{"id":"17-8","n":9,"src":[{"x":6,"y":8,"r":4,"rot":true}],"tgt":[{"x":0,"y":0}],"fly":[{"x":1,"y":0},{"x":3,"y":1}],"walls":[[7,3],[7,5],[4,5],[4,6],[4,0],[3,8],[7,1],[3,5],[5,6],[5,3],[5,2],[3,2],[1,6],[3,7],[0,1],[1,1]],"tray":[{"t":"mirror","n":4}],"sol":{"base":[12],"placed":[{"t":"mirror","x":6,"y":1,"r":2},{"t":"mirror","x":2,"y":1,"r":3},{"t":"mirror","x":3,"y":0,"r":3}]},"seed":1707074},
+] },
+{ key: 'ch18', levels: [
+{"id":"18-1","n":7,"src":[{"x":6,"y":4,"r":8}],"tgt":[{"x":1,"y":1},{"x":0,"y":6},{"x":4,"y":0}],"fly":[{"x":2,"y":1},{"x":1,"y":3}],"walls":[[5,2],[6,2],[1,0],[6,1],[0,2],[5,6],[5,1],[5,3],[0,0]],"tray":[{"t":"splitter","n":2},{"t":"mirror","n":1}],"sol":{"base":[8],"placed":[{"t":"splitter","x":2,"y":4,"r":7},{"t":"mirror","x":0,"y":4,"r":3},{"t":"splitter","x":3,"y":1,"r":3}]},"seed":1800000},
+{"id":"18-2","n":7,"src":[{"x":1,"y":0,"r":4}],"tgt":[{"x":5,"y":2},{"x":0,"y":1},{"x":0,"y":5}],"fly":[{"x":3,"y":4},{"x":4,"y":3}],"walls":[[0,3],[2,1],[4,6],[3,2],[5,6],[0,4],[4,0],[0,0],[3,0],[6,4]],"tray":[{"t":"splitter","n":2},{"t":"mirror","n":1}],"sol":{"base":[4],"placed":[{"t":"splitter","x":1,"y":2,"r":7},{"t":"mirror","x":1,"y":6,"r":1},{"t":"splitter","x":2,"y":5,"r":3}]},"seed":1801037},
+{"id":"18-3","n":7,"src":[{"x":6,"y":2,"r":8}],"tgt":[{"x":6,"y":6},{"x":6,"y":0}],"fly":[{"x":4,"y":3},{"x":4,"y":1}],"walls":[[6,4],[0,1],[3,6],[3,5],[6,1],[1,2],[3,4],[6,5],[2,6],[1,3],[5,1]],"tray":[{"t":"mirror","n":4},{"t":"splitter","n":1}],"sol":{"base":[8],"placed":[{"t":"mirror","x":2,"y":2,"r":2},{"t":"mirror","x":2,"y":0,"r":6},{"t":"splitter","x":4,"y":0,"r":2},{"t":"mirror","x":4,"y":6,"r":2}]},"seed":1802037},
+{"id":"18-4","n":8,"src":[{"x":5,"y":7,"r":12}],"tgt":[{"x":7,"y":2},{"x":7,"y":7},{"x":1,"y":6}],"fly":[{"x":2,"y":6},{"x":6,"y":2}],"walls":[[5,0],[4,1],[2,7],[6,1],[1,7],[2,0],[1,2],[0,1],[3,0],[6,4]],"tray":[{"t":"splitter","n":2},{"t":"mirror","n":2}],"sol":{"base":[12],"placed":[{"t":"splitter","x":5,"y":5,"r":7},{"t":"mirror","x":5,"y":2,"r":6},{"t":"splitter","x":6,"y":6,"r":5}]},"seed":1803074},
+{"id":"18-5","n":8,"src":[{"x":0,"y":5,"r":0}],"tgt":[{"x":7,"y":5},{"x":0,"y":2}],"fly":[{"x":2,"y":3},{"x":4,"y":3}],"walls":[[6,1],[3,7],[2,6],[1,1],[5,1],[4,1],[1,0],[3,1],[0,7],[5,5],[3,2],[5,7],[4,2],[7,4]],"tray":[{"t":"mirror","n":4},{"t":"splitter","n":1}],"sol":{"base":[0],"placed":[{"t":"mirror","x":3,"y":5,"r":5},{"t":"splitter","x":1,"y":3,"r":5},{"t":"mirror","x":6,"y":3,"r":2},{"t":"mirror","x":6,"y":6,"r":1}]},"seed":1804037},
+{"id":"18-6","n":8,"src":[{"x":4,"y":0,"r":4}],"tgt":[{"x":1,"y":2},{"x":7,"y":2},{"x":6,"y":7}],"fly":[{"x":2,"y":2},{"x":6,"y":4}],"walls":[[5,6],[3,1],[2,7],[7,5],[1,0],[0,6],[0,4],[7,7],[0,0],[0,5],[0,7],[2,1]],"tray":[{"t":"splitter","n":2},{"t":"mirror","n":2}],"sol":{"base":[4],"placed":[{"t":"splitter","x":4,"y":2,"r":6},{"t":"mirror","x":4,"y":5,"r":1},{"t":"splitter","x":6,"y":3,"r":1}]},"seed":1805074},
+{"id":"18-7","n":9,"src":[{"x":6,"y":0,"r":4}],"tgt":[{"x":3,"y":8},{"x":7,"y":7}],"fly":[{"x":3,"y":4},{"x":5,"y":4}],"walls":[[7,1],[1,1],[3,2],[1,2],[8,7],[8,5],[2,3],[5,5],[4,3],[8,6],[2,2],[2,6],[6,5]],"tray":[{"t":"mirror","n":4},{"t":"splitter","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":6,"y":4,"r":6},{"t":"mirror","x":2,"y":4,"r":5},{"t":"splitter","x":3,"y":5,"r":3},{"t":"mirror","x":5,"y":7,"r":1}]},"seed":1806074},
+{"id":"18-8","n":9,"src":[{"x":6,"y":0,"r":4}],"tgt":[{"x":0,"y":5},{"x":8,"y":2},{"x":4,"y":8}],"fly":[{"x":4,"y":6},{"x":5,"y":5}],"walls":[[2,6],[1,7],[2,8],[3,6],[3,0],[8,0],[2,3],[2,4],[1,8],[5,3],[1,3],[0,3],[8,4]],"tray":[{"t":"splitter","n":2},{"t":"mirror","n":2}],"sol":{"base":[4],"placed":[{"t":"splitter","x":6,"y":2,"r":2},{"t":"mirror","x":6,"y":5,"r":6},{"t":"splitter","x":4,"y":5,"r":6}]},"seed":1807000},
+] },
+{ key: 'ch19', levels: [
+{"id":"19-1","n":7,"src":[{"x":6,"y":3,"r":8}],"tgt":[{"x":6,"y":1},{"x":2,"y":2},{"x":4,"y":1}],"fly":[{"x":0,"y":4},{"x":3,"y":2}],"walls":[[3,0],[4,0],[0,1],[6,6],[6,5],[0,6],[4,6],[1,2],[2,6]],"tray":[{"t":"mirror","n":2},{"t":"dlens","n":1}],"sol":{"base":[8],"placed":[{"t":"mirror","x":0,"y":3,"r":6},{"t":"mirror","x":0,"y":5,"r":1},{"t":"dlens","x":1,"y":4,"r":2}]},"seed":1900000},
+{"id":"19-2","n":7,"src":[{"x":2,"y":0,"r":4}],"tgt":[{"x":5,"y":5},{"x":6,"y":6},{"x":4,"y":6}],"fly":[{"x":4,"y":1},{"x":3,"y":2}],"walls":[[1,3],[0,6],[0,5],[1,5],[1,6],[1,4],[6,0],[2,6],[1,2],[2,5]],"tray":[{"t":"mirror","n":2},{"t":"dlens","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":2,"y":3,"r":1},{"t":"mirror","x":5,"y":0,"r":1},{"t":"dlens","x":5,"y":2,"r":0}]},"seed":1901037},
+{"id":"19-3","n":7,"src":[{"x":2,"y":6,"r":14}],"tgt":[{"x":1,"y":4,"focus":true}],"fly":[{"x":1,"y":1},{"x":3,"y":0}],"walls":[[5,5],[3,3],[2,1],[3,2],[4,6],[5,6],[0,6],[0,2],[6,5],[1,6],[1,5],[2,4]],"tray":[{"t":"mirror","n":4},{"t":"lens","n":1}],"sol":{"base":[14],"placed":[{"t":"mirror","x":6,"y":2,"r":5},{"t":"mirror","x":6,"y":0,"r":2},{"t":"mirror","x":1,"y":0,"r":6},{"t":"lens","x":1,"y":2,"r":0}]},"seed":1902074},
+{"id":"19-4","n":8,"src":[{"x":0,"y":1,"r":0}],"tgt":[{"x":0,"y":4},{"x":0,"y":2},{"x":1,"y":3}],"fly":[{"x":5,"y":2},{"x":2,"y":3}],"walls":[[0,5],[4,2],[7,1],[1,0],[6,3],[3,2],[2,0],[1,5],[1,6],[4,7]],"tray":[{"t":"mirror","n":3},{"t":"dlens","n":1}],"sol":{"base":[0],"placed":[{"t":"mirror","x":5,"y":1,"r":2},{"t":"mirror","x":5,"y":3,"r":6},{"t":"dlens","x":3,"y":3,"r":4}]},"seed":1903000},
+{"id":"19-5","n":8,"src":[{"x":2,"y":7,"r":12}],"tgt":[{"x":0,"y":1,"focus":true}],"fly":[{"x":1,"y":4},{"x":0,"y":3}],"walls":[[0,7],[4,6],[3,7],[5,7],[7,3],[4,7],[6,5],[3,2],[1,6],[7,5],[6,1],[2,1],[1,2]],"tray":[{"t":"mirror","n":3},{"t":"lens","n":1}],"sol":{"base":[12],"placed":[{"t":"mirror","x":2,"y":4,"r":2},{"t":"mirror","x":0,"y":4,"r":2},{"t":"lens","x":0,"y":2,"r":0}]},"seed":1904074},
+{"id":"19-6","n":8,"src":[{"x":7,"y":3,"r":8}],"tgt":[{"x":7,"y":2},{"x":7,"y":0},{"x":6,"y":1}],"fly":[{"x":1,"y":2},{"x":2,"y":1}],"walls":[[3,6],[7,6],[3,7],[1,4],[6,6],[7,5],[2,6],[1,0],[2,5],[3,0],[2,0],[6,7]],"tray":[{"t":"mirror","n":3},{"t":"dlens","n":1}],"sol":{"base":[8],"placed":[{"t":"mirror","x":1,"y":3,"r":2},{"t":"mirror","x":1,"y":1,"r":6},{"t":"dlens","x":4,"y":1,"r":4}]},"seed":1905074},
+{"id":"19-7","n":8,"src":[{"x":6,"y":7,"r":12}],"tgt":[{"x":2,"y":7,"focus":true}],"fly":[{"x":5,"y":3},{"x":2,"y":3}],"walls":[[1,0],[5,4],[5,6],[1,5],[1,7],[4,4],[5,5],[0,7],[0,0],[1,2],[6,2]],"tray":[{"t":"mirror","n":4},{"t":"lens","n":1}],"sol":{"base":[12],"placed":[{"t":"mirror","x":6,"y":3,"r":2},{"t":"mirror","x":3,"y":3,"r":1},{"t":"mirror","x":2,"y":2,"r":7},{"t":"lens","x":2,"y":5,"r":0}]},"seed":1906074},
+{"id":"19-8","n":9,"src":[{"x":8,"y":3,"r":8}],"tgt":[{"x":1,"y":1},{"x":0,"y":2},{"x":0,"y":0}],"fly":[{"x":5,"y":1},{"x":6,"y":2}],"walls":[[4,6],[6,5],[1,3],[3,6],[3,3],[6,6],[1,5],[0,6],[3,0],[8,7],[2,7],[7,8],[4,2]],"tray":[{"t":"mirror","n":3},{"t":"dlens","n":1}],"sol":{"base":[8],"placed":[{"t":"mirror","x":5,"y":3,"r":3},{"t":"mirror","x":7,"y":1,"r":3},{"t":"dlens","x":3,"y":1,"r":4}]},"seed":1907074},
+] },
+{ key: 'ch20', levels: [
+{"id":"20-1","n":7,"src":[{"x":6,"y":3,"r":8}],"tgt":[{"x":5,"y":0}],"fly":[{"x":4,"y":0},{"x":1,"y":0}],"walls":[[2,2],[5,6],[5,5],[5,2],[6,4],[3,2],[5,1],[2,1],[4,5],[4,1],[0,3]],"tray":[{"t":"mirror","n":3}],"sol":{"base":[8],"placed":[{"t":"mirror","x":1,"y":3,"r":2},{"t":"mirror","x":1,"y":1,"r":3},{"t":"mirror","x":0,"y":0,"r":5}]},"seed":2000037},
+{"id":"20-2","n":7,"src":[{"x":6,"y":5,"r":8}],"tgt":[{"x":1,"y":0},{"x":1,"y":4}],"fly":[{"x":3,"y":4},{"x":1,"y":1}],"walls":[[0,6],[0,2],[2,1],[6,2],[0,3],[2,6],[5,6],[6,3],[5,1],[5,0]],"tray":[{"t":"splitter","n":1},{"t":"mirror","n":2}],"sol":{"base":[8],"placed":[{"t":"splitter","x":4,"y":5,"r":1},{"t":"mirror","x":1,"y":2,"r":3},{"t":"mirror","x":2,"y":5,"r":1}]},"seed":2001000},
+{"id":"20-3","n":7,"src":[{"x":2,"y":0,"r":4}],"tgt":[{"x":4,"y":1,"focus":true}],"fly":[{"x":5,"y":3},{"x":3,"y":3}],"walls":[[4,6],[3,6],[0,1],[5,0],[1,0],[4,0],[0,3],[0,0],[3,5],[6,6],[5,6],[3,1],[3,2]],"tray":[{"t":"mirror","n":3},{"t":"lens","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":2,"y":3,"r":2},{"t":"mirror","x":6,"y":3,"r":5},{"t":"lens","x":5,"y":2,"r":6}]},"seed":2002000},
+{"id":"20-4","n":8,"src":[{"x":2,"y":7,"r":12}],"tgt":[{"x":3,"y":7,"c":2},{"x":4,"y":4,"c":1}],"fly":[{"x":3,"y":4},{"x":3,"y":6}],"walls":[[5,3],[4,5],[0,7],[0,5],[6,5],[6,4],[0,0],[7,4],[1,6],[6,2]],"tray":[{"t":"mirror","n":2},{"t":"prism","n":1}],"sol":{"base":[12],"placed":[{"t":"mirror","x":2,"y":0,"r":7},{"t":"prism","x":3,"y":1,"r":13}]},"seed":2003037},
+{"id":"20-5","n":8,"src":[{"x":3,"y":7,"r":12}],"tgt":[{"x":7,"y":0}],"fly":[{"x":5,"y":2},{"x":2,"y":2}],"walls":[[6,0],[2,4],[2,3],[4,0],[0,1],[6,1],[5,1],[1,6],[6,7],[0,6],[3,0]],"portals":[[6,4,0,2]],"tray":[{"t":"mirror","n":3}],"sol":{"base":[12],"placed":[{"t":"mirror","x":3,"y":4,"r":6},{"t":"mirror","x":7,"y":2,"r":6}]},"seed":2004037},
+{"id":"20-6","n":8,"src":[{"x":3,"y":0,"r":4}],"tgt":[{"x":7,"y":7},{"x":5,"y":7},{"x":3,"y":6}],"fly":[{"x":4,"y":6},{"x":2,"y":3}],"walls":[[1,0],[5,4],[7,0],[0,7],[0,4],[7,2],[0,3],[1,5],[1,1],[2,6],[2,0],[5,3]],"tray":[{"t":"mirror","n":3},{"t":"dlens","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":3,"y":3,"r":6},{"t":"mirror","x":1,"y":3,"r":5},{"t":"dlens","x":2,"y":4,"r":6}]},"seed":2005037},
+{"id":"20-7","n":9,"src":[{"x":6,"y":8,"r":12}],"tgt":[{"x":8,"y":2},{"x":0,"y":2}],"fly":[{"x":5,"y":1},{"x":1,"y":1}],"walls":[[3,8],[0,3],[1,5],[7,3],[3,7],[5,2],[1,4],[2,2],[5,7],[5,3],[3,4],[7,7]],"tray":[{"t":"mirror","n":4},{"t":"splitter","n":1}],"sol":{"base":[12],"placed":[{"t":"mirror","x":6,"y":0,"r":7},{"t":"splitter","x":7,"y":1,"r":5},{"t":"mirror","x":3,"y":1,"r":1},{"t":"mirror","x":2,"y":0,"r":0}]},"seed":2006000},
+{"id":"20-8","n":9,"src":[{"x":0,"y":6,"r":0}],"tgt":[{"x":8,"y":2,"focus":true}],"fly":[{"x":6,"y":3},{"x":5,"y":7}],"walls":[[3,1],[7,4],[4,1],[0,0],[2,0],[7,3],[7,8],[3,0],[8,4],[7,5],[4,0],[1,2],[0,3]],"tray":[{"t":"mirror","n":4},{"t":"lens","n":1}],"sol":{"base":[0],"placed":[{"t":"mirror","x":4,"y":6,"r":1},{"t":"mirror","x":6,"y":8,"r":7},{"t":"mirror","x":6,"y":0,"r":7},{"t":"lens","x":7,"y":1,"r":6}]},"seed":2007000},
+] },
+{ key: 'ch21', levels: [
+{"id":"21-1","n":7,"src":[{"x":6,"y":5,"r":8}],"tgt":[{"x":6,"y":0},{"x":1,"y":0}],"fly":[{"x":1,"y":1},{"x":6,"y":3}],"walls":[[0,4],[5,0],[0,5],[0,2],[0,3],[5,1],[4,1],[1,6],[4,0],[1,5]],"portals":[[5,4,4,6]],"tray":[{"t":"mirror","n":3},{"t":"splitter","n":1}],"sol":{"base":[8],"placed":[{"t":"mirror","x":4,"y":5,"r":3},{"t":"mirror","x":6,"y":4,"r":5},{"t":"splitter","x":6,"y":2,"r":2},{"t":"mirror","x":1,"y":2,"r":2}]},"seed":2100074},
+{"id":"21-2","n":7,"src":[{"x":3,"y":0,"r":4}],"tgt":[{"x":1,"y":1},{"x":0,"y":0}],"fly":[{"x":4,"y":2},{"x":2,"y":2}],"walls":[[6,1],[5,6],[3,6],[4,6],[2,5],[6,5],[2,4],[0,6],[5,0],[5,1]],"portals":[[3,5,6,2]],"tray":[{"t":"splitter","n":1},{"t":"mirror","n":2}],"sol":{"base":[4],"placed":[{"t":"splitter","x":3,"y":3,"r":7},{"t":"mirror","x":6,"y":4,"r":7},{"t":"mirror","x":2,"y":0,"r":1}]},"seed":2101037},
+{"id":"21-3","n":7,"src":[{"x":0,"y":2,"r":0}],"tgt":[{"x":6,"y":6},{"x":6,"y":0}],"fly":[{"x":6,"y":1},{"x":3,"y":3}],"walls":[[5,3],[4,3],[5,2],[0,3],[5,1],[0,0],[0,1],[5,0],[3,0],[4,1],[2,3]],"portals":[[3,6,1,0]],"tray":[{"t":"mirror","n":4},{"t":"splitter","n":1}],"sol":{"base":[0],"placed":[{"t":"mirror","x":3,"y":2,"r":2},{"t":"mirror","x":1,"y":4,"r":2},{"t":"splitter","x":4,"y":4,"r":1},{"t":"mirror","x":6,"y":4,"r":6}]},"seed":2102111},
+{"id":"21-4","n":8,"src":[{"x":6,"y":7,"r":12}],"tgt":[{"x":2,"y":7},{"x":7,"y":1}],"fly":[{"x":5,"y":4},{"x":3,"y":4}],"walls":[[3,2],[4,2],[1,4],[0,6],[0,7],[0,5],[2,0],[3,1],[5,2],[2,1]],"portals":[[3,6,4,3]],"tray":[{"t":"splitter","n":1},{"t":"mirror","n":3}],"sol":{"base":[12],"placed":[{"t":"splitter","x":6,"y":3,"r":1},{"t":"mirror","x":1,"y":6,"r":4},{"t":"mirror","x":6,"y":0,"r":7}]},"seed":2103037},
+{"id":"21-5","n":8,"src":[{"x":7,"y":6,"r":8}],"tgt":[{"x":0,"y":0},{"x":6,"y":0}],"fly":[{"x":1,"y":3},{"x":6,"y":5}],"walls":[[5,1],[6,1],[3,5],[5,2],[5,4],[2,7],[0,6],[5,7],[4,6],[3,2],[6,2]],"portals":[[7,4,0,4]],"tray":[{"t":"mirror","n":4},{"t":"splitter","n":1}],"sol":{"base":[8],"placed":[{"t":"mirror","x":5,"y":6,"r":3},{"t":"mirror","x":2,"y":2,"r":4},{"t":"splitter","x":1,"y":1,"r":4},{"t":"mirror","x":2,"y":0,"r":7}]},"seed":2104074},
+{"id":"21-6","n":8,"src":[{"x":6,"y":0,"r":4}],"tgt":[{"x":4,"y":7},{"x":4,"y":6}],"fly":[{"x":3,"y":6},{"x":4,"y":5}],"walls":[[3,4],[4,2],[3,2],[2,4],[5,5],[1,3],[3,3],[0,5],[4,3],[7,6],[2,3],[5,3],[5,6],[6,7]],"portals":[[7,3,2,5]],"tray":[{"t":"splitter","n":1},{"t":"mirror","n":3}],"sol":{"base":[4],"placed":[{"t":"splitter","x":6,"y":2,"r":3},{"t":"mirror","x":6,"y":4,"r":6},{"t":"mirror","x":4,"y":4,"r":6}]},"seed":2105000},
+{"id":"21-7","n":9,"src":[{"x":0,"y":1,"r":0}],"tgt":[{"x":0,"y":2},{"x":0,"y":8}],"fly":[{"x":2,"y":3},{"x":5,"y":4}],"walls":[[7,6],[8,8],[8,6],[2,6],[6,8],[3,6],[7,5],[7,8],[7,7],[2,0],[7,2],[4,8],[0,4]],"portals":[[6,2,1,2]],"tray":[{"t":"mirror","n":4},{"t":"splitter","n":1}],"sol":{"base":[0],"placed":[{"t":"mirror","x":5,"y":1,"r":1},{"t":"mirror","x":5,"y":6,"r":7},{"t":"splitter","x":2,"y":4,"r":0},{"t":"mirror","x":0,"y":6,"r":5}]},"seed":2106074},
+{"id":"21-8","n":9,"src":[{"x":2,"y":8,"r":12}],"tgt":[{"x":4,"y":0},{"x":7,"y":5}],"fly":[{"x":4,"y":5},{"x":1,"y":5}],"walls":[[7,3],[8,5],[3,4],[3,8],[3,2],[7,8],[5,7],[4,8],[4,7],[1,7],[5,8],[8,7],[5,1],[0,0]],"portals":[[2,2,0,8]],"tray":[{"t":"splitter","n":1},{"t":"mirror","n":3}],"sol":{"base":[12],"placed":[{"t":"splitter","x":2,"y":6,"r":6},{"t":"mirror","x":4,"y":6,"r":6},{"t":"mirror","x":0,"y":5,"r":6}]},"seed":2107074},
+] },
+{ key: 'ch22', levels: [
+{"id":"22-1","n":8,"src":[{"x":6,"y":7,"r":12}],"tgt":[{"x":4,"y":5,"c":1},{"x":5,"y":6,"c":2}],"fly":[{"x":5,"y":5},{"x":5,"y":3}],"walls":[[4,7],[0,7],[0,6],[2,5],[7,4],[1,2],[3,7],[5,7],[2,2],[4,6]],"tray":[{"t":"mirror","n":1},{"t":"prism","n":1}],"sol":{"base":[12],"placed":[{"t":"mirror","x":6,"y":0,"r":1},{"t":"prism","x":5,"y":1,"r":3}]},"seed":2200037},
+{"id":"22-2","n":7,"src":[{"x":6,"y":1,"r":8}],"tgt":[{"x":1,"y":6}],"fly":[{"x":5,"y":5},{"x":4,"y":6}],"walls":[[3,3],[3,4],[6,2],[3,5],[0,5],[2,2],[3,2],[6,3],[1,4],[0,3]],"portals":[[1,3,5,2]],"tray":[{"t":"mirror","n":2}],"sol":{"base":[8],"placed":[{"t":"mirror","x":1,"y":1,"r":6},{"t":"mirror","x":5,"y":6,"r":6}]},"seed":2201037},
+{"id":"22-3","n":8,"src":[{"x":6,"y":0,"r":4}],"tgt":[{"x":2,"y":7,"c":2},{"x":3,"y":2,"c":1}],"fly":[{"x":4,"y":5},{"x":3,"y":6}],"walls":[[7,6],[1,0],[1,4],[2,6],[1,2],[2,1],[1,5],[0,4],[5,6],[0,3],[3,4],[1,7]],"tray":[{"t":"prism","n":1},{"t":"mirror","n":2}],"sol":{"base":[4],"placed":[{"t":"prism","x":6,"y":3,"r":15},{"t":"mirror","x":5,"y":5,"r":0}]},"seed":2202074},
+{"id":"22-4","n":8,"src":[{"x":7,"y":3,"r":8}],"tgt":[{"x":1,"y":4,"focus":true}],"fly":[{"x":2,"y":4},{"x":5,"y":4}],"walls":[[7,5],[5,0],[6,6],[0,4],[6,5],[5,1],[1,2],[3,6],[0,1],[7,0],[1,3]],"portals":[[2,5,6,0]],"tray":[{"t":"mirror","n":3},{"t":"lens","n":1}],"sol":{"base":[8],"placed":[{"t":"mirror","x":2,"y":3,"r":6},{"t":"mirror","x":6,"y":4,"r":6},{"t":"lens","x":3,"y":4,"r":4}]},"seed":2203037},
+{"id":"22-5","n":8,"src":[{"x":2,"y":7,"r":12}],"tgt":[{"x":3,"y":7,"c":2},{"x":4,"y":4,"c":1}],"fly":[{"x":3,"y":6},{"x":3,"y":4}],"walls":[[0,6],[1,6],[6,5],[1,5],[0,7],[6,4],[6,3],[6,2],[4,6],[1,4],[7,5]],"tray":[{"t":"mirror","n":2},{"t":"prism","n":1}],"sol":{"base":[12],"placed":[{"t":"mirror","x":2,"y":0,"r":7},{"t":"prism","x":3,"y":1,"r":13}]},"seed":2204074},
+{"id":"22-6","n":8,"src":[{"x":5,"y":0,"r":4}],"tgt":[{"x":6,"y":2},{"x":7,"y":4},{"x":3,"y":7}],"fly":[{"x":6,"y":3},{"x":2,"y":1}],"walls":[[2,4],[3,5],[7,7],[4,3],[3,4],[0,0],[5,6],[0,1],[3,3],[5,7],[7,1],[6,7]],"portals":[[6,4,0,3]],"tray":[{"t":"mirror","n":3},{"t":"dlens","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":5,"y":5,"r":1},{"t":"mirror","x":3,"y":0,"r":0},{"t":"dlens","x":4,"y":1,"r":6}]},"seed":2205000},
+{"id":"22-7","n":9,"src":[{"x":7,"y":8,"r":12}],"tgt":[{"x":5,"y":4,"c":2},{"x":8,"y":0,"c":4}],"fly":[{"x":3,"y":2},{"x":4,"y":1}],"walls":[[8,7],[8,8],[0,5],[1,4],[0,7],[3,5],[1,5],[1,1],[3,3],[4,6],[5,7],[0,1]],"tray":[{"t":"prism","n":1},{"t":"mirror","n":2}],"sol":{"base":[12],"placed":[{"t":"prism","x":7,"y":6,"r":14},{"t":"mirror","x":1,"y":3,"r":4}]},"seed":2206074},
+{"id":"22-8","n":9,"src":[{"x":0,"y":2,"r":0}],"tgt":[{"x":6,"y":8}],"fly":[{"x":2,"y":4},{"x":1,"y":5}],"walls":[[7,5],[6,5],[3,3],[2,7],[0,8],[6,3],[6,6],[1,0],[8,5],[2,3],[8,3],[1,1],[2,0],[4,8],[5,8]],"portals":[[7,1,2,6],[4,4,5,7]],"tray":[{"t":"mirror","n":4}],"sol":{"base":[0],"placed":[{"t":"mirror","x":8,"y":2,"r":5},{"t":"mirror","x":0,"y":4,"r":5},{"t":"mirror","x":7,"y":7,"r":3}]},"seed":2207000},
+] },
+{ key: 'ch23', levels: [
+{"id":"23-1","n":7,"src":[{"x":6,"y":5,"r":8}],"tgt":[{"x":1,"y":6}],"fly":[{"x":5,"y":0},{"x":1,"y":1}],"walls":[[2,3],[0,5],[2,4],[3,6],[3,2],[3,5],[0,4],[4,1],[5,1]],"tray":[{"t":"mirror","n":4}],"sol":{"base":[8],"placed":[{"t":"mirror","x":4,"y":5,"r":3},{"t":"mirror","x":6,"y":3,"r":5},{"t":"mirror","x":6,"y":0,"r":2},{"t":"mirror","x":1,"y":0,"r":6}]},"seed":2300074},
+{"id":"23-2","n":7,"src":[{"x":0,"y":5,"r":0}],"tgt":[{"x":6,"y":3},{"x":4,"y":6}],"fly":[{"x":1,"y":3},{"x":4,"y":3}],"walls":[[0,1],[4,0],[3,0],[0,0],[5,6],[2,0],[0,6],[2,6],[1,2],[0,2],[5,5],[3,5],[4,2]],"tray":[{"t":"mirror","n":3},{"t":"splitter","n":1}],"sol":{"base":[0],"placed":[{"t":"mirror","x":2,"y":5,"r":5},{"t":"splitter","x":1,"y":4,"r":5},{"t":"mirror","x":4,"y":4,"r":2},{"t":"mirror","x":0,"y":3,"r":5}]},"seed":2301000},
+{"id":"23-3","n":7,"src":[{"x":2,"y":6,"r":14}],"tgt":[{"x":1,"y":2,"focus":true}],"fly":[{"x":4,"y":0},{"x":6,"y":1}],"walls":[[6,4],[1,0],[2,3],[0,0],[1,4],[1,3],[4,2],[2,4],[4,1],[0,3],[0,1],[3,2]],"tray":[{"t":"mirror","n":4},{"t":"lens","n":1}],"sol":{"base":[14],"placed":[{"t":"mirror","x":6,"y":2,"r":5},{"t":"mirror","x":6,"y":0,"r":2},{"t":"mirror","x":3,"y":0,"r":7},{"t":"lens","x":2,"y":1,"r":2}]},"seed":2302000},
+{"id":"23-4","n":8,"src":[{"x":0,"y":1,"r":0}],"tgt":[{"x":7,"y":5},{"x":6,"y":1},{"x":0,"y":0}],"fly":[{"x":1,"y":5},{"x":2,"y":2}],"walls":[[5,3],[2,0],[6,3],[7,4],[6,0],[0,6],[3,0],[3,7],[7,0],[6,2]],"tray":[{"t":"splitter","n":2},{"t":"mirror","n":2}],"sol":{"base":[0],"placed":[{"t":"splitter","x":4,"y":1,"r":3},{"t":"mirror","x":0,"y":5,"r":3},{"t":"splitter","x":5,"y":5,"r":5}]},"seed":2303037},
+{"id":"23-5","n":8,"src":[{"x":4,"y":0,"r":4}],"tgt":[{"x":0,"y":0},{"x":2,"y":7}],"fly":[{"x":2,"y":2},{"x":3,"y":4}],"walls":[[7,2],[4,6],[1,5],[7,1],[2,5],[6,7],[4,3],[6,3],[2,0],[4,5],[0,2]],"tray":[{"t":"mirror","n":4},{"t":"splitter","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":4,"y":2,"r":7},{"t":"mirror","x":3,"y":1,"r":7},{"t":"splitter","x":3,"y":3,"r":7},{"t":"mirror","x":3,"y":6,"r":5}]},"seed":2304037},
+{"id":"23-6","n":8,"src":[{"x":5,"y":7,"r":12}],"tgt":[{"x":7,"y":2,"c":2},{"x":0,"y":6,"c":1}],"fly":[{"x":6,"y":3},{"x":3,"y":4}],"walls":[[2,6],[7,3],[7,1],[1,4],[5,0],[2,7],[1,7],[6,6],[6,1],[3,6],[4,1],[4,5]],"tray":[{"t":"prism","n":1},{"t":"mirror","n":2}],"sol":{"base":[12],"placed":[{"t":"prism","x":5,"y":4,"r":7},{"t":"mirror","x":6,"y":2,"r":2}]},"seed":2305037},
+{"id":"23-7","n":9,"src":[{"x":2,"y":0,"r":4}],"tgt":[{"x":8,"y":0},{"x":3,"y":0}],"fly":[{"x":3,"y":5},{"x":8,"y":4}],"walls":[[6,1],[0,0],[6,2],[6,5],[7,1],[7,6],[7,7],[0,2],[0,1],[6,6],[7,3],[1,3],[4,0]],"portals":[[0,6,5,4]],"tray":[{"t":"mirror","n":4},{"t":"splitter","n":1}],"sol":{"base":[4],"placed":[{"t":"mirror","x":2,"y":4,"r":5},{"t":"mirror","x":1,"y":8,"r":3},{"t":"splitter","x":3,"y":8,"r":6},{"t":"mirror","x":8,"y":8,"r":6}]},"seed":2306037},
+{"id":"23-8","n":9,"src":[{"x":7,"y":8,"r":12}],"tgt":[{"x":2,"y":1}],"fly":[{"x":1,"y":2},{"x":4,"y":7}],"walls":[[2,0],[1,0],[8,1],[5,2],[6,8],[0,8],[3,0],[8,0],[5,1],[8,5],[6,1],[3,2],[8,6],[2,6],[2,3]],"portals":[[8,3,3,6],[5,6,0,5]],"tray":[{"t":"mirror","n":4}],"sol":{"base":[12],"placed":[{"t":"mirror","x":7,"y":2,"r":7},{"t":"mirror","x":5,"y":8,"r":7},{"t":"mirror","x":0,"y":3,"r":5}]},"seed":2307074},
+] },
+{ key: 'ch24', levels: [
+{"id":"24-1","n":7,"src":[{"x":5,"y":6,"r":12}],"tgt":[{"x":3,"y":5},{"x":0,"y":4}],"fly":[{"x":3,"y":0},{"x":1,"y":4}],"walls":[[2,1],[3,2],[2,6],[4,6],[1,6],[3,6],[0,6],[6,0],[0,3],[4,4],[4,5],[3,3]],"tray":[{"t":"mirror","n":3},{"t":"splitter","n":1}],"sol":{"base":[12],"placed":[{"t":"mirror","x":5,"y":0,"r":2},{"t":"mirror","x":1,"y":0,"r":6},{"t":"splitter","x":1,"y":3,"r":3},{"t":"mirror","x":1,"y":5,"r":7}]},"seed":2400037},
+{"id":"24-2","n":7,"src":[{"x":6,"y":5,"r":10}],"tgt":[{"x":0,"y":3,"focus":true}],"fly":[{"x":1,"y":5},{"x":2,"y":2}],"walls":[[5,0],[3,5],[1,6],[4,5],[0,2],[6,3],[1,4],[1,1],[1,3],[0,6]],"tray":[{"t":"mirror","n":3},{"t":"lens","n":1}],"sol":{"base":[10],"placed":[{"t":"mirror","x":2,"y":1,"r":7},{"t":"mirror","x":2,"y":5,"r":6},{"t":"mirror","x":0,"y":5,"r":2},{"t":"lens","x":0,"y":4,"r":0}]},"seed":2401037},
+{"id":"24-3","n":7,"src":[{"x":6,"y":5,"r":8}],"tgt":[{"x":0,"y":5},{"x":5,"y":1},{"x":0,"y":2}],"fly":[{"x":3,"y":1},{"x":2,"y":3}],"walls":[[4,6],[5,6],[2,6],[3,6],[6,6],[5,4],[6,4],[3,4],[0,6],[0,0],[6,3]],"tray":[{"t":"splitter","n":2},{"t":"mirror","n":2}],"sol":{"base":[8],"placed":[{"t":"splitter","x":2,"y":5,"r":2},{"t":"mirror","x":2,"y":0,"r":1},{"t":"splitter","x":1,"y":1,"r":3}]},"seed":2402000},
+{"id":"24-4","n":8,"src":[{"x":1,"y":0,"r":4}],"tgt":[{"x":3,"y":6,"c":1},{"x":1,"y":7,"c":2}],"fly":[{"x":2,"y":4},{"x":2,"y":7}],"walls":[[7,5],[7,6],[4,2],[6,6],[7,7],[2,1],[4,5],[3,3],[6,5],[7,3]],"tray":[{"t":"prism","n":1},{"t":"mirror","n":2}],"sol":{"base":[4],"placed":[{"t":"prism","x":1,"y":3,"r":1},{"t":"mirror","x":5,"y":7,"r":5}]},"seed":2403000},
+{"id":"24-5","n":8,"src":[{"x":4,"y":7,"r":12}],"tgt":[{"x":7,"y":7},{"x":0,"y":5}],"fly":[{"x":5,"y":2},{"x":7,"y":5}],"walls":[[0,7],[5,3],[6,0],[1,0],[6,4],[6,5],[5,5],[7,0],[6,1],[5,6],[0,3]],"portals":[[5,0,1,2]],"tray":[{"t":"mirror","n":4},{"t":"splitter","n":1}],"sol":{"base":[12],"placed":[{"t":"mirror","x":4,"y":1,"r":5},{"t":"mirror","x":3,"y":0,"r":7},{"t":"splitter","x":3,"y":2,"r":3},{"t":"mirror","x":7,"y":2,"r":2}]},"seed":2404000},
+{"id":"24-6","n":8,"src":[{"x":7,"y":4,"r":8}],"tgt":[{"x":7,"y":2},{"x":0,"y":6}],"fly":[{"x":2,"y":2},{"x":0,"y":5}],"walls":[[3,3],[2,3],[4,6],[3,6],[2,5],[2,4],[6,5],[5,5],[0,7],[1,5],[7,1],[7,7]],"tray":[{"t":"mirror","n":4},{"t":"splitter","n":1}],"sol":{"base":[8],"placed":[{"t":"mirror","x":5,"y":4,"r":3},{"t":"splitter","x":6,"y":3,"r":4},{"t":"mirror","x":5,"y":2,"r":1},{"t":"mirror","x":0,"y":2,"r":6}]},"seed":2405000},
+{"id":"24-7","n":9,"src":[{"x":8,"y":3,"r":8}],"tgt":[{"x":2,"y":4},{"x":6,"y":8},{"x":8,"y":8}],"fly":[{"x":7,"y":7},{"x":4,"y":5}],"walls":[[5,0],[4,1],[2,2],[1,1],[1,0],[7,2],[2,0],[8,1],[2,7],[1,2],[0,1],[0,7]],"portals":[[6,7,5,4]],"tray":[{"t":"mirror","n":3},{"t":"dlens","n":1}],"sol":{"base":[8],"placed":[{"t":"mirror","x":2,"y":3,"r":5},{"t":"mirror","x":8,"y":7,"r":5},{"t":"dlens","x":3,"y":4,"r":4}]},"seed":2406037},
+{"id":"24-8","n":9,"src":[{"x":8,"y":1,"r":8}],"tgt":[{"x":1,"y":0}],"fly":[{"x":6,"y":2},{"x":5,"y":4}],"walls":[[3,2],[8,5],[3,3],[5,5],[3,6],[4,2],[5,6],[3,1],[1,8],[7,4],[1,2],[2,3],[4,1],[5,1],[5,0],[0,7]],"tray":[{"t":"mirror","n":5}],"sol":{"base":[8],"placed":[{"t":"mirror","x":6,"y":1,"r":6},{"t":"mirror","x":6,"y":4,"r":6},{"t":"mirror","x":0,"y":4,"r":2},{"t":"mirror","x":0,"y":1,"r":5}]},"seed":2407111},
+] },
+{ key: 'ch25', levels: [
+{"id":"25-1","n":7,"src":[{"x":0,"y":4,"r":0}],"tgt":[{"x":6,"y":6}],"fly":[{"x":6,"y":5},{"x":6,"y":3}],"walls":[[5,5],[3,3],[0,6],[5,0],[1,1],[0,2],[5,6],[5,4],[5,1],[4,4]],"portals":[[1,3,2,5],[4,5,1,2]],"tray":[{"t":"mirror","n":3}],"sol":{"base":[0],"placed":[{"t":"mirror","x":2,"y":4,"r":5},{"t":"mirror","x":0,"y":3,"r":5},{"t":"mirror","x":6,"y":2,"r":2}]},"seed":2500037},
+{"id":"25-2","n":7,"src":[{"x":4,"y":6,"r":12}],"tgt":[{"x":6,"y":6},{"x":0,"y":0}],"fly":[{"x":2,"y":2},{"x":6,"y":3}],"walls":[[0,6],[5,1],[5,4],[2,0],[2,3],[5,3],[5,6],[3,3],[2,1],[2,4]],"portals":[[3,0,2,6]],"tray":[{"t":"mirror","n":3},{"t":"splitter","n":1}],"sol":{"base":[12],"placed":[{"t":"mirror","x":4,"y":1,"r":3},{"t":"mirror","x":0,"y":4,"r":3},{"t":"splitter","x":0,"y":2,"r":6},{"t":"mirror","x":6,"y":2,"r":2}]},"seed":2501074},
+{"id":"25-3","n":7,"src":[{"x":0,"y":4,"r":0}],"tgt":[{"x":6,"y":6},{"x":6,"y":4},{"x":4,"y":0}],"fly":[{"x":2,"y":6},{"x":4,"y":3}],"walls":[[2,1],[1,1],[0,5],[3,1],[0,6],[5,5],[2,2],[2,3],[3,0],[2,0],[0,0]],"tray":[{"t":"splitter","n":2},{"t":"mirror","n":2}],"sol":{"base":[0],"placed":[{"t":"splitter","x":3,"y":4,"r":3},{"t":"mirror","x":1,"y":6,"r":3},{"t":"splitter","x":4,"y":6,"r":6}]},"seed":2502074},
+{"id":"25-4","n":8,"src":[{"x":1,"y":7,"r":14}],"tgt":[{"x":3,"y":1,"focus":true}],"fly":[{"x":5,"y":4},{"x":5,"y":6}],"walls":[[4,3],[6,4],[2,1],[3,2],[0,7],[2,4],[1,1],[4,2],[6,3],[2,0]],"tray":[{"t":"mirror","n":4},{"t":"lens","n":1}],"sol":{"base":[14],"placed":[{"t":"mirror","x":3,"y":5,"r":0},{"t":"mirror","x":5,"y":7,"r":7},{"t":"mirror","x":5,"y":1,"r":2},{"t":"lens","x":4,"y":1,"r":4}]},"seed":2503074},
+{"id":"25-5","n":8,"src":[{"x":3,"y":7,"r":12}],"tgt":[{"x":7,"y":2},{"x":6,"y":1}],"fly":[{"x":5,"y":1},{"x":4,"y":4}],"walls":[[4,3],[7,0],[5,7],[5,6],[6,4],[2,4],[7,7],[6,5],[3,0],[2,5],[7,6],[3,1],[3,2],[4,5]],"tray":[{"t":"mirror","n":4},{"t":"splitter","n":1}],"sol":{"base":[12],"placed":[{"t":"mirror","x":3,"y":4,"r":6},{"t":"mirror","x":5,"y":4,"r":6},{"t":"splitter","x":5,"y":2,"r":6},{"t":"mirror","x":5,"y":0,"r":7}]},"seed":2504037},
+{"id":"25-6","n":8,"src":[{"x":3,"y":0,"r":4}],"tgt":[{"x":7,"y":3,"c":1},{"x":1,"y":4,"c":2}],"fly":[{"x":2,"y":3},{"x":5,"y":4}],"walls":[[6,7],[4,0],[5,7],[5,1],[4,1],[7,2],[1,2],[0,5],[4,7],[5,2],[5,0],[7,1]],"tray":[{"t":"prism","n":1},{"t":"mirror","n":2}],"sol":{"base":[4],"placed":[{"t":"prism","x":3,"y":2,"r":15},{"t":"mirror","x":0,"y":7,"r":2}]},"seed":2505000},
+{"id":"25-7","n":9,"src":[{"x":8,"y":4,"r":8}],"tgt":[{"x":0,"y":5},{"x":0,"y":7},{"x":1,"y":6}],"fly":[{"x":2,"y":7},{"x":2,"y":5}],"walls":[[7,2],[6,0],[1,3],[3,1],[7,8],[6,7],[8,3],[3,2],[7,1],[6,6],[1,4],[8,2]],"portals":[[2,8,5,2]],"tray":[{"t":"mirror","n":3},{"t":"dlens","n":1}],"sol":{"base":[8],"placed":[{"t":"mirror","x":2,"y":4,"r":6},{"t":"mirror","x":5,"y":6,"r":6},{"t":"dlens","x":3,"y":6,"r":4}]},"seed":2506000},
+{"id":"25-8","n":9,"src":[{"x":7,"y":8,"r":12}],"tgt":[{"x":5,"y":1}],"fly":[{"x":2,"y":6},{"x":1,"y":8}],"walls":[[6,1],[6,3],[1,1],[5,5],[4,7],[6,4],[7,3],[5,6],[4,6],[1,5],[6,2],[3,0],[0,3]],"tray":[{"t":"mirror","n":5}],"sol":{"base":[12],"placed":[{"t":"mirror","x":7,"y":6,"r":1},{"t":"mirror","x":5,"y":8,"r":7},{"t":"mirror","x":0,"y":8,"r":3},{"t":"mirror","x":5,"y":3,"r":5}]},"seed":2507000},
 ] },
 ];
 return { DATA };
@@ -737,8 +928,12 @@ for (let k = Math.floor(day / DAILY.length) % 4; k > 0; k--) L = turnLevel(L);
 if (L !== base && !solvedByStored(L)) L = base;
 return { ...L, id: `day-${day}`, mustFly: true, daily: day, seed: 3000 + (day % 997) };
 }
+function bonusLevel(day) {
+const L = dailyLevel(day + 41);
+return { ...L, id: `bonus-${day}`, daily: undefined, bonus: day };
+}
 const DAILY_COUNT = DAILY.length;
-return { MUST_FLY_FROM, CHAPTERS, LEVELS, solvedByStored, dayNumber, dailyLevel, DAILY_COUNT };
+return { MUST_FLY_FROM, CHAPTERS, LEVELS, solvedByStored, dayNumber, dailyLevel, bonusLevel, DAILY_COUNT };
 })();
 __m['src/render/themes.js'] = (() => {
 const THEMES = [
@@ -782,7 +977,7 @@ grain: [140, 110, 80],
 shade: '#3d6a8f', chip: 'rgba(40,80,120,0.35)',
 },
 {
-id: 'night', name: 'thNight', stars: 70,
+id: 'night', name: 'thNight', stars: 90,
 sky: ['#34477c', '#202d57', '#111a36'],
 sun: [190, 210, 255, 0.4],
 grass: [30, 70, 70, 20, 40, 30],
@@ -796,7 +991,7 @@ shade: '#0d1430', chip: 'rgba(10,15,40,0.45)',
 sparkle: true,
 },
 {
-id: 'sakura', name: 'thSakura', stars: 100,
+id: 'sakura', name: 'thSakura', stars: 150,
 sky: ['#f6c9d8', '#e9a2bb', '#cd7e9c'],
 sun: [255, 246, 250, 0.7],
 grass: [90, 150, 90, 40, 40, 30],
@@ -822,11 +1017,33 @@ grain: [80, 70, 64],
 shade: '#081526', chip: 'rgba(5,20,35,0.5)',
 sparkle: true, aurora: true,
 },
+{
+id: 'newyear', name: 'thNewYear', stars: 0, event: 'ny',
+sky: ['#24386b', '#192a55', '#0d1733'],
+sun: [255, 230, 190, 0.35],
+grass: [200, 220, 245, 30, 20, 10],
+leaves: ['#1f5a3a', '#2a6e48', '#164a30', '#2f7a50', '#e9f3fa'],
+bokeh: [255, 255, 255, 0.28],
+vignette: [0, 5, 25, 0.4],
+frame: ['#b5443a', '#8e2d26', '#621c17'],
+plank: [-10, -48, -86],
+grain: [110, 60, 30],
+shade: '#0d1733', chip: 'rgba(10,20,50,0.5)',
+sparkle: true, garland: true,
+},
 ];
+function eventActive(ms) {
+const d = new Date(ms);
+return (d.getMonth() === 11 && d.getDate() >= 15) || (d.getMonth() === 0 && d.getDate() <= 14);
+}
+function eventSeason(ms) {
+const d = new Date(ms);
+return 'ny' + (d.getMonth() === 0 ? d.getFullYear() - 1 : d.getFullYear());
+}
 function themeById(id) {
 return THEMES.find((th) => th.id === id) || THEMES[0];
 }
-return { THEMES, themeById };
+return { THEMES, eventActive, eventSeason, themeById };
 })();
 __m['src/render/art.js'] = (() => {
 const { PIECE, STEP, W } = __m['src/core/optics.js'];
@@ -920,6 +1137,34 @@ g.fillRect(x, yy, 3, thick);
 }
 });
 g.globalCompositeOperation = 'source-over';
+}
+if (TH.garland) {
+const cols = [[255, 70, 60], [255, 210, 70], [80, 220, 120], [90, 160, 255]];
+g.strokeStyle = 'rgba(20,30,20,0.85)';
+g.lineWidth = Math.max(1.5, s * 0.004);
+const sag = (x) => s * 0.05 + Math.abs(Math.sin(x / w * Math.PI * 3)) * s * 0.045;
+g.beginPath();
+for (let x = 0; x <= w; x += 4) g.lineTo(x, sag(x));
+g.stroke();
+const step = Math.max(26, s * 0.07);
+for (let x = step / 2, k = 0; x < w; x += step, k++) {
+const c = cols[k % cols.length], y = sag(x) + s * 0.012, br = s * 0.011;
+const gl = g.createRadialGradient(x, y, 0, x, y, br * 4);
+gl.addColorStop(0, rgba(c, 0.55));
+gl.addColorStop(1, rgba(c, 0));
+g.fillStyle = gl;
+g.fillRect(x - br * 4, y - br * 4, br * 8, br * 8);
+g.fillStyle = rgba(c, 1);
+g.beginPath();
+g.ellipse(x, y, br, br * 1.35, 0, 0, TAU);
+g.fill();
+}
+for (let i = 0; i < 70; i++) {
+g.fillStyle = `rgba(255,255,255,${0.35 + r() * 0.5})`;
+g.beginPath();
+g.arc(r() * w, r() * h, 1 + r() * 2.2, 0, TAU);
+g.fill();
+}
 }
 if (TH.sparkle) {
 for (let i = 0; i < 90; i++) {
@@ -3072,6 +3317,7 @@ fly: '<ellipse cx="7" cy="8.5" rx="5" ry="3" transform="rotate(-28 7 8.5)" fill=
 home: '<path d="M3 11.5L12 4l9 7.5" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10.5V20h12v-9.5" fill="currentColor"/>',
 trophy: '<path d="M7 3.5h10v5a5 5 0 0 1-10 0z" fill="currentColor"/><path d="M7 5.5H4v1.5a3.5 3.5 0 0 0 3.5 3.5M17 5.5h3v1.5a3.5 3.5 0 0 1-3.5 3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10.5 13.5h3v3.5h-3zM7.5 18.5h9v2.5h-9z" fill="currentColor"/>',
 vibe: '<rect x="7.5" y="3" width="9" height="18" rx="2" fill="currentColor"/><path d="M4 8v8M20 8v8M1.5 10v4M22.5 10v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+cart: '<path d="M2.5 4h3l2.2 10.5h10.3l2-7.5H7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="19" r="1.9" fill="currentColor"/><circle cx="16.5" cy="19" r="1.9" fill="currentColor"/>',
 flame: '<path d="M12 2.5c.6 3.2 4.9 5.6 4.9 10.6a4.9 4.9 0 0 1-9.8 0c0-2.3 1.2-3.7 2.3-4.9.2 1.6 1 2.6 2 2.9-.6-3 .1-5.9.6-8.6z" fill="currentColor"/>',
 sun: '<circle cx="12" cy="12" r="4.6" fill="currentColor"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>',
 pin: '<rect x="3" y="4" width="18" height="12.5" rx="2.2" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M8.5 20.5h7M12 16.5v4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M12 7.2v6M9 10.2h6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>',
@@ -3142,6 +3388,17 @@ themeNeed: 'Нужно ещё {n} ★',
 themeAd: 'Открыть «{name}» сейчас',
 themeNew: 'Открыта новая тема «{name}»! Включите её в меню «Темы».',
 close: 'Закрыть',
+ch7: 'Рассвет', ch8: 'Утро', ch9: 'Полдень', ch10: 'Радуга', ch11: 'Туман', ch12: 'Зенит', ch13: 'Мираж',
+ch14: 'Закат', ch15: 'Сумерки', ch16: 'Звездопад', ch17: 'Комета', ch18: 'Гроза', ch19: 'Иней', ch20: 'Капель',
+ch21: 'Полночь', ch22: 'Затмение', ch23: 'Равноденствие', ch24: 'Солнцестояние', ch25: 'Сияние',
+shop: 'Магазин', noads: 'Без рекламы', noadsText: 'Никакой рекламы, а награды за ролики — сразу',
+hints10: '10 подсказок', hints10Text: 'Подсказки без рекламы',
+allThemes: 'Все темы', allThemesText: 'Открыть все темы, кроме наград за серию',
+owned: 'Куплено', bought: 'Спасибо за покупку!', buyFail: 'Покупка не прошла',
+hintsLeft: 'Подсказок: {n}', useHint: 'Взять подсказку', buyHints: 'Купить подсказки',
+bonus: 'Бонусный уровень', bonusText: 'Посмотрите рекламу и сыграйте сегодня ещё один уровень', bonusDone: 'Бонусный уровень пройден!',
+thNewYear: 'Новогодняя', eventNY: 'Новогоднее событие: праздничная тема открыта для всех до 14 января!',
+themeEvent: 'Открывается во время новогоднего события',
 howTo: 'Перетаскивайте фигуры с лотка на доску, крутите их и направьте свет на все цветы и фонарики.',
 },
 en: {
@@ -3198,6 +3455,17 @@ themeNeed: 'You need {n} more ★',
 themeAd: 'Unlock {name} now',
 themeNew: 'New theme unlocked: {name}! Pick it in Themes.',
 close: 'Close',
+ch7: 'Dawn', ch8: 'Morning', ch9: 'Noon', ch10: 'Rainbow', ch11: 'Mist', ch12: 'Zenith', ch13: 'Mirage',
+ch14: 'Sunset', ch15: 'Twilight', ch16: 'Starfall', ch17: 'Comet', ch18: 'Storm', ch19: 'Frost', ch20: 'Thaw',
+ch21: 'Midnight', ch22: 'Eclipse', ch23: 'Equinox', ch24: 'Solstice', ch25: 'Radiance',
+shop: 'Shop', noads: 'No ads', noadsText: 'No ads at all, and video rewards come instantly',
+hints10: '10 hints', hints10Text: 'Hints without ads',
+allThemes: 'All themes', allThemesText: 'Unlock every theme except streak rewards',
+owned: 'Owned', bought: 'Thank you for your purchase!', buyFail: 'The purchase did not go through',
+hintsLeft: 'Hints: {n}', useHint: 'Use a hint', buyHints: 'Buy hints',
+bonus: 'Bonus puzzle', bonusText: 'Watch an ad to play one more puzzle today', bonusDone: 'Bonus puzzle solved!',
+thNewYear: 'New Year', eventNY: 'New Year event: the holiday theme is free for everyone until 14 January!',
+themeEvent: 'Opens during the New Year event',
 howTo: 'Drag pieces from the tray onto the board, rotate them and send the light to every flower and lantern.',
 },
 tr: {
@@ -3254,7 +3522,226 @@ themeNeed: '{n} ★ daha gerekli',
 themeAd: '{name} temasını şimdi aç',
 themeNew: 'Yeni tema açıldı: {name}! Temalar menüsünden seç.',
 close: 'Kapat',
+ch7: 'Şafak', ch8: 'Sabah', ch9: 'Öğle', ch10: 'Gökkuşağı', ch11: 'Sis', ch12: 'Zirve', ch13: 'Serap',
+ch14: 'Gün batımı', ch15: 'Alacakaranlık', ch16: 'Yıldız yağmuru', ch17: 'Kuyruklu yıldız', ch18: 'Fırtına', ch19: 'Kırağı', ch20: 'Erime',
+ch21: 'Gece yarısı', ch22: 'Tutulma', ch23: 'Ekinoks', ch24: 'Gündönümü', ch25: 'Işıltı',
+shop: 'Mağaza', noads: 'Reklamsız', noadsText: 'Hiç reklam yok, video ödülleri anında gelir',
+hints10: '10 ipucu', hints10Text: 'Reklamsız ipuçları',
+allThemes: 'Tüm temalar', allThemesText: 'Seri ödülleri hariç tüm temaları aç',
+owned: 'Satın alındı', bought: 'Satın aldığın için teşekkürler!', buyFail: 'Satın alma tamamlanmadı',
+hintsLeft: 'İpucu: {n}', useHint: 'İpucu kullan', buyHints: 'İpucu satın al',
+bonus: 'Bonus bulmaca', bonusText: 'Bugün bir bulmaca daha oynamak için reklam izle', bonusDone: 'Bonus bulmaca çözüldü!',
+thNewYear: 'Yılbaşı', eventNY: 'Yılbaşı etkinliği: bayram teması 14 Ocak’a kadar herkese açık!',
+themeEvent: 'Yılbaşı etkinliği sırasında açılır',
 howTo: 'Parçaları tepsiden tahtaya sürükle, döndür ve ışığı tüm çiçeklere ve fenerlere ulaştır.',
+},
+es: {
+title: 'Rayo de sol',
+subtitle: 'espejos y lentes',
+play: 'Jugar', continue: 'Continuar', levels: 'Niveles', chapter: 'Capítulo', level: 'Nivel',
+ch1: 'Espejos', ch2: 'Lentes', ch3: 'Divisores de haz', ch4: 'Colores', ch5: 'Maestro', ch6: 'Portales',
+ch7: 'Amanecer', ch8: 'Mañana', ch9: 'Mediodía', ch10: 'Arcoíris', ch11: 'Niebla', ch12: 'Cénit', ch13: 'Espejismo',
+ch14: 'Atardecer', ch15: 'Crepúsculo', ch16: 'Lluvia de estrellas', ch17: 'Cometa', ch18: 'Tormenta', ch19: 'Escarcha', ch20: 'Deshielo',
+ch21: 'Medianoche', ch22: 'Eclipse', ch23: 'Equinoccio', ch24: 'Solsticio', ch25: 'Resplandor',
+locked: 'Completa primero los niveles anteriores',
+sound: 'Sonidos', music: 'Música', on: 'sí', off: 'no',
+pause: 'Pausa', resume: 'Continuar', restart: 'Reiniciar', menu: 'Menú',
+done: 'Listo', complete: '¡Nivel superado!', chapterDone: '¡Capítulo superado!', next: 'Siguiente', replay: 'Repetir',
+allDone: '¡Has completado todos los niveles! Vuelve cada día para el reto diario.',
+flyHint: 'Haz pasar el rayo por las luciérnagas para ganar más estrellas',
+hintFree: '¡Tu primera pista es gratis!',
+hintTitle: 'Pista', hintText: 'Mira un anuncio y te mostraremos dónde va una pieza.',
+skipTitle: 'Saltar nivel', skipText: 'Mira un anuncio para saltar este nivel y desbloquear el siguiente.',
+watch: 'Ver anuncio', cancel: 'Cancelar', adFail: 'Los anuncios no están disponibles ahora, inténtalo más tarde',
+noHint: '¡Todas las piezas ya están en su sitio, solo gíralas!', stars: 'Estrellas',
+tut1: 'Toca el espejo para girarlo. Apunta el rayo a la flor',
+tut2: 'Arrastra el espejo desde la bandeja al tablero',
+tut3: 'Gira tocando la pieza, con los botones ⟲ ⟳ o arrastrando el anillo',
+tutLens: 'Una lente convergente concentra el rayo. Los farolillos necesitan luz brillante y concentrada',
+tutDlens: 'Una lente divergente ensancha el rayo para llegar a varias flores',
+tutSplit: 'Un divisor de haz deja pasar la mitad de la luz y refleja la otra mitad',
+tutFilter: 'Un filtro de color solo deja pasar su color. Las flores necesitan luz de su color',
+tutPrism: 'Un prisma desvía la luz y descompone la luz blanca en colores',
+tutPortal: 'Un portal transporta el rayo: entra por un anillo y sale por el otro del mismo color',
+tutColor: 'La luz roja y la verde juntas forman el amarillo',
+tutFly: 'Las luciérnagas dan estrellas: haz pasar el rayo por ellas',
+tutFlyMust: 'A partir de ahora cuentan todas las luciérnagas: haz pasar el rayo por todas',
+themes: 'Temas',
+daily: 'Reto diario', dailySolved: 'Resuelto hoy', dailyDone: '¡Reto diario resuelto!',
+streak: 'Racha de días: {n}.', dailyNext: 'Mañana llega un nuevo reto diario.',
+shortcut: 'Añadir acceso directo', shortcutDone: '¡Acceso directo añadido!',
+thAurora: 'Aurora boreal', themeStreak: 'Premio por una racha de {n} días en el reto diario',
+vibration: 'Vibración',
+top: 'Clasificación', topText: 'Los mejores coleccionistas de estrellas', topAuth: 'Inicia sesión con Yandex para entrar en la clasificación.', signIn: 'Iniciar sesión', topNone: 'La clasificación aún no está disponible.',
+themesText: 'Reúne estrellas para desbloquear nuevos temas.',
+thSummer: 'Verano', thAutumn: 'Otoño', thWinter: 'Invierno', thNight: 'Noche', thSakura: 'Sakura',
+themeNeed: 'Te faltan {n} ★', themeAd: 'Desbloquear {name} ahora', themeNew: '¡Nuevo tema desbloqueado: {name}! Elígelo en Temas.',
+close: 'Cerrar',
+shop: 'Tienda', noads: 'Sin anuncios', noadsText: 'Ningún anuncio, y los premios de los vídeos llegan al instante',
+hints10: '10 pistas', hints10Text: 'Pistas sin anuncios',
+allThemes: 'Todos los temas', allThemesText: 'Desbloquea todos los temas salvo los premios por racha',
+owned: 'Comprado', bought: '¡Gracias por tu compra!', buyFail: 'La compra no se ha completado',
+hintsLeft: 'Pistas: {n}', useHint: 'Usar una pista', buyHints: 'Comprar pistas',
+bonus: 'Reto extra', bonusText: 'Mira un anuncio para jugar un reto más hoy', bonusDone: '¡Reto extra superado!',
+thNewYear: 'Año Nuevo', eventNY: 'Evento de Año Nuevo: ¡el tema festivo es gratis para todos hasta el 14 de enero!',
+themeEvent: 'Se abre durante el evento de Año Nuevo',
+howTo: 'Arrastra las piezas de la bandeja al tablero, gíralas y lleva la luz a todas las flores y farolillos.',
+},
+pt: {
+title: 'Raio de Sol',
+subtitle: 'espelhos e lentes',
+play: 'Jogar', continue: 'Continuar', levels: 'Níveis', chapter: 'Capítulo', level: 'Nível',
+ch1: 'Espelhos', ch2: 'Lentes', ch3: 'Divisores de feixe', ch4: 'Cores', ch5: 'Mestre', ch6: 'Portais',
+ch7: 'Alvorada', ch8: 'Manhã', ch9: 'Meio-dia', ch10: 'Arco-íris', ch11: 'Névoa', ch12: 'Zênite', ch13: 'Miragem',
+ch14: 'Pôr do sol', ch15: 'Crepúsculo', ch16: 'Chuva de estrelas', ch17: 'Cometa', ch18: 'Tempestade', ch19: 'Geada', ch20: 'Degelo',
+ch21: 'Meia-noite', ch22: 'Eclipse', ch23: 'Equinócio', ch24: 'Solstício', ch25: 'Esplendor',
+locked: 'Conclua os níveis anteriores primeiro',
+sound: 'Sons', music: 'Música', on: 'ligado', off: 'desligado',
+pause: 'Pausa', resume: 'Continuar', restart: 'Reiniciar', menu: 'Menu',
+done: 'Pronto', complete: 'Nível concluído!', chapterDone: 'Capítulo concluído!', next: 'Próximo', replay: 'Repetir',
+allDone: 'Você concluiu todos os níveis! Volte todos os dias para o desafio diário.',
+flyHint: 'Passe o raio pelos vaga-lumes para ganhar mais estrelas',
+hintFree: 'Sua primeira dica é grátis!',
+hintTitle: 'Dica', hintText: 'Assista a um anúncio e mostraremos onde vai uma peça.',
+skipTitle: 'Pular nível', skipText: 'Assista a um anúncio para pular este nível e liberar o próximo.',
+watch: 'Ver anúncio', cancel: 'Cancelar', adFail: 'Os anúncios não estão disponíveis agora, tente mais tarde',
+noHint: 'Todas as peças já estão no lugar, é só girá-las!', stars: 'Estrelas',
+tut1: 'Toque no espelho para girá-lo. Aponte o raio para a flor',
+tut2: 'Arraste o espelho da bandeja para o tabuleiro',
+tut3: 'Gire tocando na peça, com os botões ⟲ ⟳ ou arrastando o anel',
+tutLens: 'Uma lente convergente concentra o raio. As lanternas precisam de luz forte e concentrada',
+tutDlens: 'Uma lente divergente alarga o raio para alcançar várias flores',
+tutSplit: 'Um divisor de feixe deixa passar metade da luz e reflete a outra metade',
+tutFilter: 'Um filtro colorido só deixa passar a sua cor. As flores precisam de luz da sua cor',
+tutPrism: 'Um prisma desvia a luz e separa a luz branca em cores',
+tutPortal: 'Um portal transporta o raio: ele entra por um anel e sai pelo outro da mesma cor',
+tutColor: 'Luz vermelha e verde juntas formam o amarelo',
+tutFly: 'Os vaga-lumes dão estrelas: passe o raio por eles',
+tutFlyMust: 'A partir de agora todos os vaga-lumes contam: passe o raio por todos',
+themes: 'Temas',
+daily: 'Desafio diário', dailySolved: 'Resolvido hoje', dailyDone: 'Desafio diário resolvido!',
+streak: 'Sequência de dias: {n}.', dailyNext: 'Um novo desafio diário chega amanhã.',
+shortcut: 'Adicionar atalho', shortcutDone: 'Atalho adicionado!',
+thAurora: 'Aurora boreal', themeStreak: 'Prêmio por uma sequência de {n} dias no desafio diário',
+vibration: 'Vibração',
+top: 'Ranking', topText: 'Os maiores colecionadores de estrelas', topAuth: 'Entre com a Yandex para participar do ranking.', signIn: 'Entrar', topNone: 'O ranking ainda não está disponível.',
+themesText: 'Junte estrelas para liberar novos temas.',
+thSummer: 'Verão', thAutumn: 'Outono', thWinter: 'Inverno', thNight: 'Noite', thSakura: 'Sakura',
+themeNeed: 'Faltam {n} ★', themeAd: 'Liberar {name} agora', themeNew: 'Novo tema liberado: {name}! Escolha-o em Temas.',
+close: 'Fechar',
+shop: 'Loja', noads: 'Sem anúncios', noadsText: 'Nenhum anúncio, e os prêmios dos vídeos chegam na hora',
+hints10: '10 dicas', hints10Text: 'Dicas sem anúncios',
+allThemes: 'Todos os temas', allThemesText: 'Libera todos os temas, exceto os prêmios de sequência',
+owned: 'Comprado', bought: 'Obrigado pela compra!', buyFail: 'A compra não foi concluída',
+hintsLeft: 'Dicas: {n}', useHint: 'Usar uma dica', buyHints: 'Comprar dicas',
+bonus: 'Desafio bônus', bonusText: 'Assista a um anúncio para jogar mais um desafio hoje', bonusDone: 'Desafio bônus concluído!',
+thNewYear: 'Ano Novo', eventNY: 'Evento de Ano Novo: o tema festivo está liberado para todos até 14 de janeiro!',
+themeEvent: 'Abre durante o evento de Ano Novo',
+howTo: 'Arraste as peças da bandeja para o tabuleiro, gire-as e leve a luz a todas as flores e lanternas.',
+},
+de: {
+title: 'Sonnenstrahl',
+subtitle: 'Spiegel und Linsen',
+play: 'Spielen', continue: 'Weiter', levels: 'Level', chapter: 'Kapitel', level: 'Level',
+ch1: 'Spiegel', ch2: 'Linsen', ch3: 'Strahlteiler', ch4: 'Farben', ch5: 'Meister', ch6: 'Portale',
+ch7: 'Morgengrauen', ch8: 'Morgen', ch9: 'Mittag', ch10: 'Regenbogen', ch11: 'Nebel', ch12: 'Zenit', ch13: 'Fata Morgana',
+ch14: 'Sonnenuntergang', ch15: 'Dämmerung', ch16: 'Sternschnuppen', ch17: 'Komet', ch18: 'Gewitter', ch19: 'Raureif', ch20: 'Tauwetter',
+ch21: 'Mitternacht', ch22: 'Finsternis', ch23: 'Tagundnachtgleiche', ch24: 'Sonnenwende', ch25: 'Strahlenglanz',
+locked: 'Schließe zuerst die vorherigen Level ab',
+sound: 'Geräusche', music: 'Musik', on: 'an', off: 'aus',
+pause: 'Pause', resume: 'Weiter', restart: 'Neu starten', menu: 'Menü',
+done: 'Fertig', complete: 'Level geschafft!', chapterDone: 'Kapitel geschafft!', next: 'Weiter', replay: 'Nochmal',
+allDone: 'Du hast alle Level geschafft! Komm jeden Tag für das Tagesrätsel zurück.',
+flyHint: 'Führe den Strahl durch die Glühwürmchen, um mehr Sterne zu bekommen',
+hintFree: 'Dein erster Tipp ist gratis!',
+hintTitle: 'Tipp', hintText: 'Sieh dir eine Werbung an, und wir zeigen dir, wohin ein Teil gehört.',
+skipTitle: 'Level überspringen', skipText: 'Sieh dir eine Werbung an, um dieses Level zu überspringen und das nächste freizuschalten.',
+watch: 'Werbung ansehen', cancel: 'Abbrechen', adFail: 'Werbung ist gerade nicht verfügbar, versuche es später erneut',
+noHint: 'Alle Teile stehen schon richtig – du musst sie nur drehen!', stars: 'Sterne',
+tut1: 'Tippe auf den Spiegel, um ihn zu drehen. Richte den Strahl auf die Blume',
+tut2: 'Ziehe den Spiegel vom Tablett auf das Brett',
+tut3: 'Drehe durch Tippen auf das Teil, mit den Tasten ⟲ ⟳ oder durch Ziehen am Ring',
+tutLens: 'Eine Sammellinse bündelt den Strahl. Laternen brauchen helles, gebündeltes Licht',
+tutDlens: 'Eine Zerstreuungslinse weitet den Strahl, damit er mehrere Blumen erreicht',
+tutSplit: 'Ein Strahlteiler lässt die Hälfte des Lichts durch und spiegelt die andere Hälfte',
+tutFilter: 'Ein Farbfilter lässt nur seine eigene Farbe durch. Blumen brauchen Licht in ihrer Farbe',
+tutPrism: 'Ein Prisma bricht das Licht und zerlegt weißes Licht in Farben',
+tutPortal: 'Ein Portal trägt den Strahl weiter: Er tritt in einen Ring ein und kommt aus dem anderen Ring derselben Farbe heraus',
+tutColor: 'Rotes und grünes Licht ergeben zusammen Gelb',
+tutFly: 'Glühwürmchen bringen Sterne: Führe den Strahl durch sie hindurch',
+tutFlyMust: 'Ab jetzt zählt jedes Glühwürmchen: Führe den Strahl durch alle',
+themes: 'Designs',
+daily: 'Tagesrätsel', dailySolved: 'Heute gelöst', dailyDone: 'Tagesrätsel gelöst!',
+streak: 'Tage in Folge: {n}.', dailyNext: 'Morgen gibt es ein neues Tagesrätsel.',
+shortcut: 'Verknüpfung hinzufügen', shortcutDone: 'Verknüpfung hinzugefügt!',
+thAurora: 'Nordlicht', themeStreak: 'Belohnung für {n} Tage Tagesrätsel in Folge',
+vibration: 'Vibration',
+top: 'Bestenliste', topText: 'Die besten Sternesammler', topAuth: 'Melde dich bei Yandex an, um in die Bestenliste zu kommen.', signIn: 'Anmelden', topNone: 'Die Bestenliste ist noch nicht verfügbar.',
+themesText: 'Sammle Sterne, um neue Designs freizuschalten.',
+thSummer: 'Sommer', thAutumn: 'Herbst', thWinter: 'Winter', thNight: 'Nacht', thSakura: 'Sakura',
+themeNeed: 'Dir fehlen noch {n} ★', themeAd: '{name} jetzt freischalten', themeNew: 'Neues Design freigeschaltet: {name}! Wähle es unter Designs.',
+close: 'Schließen',
+shop: 'Shop', noads: 'Ohne Werbung', noadsText: 'Keine Werbung mehr, Video-Belohnungen gibt es sofort',
+hints10: '10 Tipps', hints10Text: 'Tipps ohne Werbung',
+allThemes: 'Alle Designs', allThemesText: 'Schaltet alle Designs frei, außer den Serien-Belohnungen',
+owned: 'Gekauft', bought: 'Danke für deinen Kauf!', buyFail: 'Der Kauf hat nicht geklappt',
+hintsLeft: 'Tipps: {n}', useHint: 'Tipp nutzen', buyHints: 'Tipps kaufen',
+bonus: 'Bonusrätsel', bonusText: 'Sieh dir eine Werbung an, um heute noch ein Rätsel zu spielen', bonusDone: 'Bonusrätsel gelöst!',
+thNewYear: 'Neujahr', eventNY: 'Neujahrs-Event: Das Feiertagsdesign ist bis zum 14. Januar für alle frei!',
+themeEvent: 'Wird während des Neujahrs-Events freigeschaltet',
+howTo: 'Ziehe Teile vom Tablett auf das Brett, drehe sie und leite das Licht zu allen Blumen und Laternen.',
+},
+fr: {
+title: 'Rayon de soleil',
+subtitle: 'miroirs et lentilles',
+play: 'Jouer', continue: 'Continuer', levels: 'Niveaux', chapter: 'Chapitre', level: 'Niveau',
+ch1: 'Miroirs', ch2: 'Lentilles', ch3: 'Séparateurs', ch4: 'Couleurs', ch5: 'Maître', ch6: 'Portails',
+ch7: 'Aube', ch8: 'Matin', ch9: 'Midi', ch10: 'Arc-en-ciel', ch11: 'Brume', ch12: 'Zénith', ch13: 'Mirage',
+ch14: 'Coucher de soleil', ch15: 'Crépuscule', ch16: 'Étoiles filantes', ch17: 'Comète', ch18: 'Orage', ch19: 'Givre', ch20: 'Dégel',
+ch21: 'Minuit', ch22: 'Éclipse', ch23: 'Équinoxe', ch24: 'Solstice', ch25: 'Rayonnement',
+locked: 'Termine d’abord les niveaux précédents',
+sound: 'Sons', music: 'Musique', on: 'oui', off: 'non',
+pause: 'Pause', resume: 'Reprendre', restart: 'Recommencer', menu: 'Menu',
+done: 'Terminé', complete: 'Niveau réussi !', chapterDone: 'Chapitre réussi !', next: 'Suivant', replay: 'Rejouer',
+allDone: 'Tu as terminé tous les niveaux ! Reviens chaque jour pour le défi du jour.',
+flyHint: 'Fais passer le rayon par les lucioles pour gagner plus d’étoiles',
+hintFree: 'Ton premier indice est gratuit !',
+hintTitle: 'Indice', hintText: 'Regarde une pub et nous te montrerons où placer une pièce.',
+skipTitle: 'Passer le niveau', skipText: 'Regarde une pub pour passer ce niveau et débloquer le suivant.',
+watch: 'Regarder la pub', cancel: 'Annuler', adFail: 'Les pubs ne sont pas disponibles pour le moment, réessaie plus tard',
+noHint: 'Toutes les pièces sont déjà en place, il suffit de les tourner !', stars: 'Étoiles',
+tut1: 'Touche le miroir pour le tourner. Dirige le rayon vers la fleur',
+tut2: 'Fais glisser le miroir de la réserve vers le plateau',
+tut3: 'Tourne en touchant la pièce, avec les boutons ⟲ ⟳ ou en faisant glisser l’anneau',
+tutLens: 'Une lentille convergente concentre le rayon. Les lanternes ont besoin d’une lumière vive et concentrée',
+tutDlens: 'Une lentille divergente élargit le rayon pour atteindre plusieurs fleurs',
+tutSplit: 'Un séparateur laisse passer la moitié de la lumière et réfléchit l’autre moitié',
+tutFilter: 'Un filtre de couleur ne laisse passer que sa couleur. Les fleurs ont besoin d’une lumière de leur couleur',
+tutPrism: 'Un prisme dévie la lumière et décompose la lumière blanche en couleurs',
+tutPortal: 'Un portail transporte le rayon : il entre dans un anneau et ressort par l’autre anneau de la même couleur',
+tutColor: 'Les lumières rouge et verte ensemble donnent du jaune',
+tutFly: 'Les lucioles donnent des étoiles : fais passer le rayon par elles',
+tutFlyMust: 'Désormais, chaque luciole compte : fais passer le rayon par toutes',
+themes: 'Thèmes',
+daily: 'Défi du jour', dailySolved: 'Résolu aujourd’hui', dailyDone: 'Défi du jour résolu !',
+streak: 'Jours d’affilée : {n}.', dailyNext: 'Un nouveau défi du jour arrive demain.',
+shortcut: 'Ajouter un raccourci', shortcutDone: 'Raccourci ajouté !',
+thAurora: 'Aurore boréale', themeStreak: 'Récompense pour {n} jours d’affilée au défi du jour',
+vibration: 'Vibration',
+top: 'Classement', topText: 'Les meilleurs collectionneurs d’étoiles', topAuth: 'Connecte-toi avec Yandex pour entrer au classement.', signIn: 'Se connecter', topNone: 'Le classement n’est pas encore disponible.',
+themesText: 'Collectionne des étoiles pour débloquer de nouveaux thèmes.',
+thSummer: 'Été', thAutumn: 'Automne', thWinter: 'Hiver', thNight: 'Nuit', thSakura: 'Sakura',
+themeNeed: 'Il te manque {n} ★', themeAd: 'Débloquer {name} maintenant', themeNew: 'Nouveau thème débloqué : {name} ! Choisis-le dans Thèmes.',
+close: 'Fermer',
+shop: 'Boutique', noads: 'Sans pub', noadsText: 'Plus aucune pub, et les récompenses des vidéos arrivent tout de suite',
+hints10: '10 indices', hints10Text: 'Des indices sans pub',
+allThemes: 'Tous les thèmes', allThemesText: 'Débloque tous les thèmes, sauf les récompenses de série',
+owned: 'Acheté', bought: 'Merci pour ton achat !', buyFail: 'L’achat n’a pas abouti',
+hintsLeft: 'Indices : {n}', useHint: 'Utiliser un indice', buyHints: 'Acheter des indices',
+bonus: 'Défi bonus', bonusText: 'Regarde une pub pour jouer un défi de plus aujourd’hui', bonusDone: 'Défi bonus réussi !',
+thNewYear: 'Nouvel An', eventNY: 'Événement du Nouvel An : le thème festif est offert à tous jusqu’au 14 janvier !',
+themeEvent: 'S’ouvre pendant l’événement du Nouvel An',
+howTo: 'Fais glisser les pièces de la réserve vers le plateau, tourne-les et envoie la lumière vers toutes les fleurs et lanternes.',
 },
 };
 const RU_FAMILY = ['ru', 'be', 'kk', 'uk', 'uz', 'hy', 'ka', 'ky', 'tg'];
@@ -3507,16 +3994,82 @@ return false;
 popPause('auth');
 }
 }
-return { initSdk, sdkLang, gameReady, setGameplay, pushPause, popPause, isPaused, onPause, showFullscreen, showRewarded, cloudLoad, cloudSave, serverNow, canShortcut, showShortcut, askReview, isAuthorized, hasLeaderboard, submitScore, topScores, signIn };
+let payments = null;
+async function initPayments() {
+if (!ysdk) return false;
+try {
+payments = ysdk.payments || (typeof ysdk.getPayments === 'function'
+? await withTimeout(ysdk.getPayments({ signed: false }), 5000) : null);
+} catch (e) {
+payments = null;
+}
+return !!payments;
+}
+function hasPayments() {
+return !!payments;
+}
+async function catalog() {
+if (!payments) return [];
+try {
+const list = await withTimeout(payments.getCatalog(), 5000);
+return list.map((p) => ({
+id: p.id,
+title: p.title,
+price: p.price,
+image: typeof p.getPriceCurrencyImage === 'function' ? p.getPriceCurrencyImage('small') : '',
+}));
+} catch (e) {
+console.warn('[sdk] getCatalog failed', e);
+return [];
+}
+}
+async function ownedPurchases() {
+if (!payments) return [];
+try {
+const list = await withTimeout(payments.getPurchases(), 5000);
+return list.map((p) => ({ id: p.productID, token: p.purchaseToken }));
+} catch (e) {
+return [];
+}
+}
+async function buy(id) {
+if (!payments) return null;
+pushPause('purchase');
+try {
+const p = await payments.purchase({ id });
+return { id: p.productID, token: p.purchaseToken };
+} catch (e) {
+return null;
+} finally {
+popPause('purchase');
+}
+}
+async function consume(token) {
+try {
+await payments.consumePurchase(token);
+return true;
+} catch (e) {
+return false;
+}
+}
+function setBanner(show) {
+try {
+if (!ysdk || !ysdk.adv || typeof ysdk.adv.showBannerAdv !== 'function') return;
+if (show) ysdk.adv.showBannerAdv();
+else ysdk.adv.hideBannerAdv();
+} catch (e) {
+}
+}
+return { initSdk, sdkLang, gameReady, setGameplay, pushPause, popPause, isPaused, onPause, showFullscreen, showRewarded, cloudLoad, cloudSave, serverNow, canShortcut, showShortcut, askReview, isAuthorized, hasLeaderboard, submitScore, topScores, signIn, initPayments, hasPayments, catalog, ownedPurchases, buy, consume, setBanner };
 })();
 __m['src/platform/storage.js'] = (() => {
 const { cloudLoad, cloudSave } = __m['src/platform/sdk.js'];
 const KEY = 'sunbeam-save-v1';
 function fresh() {
-return { v: 1, t: 0, lv: {}, sk: {}, hf: 0, rv: 0, th: {}, dl: freshDaily(), set: { sfx: 1, mus: 1, vib: 1, theme: 'summer' } };
+return { v: 1, t: 0, lv: {}, sk: {}, hf: 0, rv: 0, hb: 0, own: {}, tk: [], ev: '', th: {}, dl: freshDaily(), set: { sfx: 1, mus: 1, vib: 1, theme: 'summer' } };
 }
 function freshDaily() {
-return { day: 0, stars: 0, streak: 0, best: 0, total: 0 };
+return { day: 0, stars: 0, streak: 0, best: 0, total: 0, bonus: 0 };
 }
 function sane(d) {
 const s = fresh();
@@ -3528,6 +4081,10 @@ for (const k in d.lv) s.lv[k] = Math.max(0, Math.min(3, Number(d.lv[k]) || 0));
 if (d.sk && typeof d.sk === 'object') for (const k in d.sk) s.sk[k] = 1;
 s.hf = d.hf ? 1 : 0;
 s.rv = d.rv ? 1 : 0;
+s.hb = Math.max(0, Math.min(9999, Math.floor(Number(d.hb) || 0)));
+if (d.own && typeof d.own === 'object') for (const k in d.own) s.own[k] = 1;
+if (Array.isArray(d.tk)) s.tk = d.tk.filter((x) => typeof x === 'string').slice(-30);
+s.ev = typeof d.ev === 'string' ? d.ev : '';
 if (d.dl && typeof d.dl === 'object') for (const k in s.dl) s.dl[k] = Math.max(0, Math.floor(Number(d.dl[k]) || 0));
 if (d.th && typeof d.th === 'object') for (const k in d.th) s.th[k] = 1;
 if (d.set && typeof d.set === 'object') {
@@ -3550,8 +4107,12 @@ Object.assign(m.sk, a.sk, b.sk);
 for (const k in m.lv) delete m.sk[k];
 m.hf = a.hf || b.hf;
 m.rv = a.rv || b.rv;
+m.hb = b.t > a.t ? b.hb : a.hb;
+Object.assign(m.own, a.own, b.own);
+m.tk = [...new Set(a.tk.concat(b.tk))].slice(-30);
+m.ev = b.t > a.t ? b.ev : a.ev;
 const later = b.dl.day > a.dl.day || (b.dl.day === a.dl.day && b.dl.stars > a.dl.stars) ? b.dl : a.dl;
-m.dl = { ...later, best: Math.max(a.dl.best, b.dl.best), total: Math.max(a.dl.total, b.dl.total) };
+m.dl = { ...later, best: Math.max(a.dl.best, b.dl.best), total: Math.max(a.dl.total, b.dl.total), bonus: Math.max(a.dl.bonus, b.dl.bonus) };
 Object.assign(m.th, a.th, b.th);
 m.set = { ...(b.t > a.t ? b.set : a.set) };
 return m;
@@ -3618,14 +4179,14 @@ return ok;
 return { levelFinished, betweenLevels, rewarded };
 })();
 __m['src/main.js'] = (() => {
-const { CHAPTERS, LEVELS, dailyLevel, dayNumber } = __m['src/levels/levels.js'];
+const { CHAPTERS, LEVELS, dailyLevel, bonusLevel, dayNumber } = __m['src/levels/levels.js'];
 const { PIECE } = __m['src/core/optics.js'];
 const { Game } = __m['src/ui/game.js'];
-const { THEMES, themeById } = __m['src/render/themes.js'];
+const { THEMES, themeById, eventActive, eventSeason } = __m['src/render/themes.js'];
 const { icon, fillIcons } = __m['src/ui/icons.js'];
 const { setLang, t } = __m['src/i18n/i18n.js'];
 const audio = __m['src/audio/audio.js'];
-const { initSdk, sdkLang, gameReady, setGameplay, pushPause, popPause, isPaused, onPause, serverNow, canShortcut, showShortcut, askReview, isAuthorized, hasLeaderboard, submitScore, topScores, signIn } = __m['src/platform/sdk.js'];
+const { initSdk, sdkLang, gameReady, setGameplay, pushPause, popPause, isPaused, onPause, serverNow, canShortcut, showShortcut, askReview, isAuthorized, hasLeaderboard, submitScore, topScores, signIn, initPayments, catalog, ownedPurchases, buy, consume, setBanner } = __m['src/platform/sdk.js'];
 const { hasHaptics, setHaptics } = __m['src/platform/haptics.js'];
 const { loadProgress, progress, saveProgress } = __m['src/platform/storage.js'];
 const { betweenLevels, levelFinished, rewarded } = __m['src/platform/ads.js'];
@@ -3637,6 +4198,7 @@ let daily = null;
 let lastWinStars = 0;
 let shortcutOk = false;
 let sentScore = -1;
+let shopItems = [];
 let pagerChapter = 0;
 let dialogOpen = false;
 let won = false;
@@ -3710,7 +4272,21 @@ $('menuMus').classList.toggle('off', !s.mus);
 function themeOpen(th) {
 const p = progress();
 if (p.th[th.id]) return true;
-return th.streak ? p.dl.best >= th.streak : th.stars <= totalStars();
+if (th.event) return eventActive(serverNow());
+if (th.streak) return p.dl.best >= th.streak;
+return !!p.own.themes || th.stars <= totalStars();
+}
+function checkEvent() {
+const p = progress(), now = serverNow();
+if (!eventActive(now)) return;
+const th = THEMES.find((x) => x.event);
+if (th && !p.th[th.id]) p.th[th.id] = 1;
+const season = eventSeason(now);
+if (p.ev !== season) {
+p.ev = season;
+toast(t('eventNY'));
+}
+saveProgress();
 }
 function applyTheme(forceId) {
 let th = themeById(forceId || progress().set.theme);
@@ -3725,7 +4301,7 @@ if (meta) meta.content = th.sky[1];
 }
 function openThemes() {
 const p = progress(), total = totalStars();
-const next = THEMES.find((th) => !th.streak && !themeOpen(th));
+const next = noAds() ? null : THEMES.find((th) => !th.streak && !th.event && !themeOpen(th));
 const choose = (th) => {
 p.set.theme = th.id;
 saveProgress();
@@ -3734,9 +4310,10 @@ openThemes();
 };
 const buttons = THEMES.map((th) => {
 const open = themeOpen(th);
-const need = th.streak ? t('themeStreak').replace('{n}', th.streak) : t('themeNeed').replace('{n}', th.stars - total);
+const need = th.event ? t('themeEvent') : th.streak ? t('themeStreak').replace('{n}', th.streak)
+: t('themeNeed').replace('{n}', th.stars - total);
 return {
-label: open ? t(th.name) : th.streak ? `${t(th.name)} ${th.streak}` : `${t(th.name)} ★${th.stars}`,
+label: open || th.event ? t(th.name) : th.streak ? `${t(th.name)} ${th.streak}` : `${t(th.name)} ★${th.stars}`,
 cls: 'small ' + (th === game.theme ? 'green' : open ? 'gray' : 'gray locked'),
 icon: open ? '' : th.streak ? 'flame' : 'lock',
 swatch: th.sky,
@@ -3746,7 +4323,7 @@ fn: () => (open ? choose(th) : toast(need)),
 if (next) {
 buttons.push({ label: t('themeAd').replace('{name}', t(next.name)), cls: 'small', icon: 'video', fn: async () => {
 closeDialog();
-const ok = await rewarded();
+const ok = await reward();
 if (!ok) { toast(t('adFail')); openThemes(); return; }
 p.th[next.id] = 1;
 saveProgress(true);
@@ -3770,7 +4347,79 @@ $('btnPlay').querySelector('span').textContent = Object.keys(progress().lv).leng
 updateDailyButton();
 $('menuShortcut').hidden = !shortcutOk;
 $('menuTop').hidden = !hasLeaderboard();
+$('menuShop').hidden = !shopItems.length;
 show('menu');
+checkEvent();
+}
+const PRODUCTS = [
+{ id: 'noads', name: 'noads', text: 'noadsText' },
+{ id: 'hints10', name: 'hints10', text: 'hints10Text' },
+{ id: 'themes', name: 'allThemes', text: 'allThemesText' },
+];
+function noAds() {
+return !!progress().own.noads;
+}
+function reward() {
+return noAds() ? Promise.resolve(true) : rewarded();
+}
+function grant(pur) {
+const p = progress();
+if (p.tk.includes(pur.token)) return false;
+if (pur.id === 'hints10') p.hb += 10;
+else if (pur.id === 'noads' || pur.id === 'themes') p.own[pur.id] = 1;
+else return false;
+p.tk.push(pur.token);
+p.tk = p.tk.slice(-30);
+return true;
+}
+async function restorePurchases() {
+if (!(await initPayments())) { setBanner(true); return; }
+const p = progress();
+for (const pur of await ownedPurchases()) {
+if (pur.id === 'noads' || pur.id === 'themes') p.own[pur.id] = 1;
+else if (pur.id === 'hints10') {
+grant(pur);
+await consume(pur.token);
+}
+}
+saveProgress(true);
+setBanner(!noAds());
+shopItems = await catalog();
+if (screen === 'menu') openMenu();
+}
+async function openShop(back) {
+openDialog({ title: t('shop'), text: '…', buttons: [{ label: t('close'), cls: 'gray small', fn: back || closeDialog }] });
+const items = await catalog();
+if (!dialogOpen) return;
+shopItems = items;
+const p = progress();
+const buttons = [];
+for (const pr of PRODUCTS) {
+const it = items.find((x) => x.id === pr.id);
+if (!it) continue;
+const owned = pr.id !== 'hints10' && p.own[pr.id];
+buttons.push({
+label: owned ? `${t(pr.name)} — ${t('owned')}` : `${t(pr.name)} — ${it.price}`,
+cls: 'small ' + (owned ? 'gray locked' : pr.id === 'noads' ? 'green' : ''),
+icon: owned ? 'star' : '',
+img: owned ? '' : it.image,
+fn: async () => {
+if (owned) return;
+closeDialog();
+const pur = await buy(pr.id);
+if (!pur) { toast(t('buyFail')); openShop(back); return; }
+grant(pur);
+if (pr.id === 'hints10') await consume(pur.token);
+saveProgress(true);
+if (pr.id === 'noads') setBanner(false);
+toast(t('bought'));
+openShop(back);
+},
+});
+}
+buttons.push({ label: t('close'), cls: 'gray small', fn: back || closeDialog });
+const lines = PRODUCTS.filter((pr) => items.some((x) => x.id === pr.id)).map((pr) => `${t(pr.name)}: ${t(pr.text)}`);
+openDialog({ title: t('shop'), text: `${t('hintsLeft').replace('{n}', p.hb)}\n${lines.join('\n')}`, buttons });
 }
 function pushScore() {
 const s = totalStars();
@@ -3811,6 +4460,32 @@ $('dailyStreak').innerHTML = n ? icon('flame') + n : '';
 function startDaily() {
 daily = dailyLevel(today());
 playLevel(daily, t('daily'));
+}
+function bonusReady() {
+const d = progress().dl;
+return d.day === today() && d.bonus !== today();
+}
+async function askBonus() {
+closeDialog();
+if (!(await reward())) { toast(t('adFail')); return; }
+daily = bonusLevel(today());
+playLevel(daily, t('bonus'));
+}
+function bonusLine() {
+return bonusReady() && !noAds() ? `
+${t('bonusText')}` : '';
+}
+function dailyMenu() {
+if (progress().dl.day !== today()) { startDaily(); return; }
+openDialog({
+title: t('dailyDone'),
+text: `${t('streak').replace('{n}', dailyStreak())} ${t('dailyNext')}${bonusLine()}`,
+buttons: [
+...(bonusReady() ? [{ label: t('bonus'), cls: 'small', icon: noAds() ? 'play' : 'video', fn: askBonus }] : []),
+{ label: t('replay'), cls: 'gray small', icon: 'restart', fn: startDaily },
+{ label: t('close'), cls: 'gray small', fn: closeDialog },
+],
+});
 }
 function recordDaily(stars) {
 const d = progress().dl, day = daily.daily;
@@ -3895,7 +4570,7 @@ const [c, k] = chapterOf(i);
 playLevel(LEVELS[i], `${t('level')} ${c + 1}-${k + 1}`);
 }
 function restartLevel() {
-if (daily) startDaily();
+if (daily) playLevel(daily, daily.bonus !== undefined ? t('bonus') : t('daily'));
 else startLevel(current);
 }
 function playLevel(L, title) {
@@ -3963,7 +4638,10 @@ won = true;
 syncGameplay();
 const p = progress();
 const openBefore = THEMES.filter(themeOpen);
-if (daily) recordDaily(stars);
+if (daily && daily.bonus !== undefined) {
+if (p.dl.bonus !== daily.bonus) p.dl.total += stars;
+p.dl.bonus = daily.bonus;
+} else if (daily) recordDaily(stars);
 else {
 const L = LEVELS[current];
 p.lv[L.id] = Math.max(p.lv[L.id] || 0, stars);
@@ -3975,14 +4653,24 @@ saveProgress(true);
 pushScore();
 levelFinished();
 $('btnDone').classList.remove('show');
+if (daily && daily.bonus !== undefined) {
+openDialog({
+title: t('bonusDone'),
+stars,
+text: themeText || t('dailyNext'),
+buttons: [{ label: t('menu'), cls: 'small', icon: 'home', fn: openMenu }],
+});
+return;
+}
 if (daily) {
 openDialog({
 title: t('dailyDone'),
 stars,
-text: themeText || `${t('streak').replace('{n}', p.dl.streak)} ${t('dailyNext')}`,
+text: (themeText || `${t('streak').replace('{n}', p.dl.streak)} ${t('dailyNext')}`) + bonusLine(),
 buttons: [
+...(bonusReady() ? [{ label: t('bonus'), cls: 'small', icon: noAds() ? 'play' : 'video', fn: askBonus }] : []),
 { label: t('replay'), cls: 'gray small', icon: 'restart', fn: startDaily },
-{ label: t('menu'), cls: 'small', icon: 'home', fn: openMenu },
+{ label: t('menu'), cls: bonusReady() ? 'gray small' : 'small', icon: 'home', fn: openMenu },
 ],
 });
 return;
@@ -4004,7 +4692,7 @@ buttons: [
 async function goNext() {
 closeDialog();
 if (current >= LEVELS.length - 1) { openMenu(); return; }
-if (!(await maybeReview())) await betweenLevels(current);
+if (!(await maybeReview()) && !noAds()) await betweenLevels(current);
 startLevel(current + 1);
 }
 function openDialog({ title, stars, text, buttons, board }) {
@@ -4029,6 +4717,13 @@ const el = document.createElement('button');
 el.className = 'btn ' + (b.cls || '');
 const sw = b.swatch ? `<i class="sw" style="background:linear-gradient(135deg,${b.swatch.join(',')})"></i>` : '';
 el.innerHTML = sw + (b.icon ? icon(b.icon) : '') + `<span>${b.label}</span>`;
+if (b.img) {
+const im = document.createElement('img');
+im.className = 'cur';
+im.alt = '';
+im.src = b.img;
+el.appendChild(im);
+}
 el.addEventListener('click', () => { audio.unlockAudio(); audio.ui(); b.fn(); });
 bb.appendChild(el);
 }
@@ -4063,7 +4758,7 @@ buttons: [
 { label: t('cancel'), cls: 'gray small', fn: openPause },
 { label: t('watch'), cls: 'small', icon: 'video', fn: async () => {
 closeDialog();
-const ok = await rewarded();
+const ok = await reward();
 if (!ok) { toast(t('adFail')); return; }
 const L = LEVELS[current];
 const p = progress();
@@ -4088,11 +4783,20 @@ toast(t('hintFree'));
 giveHint(h);
 return;
 }
+if (noAds()) { hintUsed = true; giveHint(h); return; }
+if (p.hb > 0) {
+p.hb--;
+saveProgress();
+toast(t('hintsLeft').replace('{n}', p.hb));
+giveHint(h);
+return;
+}
 openDialog({
 title: t('hintTitle'),
 text: t('hintText'),
 buttons: [
 { label: t('cancel'), cls: 'gray small', fn: closeDialog },
+...(shopItems.some((x) => x.id === 'hints10') ? [{ label: t('buyHints'), cls: 'gray small', icon: 'bulb', fn: () => openShop(askHint) }] : []),
 { label: t('watch'), cls: 'small', icon: 'video', fn: async () => {
 closeDialog();
 const ok = await rewarded();
@@ -4135,7 +4839,8 @@ const tapSafe = (id, fn) => $(id).addEventListener('click', () => { audio.unlock
 tapSafe('btnPlay', () => { audio.ui(); startLevel(nextUnfinished()); });
 tapSafe('btnLevels', () => { audio.ui(); openLevels(); });
 tapSafe('btnThemes', () => { audio.ui(); openThemes(); });
-tapSafe('btnDaily', () => { audio.ui(); startDaily(); });
+tapSafe('btnDaily', () => { audio.ui(); dailyMenu(); });
+tapSafe('menuShop', () => { audio.ui(); openShop(); });
 tapSafe('menuShortcut', () => { audio.ui(); addShortcut(); });
 tapSafe('menuTop', () => { audio.ui(); openTop(); });
 tapSafe('lvBack', () => { audio.ui(); openMenu(); });
@@ -4218,6 +4923,7 @@ const dev = location.hostname === 'localhost' ? new URLSearchParams(location.sea
 applyTheme(dev && dev.get('theme'));
 refreshShortcut();
 pushScore();
+restorePurchases();
 resize();
 window.addEventListener('resize', resize);
 requestAnimationFrame(frame);
