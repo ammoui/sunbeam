@@ -529,7 +529,7 @@ h: def.seg, f: def.f || 0, mask: p.c || W,
 });
 }
 const H = { t: 0, el: null };
-function nearest(sc, px, py, dx, dy, skip) {
+function nearest(sc, px, py, dx, dy, skip, off) {
 const n = sc.n;
 let best = Infinity;
 if (dx > 0) best = (n - px) / dx; else if (dx < 0) best = -px / dx;
@@ -546,7 +546,10 @@ const dn = dx * s.nx + dy * s.ny;
 if (dn > -1e-9 && dn < 1e-9) continue;
 const t = ((s.cx - px) * s.nx + (s.cy - py) * s.ny) / dn;
 if (t <= EPS || t >= best) continue;
-const qx = px + dx * t - s.cx, qy = py + dy * t - s.cy;
+let ax = px, ay = py;
+if (off === off && s.kind !== 'lens' && s.kind !== 'dlens') { ax = px + dy * off; ay = py - dx * off; }
+const ta = ((s.cx - ax) * s.nx + (s.cy - ay) * s.ny) / dn;
+const qx = ax + dx * ta - s.cx, qy = ay + dy * ta - s.cy;
 if (Math.abs(qx * s.ux + qy * s.uy) > s.h) continue;
 best = t; H.el = s;
 }
@@ -603,12 +606,12 @@ const ex = ox - dx * s, ey = oy - dy * s;
 if (ex * ex + ey * ey <= FLY_R * FLY_R) out.flies[f.i] = true;
 }
 }
-function traceRay(sc, out, px, py, dx, dy, mask, pw, key, idx, depth, skip) {
+function traceRay(sc, out, px, py, dx, dy, mask, pw, key, idx, depth, skip, off) {
 const pts = [px, py], ids = [];
 let end = 'edge', endId = 0;
 const finish = () => out.paths.push({ key, idx, mask, pw, pts, ids, end, endId });
 for (let step = 0; step < MAX_STEPS; step++) {
-nearest(sc, px, py, dx, dy, skip);
+nearest(sc, px, py, dx, dy, skip, off);
 const t = H.t, el = H.el;
 const qx = px + dx * t, qy = py + dy * t;
 checkFlies(sc, out, px, py, dx, dy, t);
@@ -631,12 +634,13 @@ const s = -2 * ((qx - el.cx) * dx + (qy - el.cy) * dy);
 const ox = qx + dx * s - el.cx + el.to.cx, oy = qy + dy * s - el.cy + el.to.cy;
 end = 'portal'; endId = el.id;
 finish();
-if (depth < MAX_DEPTH) traceRay(sc, out, ox, oy, dx, dy, mask, pw, key + 'p', idx, depth + 1, 0);
+if (depth < MAX_DEPTH) traceRay(sc, out, ox, oy, dx, dy, mask, pw, key + 'p', idx, depth + 1, 0, off);
 return;
 }
 if (kind === 'mirror') {
 const d2 = 2 * (dx * el.ux + dy * el.uy);
 dx = d2 * el.ux - dx; dy = d2 * el.uy - dy;
+off = -off;
 ids.push(el.id * 8);
 px = qx; py = qy; skip = el.id;
 continue;
@@ -646,8 +650,8 @@ end = 'split'; endId = el.id;
 finish();
 if (depth < MAX_DEPTH && pw * 0.5 >= MIN_PW) {
 const d2 = 2 * (dx * el.ux + dy * el.uy);
-traceRay(sc, out, qx, qy, d2 * el.ux - dx, d2 * el.uy - dy, mask, pw * 0.5, key + 'r', idx, depth + 1, el.id);
-traceRay(sc, out, qx, qy, dx, dy, mask, pw * 0.5, key + 't', idx, depth + 1, el.id);
+traceRay(sc, out, qx, qy, d2 * el.ux - dx, d2 * el.uy - dy, mask, pw * 0.5, key + 'r', idx, depth + 1, el.id, -off);
+traceRay(sc, out, qx, qy, dx, dy, mask, pw * 0.5, key + 't', idx, depth + 1, el.id, off);
 }
 return;
 }
@@ -661,6 +665,7 @@ if (el.f < 0) { ex = -ex; ey = -ey; }
 const l = Math.hypot(ex, ey);
 dx = ex / l; dy = ey / l;
 }
+off = NaN;
 ids.push(el.id * 8);
 px = qx; py = qy; skip = el.id;
 continue;
@@ -670,7 +675,7 @@ const m2 = mask & el.mask;
 if (m2 === mask) { ids.push(el.id * 8); px = qx; py = qy; skip = el.id; continue; }
 end = 'filter'; endId = el.id;
 finish();
-if (m2) traceRay(sc, out, qx, qy, dx, dy, m2, pw, key + 'f', idx, depth + 1, el.id);
+if (m2) traceRay(sc, out, qx, qy, dx, dy, m2, pw, key + 'f', idx, depth + 1, el.id, off);
 return;
 }
 if (kind === 'prism') {
@@ -678,11 +683,11 @@ end = 'split'; endId = el.id;
 finish();
 if (depth < MAX_DEPTH) {
 const dirs = prismDirs(el, dx, dy);
-const off = (qx - el.cx) * -dy + (qy - el.cy) * dx;
+const po = (qx - el.cx) * -dy + (qy - el.cy) * dx;
 for (let c = 0; c < 3; c++) {
 if (!(mask & (1 << c))) continue;
 const [ex, ey] = dirs[c];
-traceRay(sc, out, el.cx - ey * off, el.cy + ex * off, ex, ey, 1 << c, pw, key + 'RGB'[c], idx, depth + 1, el.id);
+traceRay(sc, out, el.cx - ey * po, el.cy + ex * po, ex, ey, 1 << c, pw, key + 'RGB'[c], idx, depth + 1, el.id, po);
 }
 }
 return;
@@ -705,7 +710,7 @@ for (let i = 0; i < RAYS; i++) {
 const off = (i / (RAYS - 1) - 0.5) * BEAM_W;
 traceRay(sc, out,
 s.cx + s.dx * SOURCE_R + qx * off, s.cy + s.dy * SOURCE_R + qy * off,
-s.dx, s.dy, s.mask, 1 / RAYS, 's' + s.id, i, 0, s.id);
+s.dx, s.dy, s.mask, 1 / RAYS, 's' + s.id, i, 0, s.id, off);
 }
 }
 let all = level.tgt.length > 0;
