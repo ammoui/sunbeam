@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Крестики-нолики</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+:root{
+  --bg:#17212b;
+  --bg-2:#232e3c;
+  --card:#2b3a4a;
+  --text:#f5f5f5;
+  --text-2:#8b9bab;
+  --accent:#3390ec;
+  --accent-ink:#ffffff;
+  --win:#4fae4e;
+  --lose:#e53935;
+  --draw:#e0a72e;
+  --radius:16px;
+}
+body{
+  --bg:#f5f5f5; --bg-2:#ffffff; --card:#ffffff; --text:#17212b; --text-2:#708499;
+  --accent:#3390ec; --accent-ink:#ffffff; --win:#2e9e44; --lose:#d92b2b; --draw:#b8860b;
+}
+body.tg-dark{
+  --bg:#17212b; --bg-2:#232e3c; --card:#2b3a4a; --text:#f5f5f5; --text-2:#8b9bab;
+  --accent:#5288c1; --win:#4fae4e; --lose:#e53935; --draw:#e0a72e;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%}
+body{
+  font:16px/1.5 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color:var(--text);background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  display:flex;justify-content:center;
+  padding:calc(env(safe-area-inset-top,0px) + 16px) 16px calc(env(safe-area-inset-bottom,0px) + 24px);
+  user-select:none;-webkit-user-select:none;
+  transition:background .2s ease,color .2s ease;
+}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button{cursor:pointer;font:inherit;color:inherit}
+.app{width:100%;max-width:420px;display:flex;flex-direction:column;gap:16px}
+
+/* ---------- header ---------- */
+.head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.title{font-size:20px;font-weight:700;letter-spacing:-.01em}
+.title small{display:block;font-size:13px;font-weight:500;color:var(--text-2)}
+.score{display:flex;gap:8px}
+.score div{
+  background:var(--bg-2);border-radius:12px;padding:6px 12px;text-align:center;min-width:64px;
+}
+.score b{display:block;font-size:16px;line-height:1.1}
+.score span{font-size:11px;color:var(--text-2);text-transform:uppercase;letter-spacing:.04em}
+
+/* ---------- status ---------- */
+.status{
+  background:var(--bg-2);border-radius:var(--radius);padding:12px 16px;
+  font-weight:600;text-align:center;min-height:48px;display:flex;align-items:center;justify-content:center;gap:8px;
+  transition:background .2s ease;
+}
+.status .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);flex:none}
+.status.think .dot{animation:pulse 1s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25}}
+
+/* ---------- board ---------- */
+.board{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+  background:var(--bg-2);padding:12px;border-radius:20px;
+}
+.cell{
+  aspect-ratio:1;border:none;background:var(--card);border-radius:12px;
+  font-size:clamp(34px,12vw,56px);font-weight:800;line-height:1;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .12s ease,opacity .2s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.cell:not(:disabled):hover{transform:scale(1.03)}
+.cell:not(:disabled):active{transform:scale(.95)}
+.cell:disabled{cursor:default}
+.cell.x{color:var(--accent)}
+.cell.o{color:var(--draw)}
+.cell.win{animation:winflash .6s ease}
+@keyframes winflash{0%,100%{transform:scale(1)}40%{transform:scale(1.08)}}
+.cell.dim{opacity:.45}
+
+/* ---------- controls ---------- */
+.row{display:flex;gap:10px}
+.btn{
+  flex:1;border:none;border-radius:14px;padding:14px 16px;font-weight:700;font-size:15px;
+  background:var(--card);transition:transform .12s ease,opacity .2s ease;
+  min-height:48px;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:scale(.97)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{background:transparent;color:var(--text-2)}
+.btn:disabled{opacity:.4;transform:none;cursor:default}
+
+/* ---------- menu / modal ---------- */
+.overlay{
+  position:fixed;inset:0;background:color-mix(in srgb,var(--bg) 70%,transparent);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  display:flex;align-items:center;justify-content:center;padding:20px;z-index:10;
+  opacity:1;transition:opacity .2s ease;
+}
+.overlay.hidden{opacity:0;pointer-events:none}
+.sheet{
+  width:100%;max-width:380px;background:var(--bg-2);border-radius:20px;padding:24px;
+  display:flex;flex-direction:column;gap:16px;
+  transform:scale(1);transition:transform .2s ease;
+}
+.overlay.hidden .sheet{transform:scale(.95)}
+.sheet h2{font-size:20px;text-align:center}
+.sheet p{color:var(--text-2);font-size:14px;text-align:center}
+.opt{
+  border:none;background:var(--card);border-radius:14px;padding:14px 16px;text-align:left;
+  display:flex;justify-content:space-between;align-items:center;font-weight:600;min-height:52px;
+  transition:transform .12s ease;
+}
+.opt:hover{transform:translateY(-1px)}
+.opt:active{transform:scale(.98)}
+.opt span{color:var(--text-2);font-size:13px;font-weight:500}
+
+/* ---------- result banner ---------- */
+.result{
+  text-align:center;padding:8px 0 2px;font-size:17px;font-weight:700;
+}
+.result small{display:block;font-size:13px;font-weight:500;color:var(--text-2);margin-top:4px}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="app">
+  <header class="head">
+    <div class="title">Крестики-нолики<small id="modeLabel">выбери режим</small></div>
+    <div class="score">
+      <div><b id="scoreX">0</b><span id="nameX">Крестик</span></div>
+      <div><b id="scoreD">0</b><span>ничьи</span></div>
+      <div><b id="scoreO">0</b><span id="nameO">Нолик</span></div>
+    </div>
+  </header>
+
+  <div class="status" id="status"><span class="dot"></span><span id="statusText">Кто первый?</span></div>
+
+  <div class="board" id="board" role="grid" aria-label="Игровое поле"></div>
+
+  <div class="row">
+    <button class="btn ghost" id="menuBtn">Режим</button>
+    <button class="btn primary" id="restartBtn">Новый раунд</button>
+  </div>
+
+  <div class="result" id="result" hidden></div>
+</main>
+
+<div class="overlay" id="menu">
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="Выбор режима">
+    <h2>Крестики-нолики</h2>
+    <p>Сыграй с другом на одном экране или против бота.</p>
+    <button class="opt" data-mode="friend">С другом <span>на одном экране</span></button>
+    <button class="opt" data-mode="bot">Против бота <span>лёгкий · средний · жёсткий</span></button>
+  </div>
+</div>
+
+<div class="overlay hidden" id="diffMenu">
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="Сложность бота">
+    <h2>Сложность</h2>
+    <p>Жёсткий бот не проигрывает. Вообще.</p>
+    <button class="opt" data-diff="0">Лёгкий <span>ходит наугад</span></button>
+    <button class="opt" data-diff="1">Средний <span>иногда думает</span></button>
+    <button class="opt" data-diff="2">Жёсткий <span>минимакс, 100%</span></button>
+  </div>
+</div>
+
+<script>
+"use strict";
+/* ================= Telegram Web App ================= */
+const tg = window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
+if (tg) {
+  try {
+    tg.ready(); tg.expand();
+    if (tg.setHeaderColor) tg.setHeaderColor("bg_color");
+    if (tg.setBackgroundColor) tg.setBackgroundColor("bg_color");
+    if (tg.themeParams) {
+      const tp = tg.themeParams, dark = (tg.colorScheme || "light") === "dark";
+      document.body.classList.toggle("tg-dark", dark);
+      const root = document.body.style;
+      if (tp.bg_color) root.setProperty("--bg", tp.bg_color);
+      if (tp.secondary_bg_color) root.setProperty("--bg-2", tp.secondary_bg_color);
+      if (tp.text_color) root.setProperty("--text", tp.text_color);
+      if (tp.hint_color) root.setProperty("--text-2", tp.hint_color);
+      if (tp.button_color) root.setProperty("--accent", tp.button_color);
+      if (tp.button_text_color) root.setProperty("--accent-ink", tp.button_text_color);
+    }
+  } catch (e) { /* миниаппа открыта не в Telegram — ок */ }
+}
+function haptic(type) {
+  try {
+    if (!tg || !tg.HapticFeedback) return;
+    if (type === "ok") tg.HapticFeedback.notificationOccurred("success");
+    else if (type === "no") tg.HapticFeedback.notificationOccurred("error");
+    else tg.HapticFeedback.impactOccurred("light");
+  } catch (e) {}
+}
+
+/* ================= game state ================= */
+const EMPTY = "";
+let board = Array(9).fill(EMPTY);
+let current = "X";            // кто ходит
+let mode = null;              // "friend" | "bot"
+let botDiff = 1;
+let locked = false;           // блокировка во время хода бота/анимации
+let scores = { X: 0, O: 0, D: 0 };
+let stats = loadStats();
+
+const LINES = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+
+const el = {
+  board: document.getElementById("board"),
+  status: document.getElementById("status"),
+  statusText: document.getElementById("statusText"),
+  modeLabel: document.getElementById("modeLabel"),
+  menu: document.getElementById("menu"),
+  diffMenu: document.getElementById("diffMenu"),
+  result: document.getElementById("result"),
+  restart: document.getElementById("restartBtn"),
+  menuBtn: document.getElementById("menuBtn"),
+};
+
+/* ================= board render ================= */
+function buildBoard() {
+  el.board.innerHTML = "";
+  for (let i = 0; i < 9; i++) {
+    const b = document.createElement("button");
+    b.className = "cell";
+    b.dataset.i = i;
+    b.setAttribute("role", "gridcell");
+    b.setAttribute("aria-label", "Клетка " + (i + 1));
+    b.addEventListener("click", () => onCell(i));
+    el.board.appendChild(b);
+  }
+}
+function render() {
+  const cells = el.board.children;
+  for (let i = 0; i < 9; i++) {
+    const c = cells[i];
+    c.textContent = board[i];
+    c.classList.toggle("x", board[i] === "X");
+    c.classList.toggle("o", board[i] === "O");
+    c.disabled = locked || board[i] !== EMPTY || !!winner();
+  }
+}
+function renderScores() {
+  document.getElementById("scoreX").textContent = scores.X;
+  document.getElementById("scoreO").textContent = scores.O;
+  document.getElementById("scoreD").textContent = scores.D;
+  const botNames = ["лёгкий", "средний", "жёсткий"];
+  document.getElementById("nameX").textContent = mode === "bot" ? "ты" : "крестик";
+  document.getElementById("nameO").textContent = mode === "bot" ? botNames[botDiff] : "нолик";
+}
+
+/* ================= logic ================= */
+function winner() {
+  for (const [a, b, c] of LINES) {
+    if (board[a] && board[a] === board[b] && board[a] === board[c]) return { p: board[a], line: [a, b, c] };
+  }
+  return board.every(v => v) ? { p: "D", line: [] } : null;
+}
+function setStatus(text, think) {
+  el.statusText.textContent = text;
+  el.status.classList.toggle("think", !!think);
+}
+function onCell(i) {
+  if (locked || board[i] !== EMPTY || winner()) return;
+  move(i);
+  const w = winner();
+  if (!w && mode === "bot" && current === "O") botTurn();
+}
+function move(i) {
+  board[i] = current;
+  haptic("tap");
+  const cells = el.board.children;
+  cells[i].classList.add(current === "X" ? "x" : "o");
+  render();
+  const w = winner();
+  if (w) return endRound(w);
+  current = current === "X" ? "O" : "X";
+  updateTurnStatus();
+}
+function updateTurnStatus() {
+  if (mode === "bot") {
+    setStatus(current === "X" ? "Твой ход — ты крестик" : "Бот думает…", current === "O");
+  } else {
+    setStatus("Ходит: " + (current === "X" ? "крестик ✕" : "нолик ○"));
+  }
+}
+
+/* ---------- bot ---------- */
+function botTurn() {
+  locked = true; render();
+  setTimeout(() => {
+    const i = botDiff === 2 ? bestMove("O") : botDiff === 1 ? mediumMove() : randomMove();
+    locked = false;
+    move(i);
+  }, 350 + Math.random() * 400);
+}
+function randomMove() {
+  const free = board.map((v, i) => v ? null : i).filter(v => v !== null);
+  return free[Math.floor(Math.random() * free.length)];
+}
+function mediumMove() {
+  // 70% — умный ход, 30% — наугад (человечность)
+  if (Math.random() < 0.7) return bestMove("O");
+  return randomMove();
+}
+function bestMove(player) {
+  const opp = player === "X" ? "O" : "X";
+  const free = board.map((v, i) => v ? null : i).filter(v => v !== null);
+  // 1) выиграть сейчас
+  for (const i of free) { board[i] = player; const w = winner(); board[i] = EMPTY; if (w && w.p === player) return i; }
+  // 2) не дать выиграть сопернику
+  for (const i of free) { board[i] = opp; const w = winner(); board[i] = EMPTY; if (w && w.p === opp) return i; }
+  // 3) минимакс
+  const res = minimax(board.slice(), player, 0);
+  return res.i;
+}
+function minimax(b, player, depth) {
+  const w = winnerOn(b);
+  if (w) {
+    if (w.p === "O") return { s: 10 - depth };
+    if (w.p === "X") return { s: depth - 10 };
+    return { s: 0 };
+  }
+  const free = b.map((v, i) => v ? null : i).filter(v => v !== null);
+  const isMax = player === "O";
+  let best = { s: isMax ? -Infinity : Infinity, i: free[0] };
+  for (const i of free) {
+    b[i] = player;
+    const r = minimax(b, player === "X" ? "O" : "X", depth + 1);
+    b[i] = EMPTY;
+    if (isMax ? r.s > best.s : r.s < best.s) best = { s: r.s, i };
+  }
+  return best;
+}
+function winnerOn(b) {
+  for (const [a, b2, c] of LINES) if (b[a] && b[a] === b[b2] && b[a] === b[c]) return { p: b[a] };
+  return b.every(v => v) ? { p: "D" } : null;
+}
+
+/* ---------- round flow ---------- */
+function endRound(w) {
+  locked = true;
+  const cells = el.board.children;
+  if (w.p === "D") {
+    scores.D++;
+    setStatus("Ничья!");
+    haptic("no");
+  } else {
+    scores[w.p]++;
+    w.line.forEach(i => { cells[i].classList.add("win"); });
+    [...cells].forEach((c, i) => { if (!w.line.includes(i)) c.classList.add("dim"); });
+    const humanWon = mode === "bot" && w.p === "X";
+    const botWon = mode === "bot" && w.p === "O";
+    if (mode === "friend") setStatus("Победил: " + (w.p === "X" ? "крестик ✕" : "нолик ○"));
+    else setStatus(humanWon ? "Ты победил!" : botWon ? "Бот победил" : "Победа");
+    haptic(humanWon || mode === "friend" ? "ok" : "no");
+  }
+  renderScores();
+  saveStats();
+  showResultText(w.p);
+  setTimeout(() => { locked = false; }, 900);
+}
+function showResultText(p) {
+  let txt, sub;
+  if (mode === "bot") {
+    if (p === "X") { txt = "Победа!"; sub = "Жёсткого бота обыграть непросто."; }
+    else if (p === "O") { txt = "Бот выиграл"; sub = botDiff === 2 ? "Он не проигрывает в принципе." : "Попробуй другую сложность."; }
+    else { txt = "Ничья", sub = "С жёстким ботом — это успех."; }
+  } else {
+    txt = p === "D" ? "Ничья!" : p === "X" ? "Победа крестиков ✕" : "Победа ноликов ○";
+    sub = "Жми «Новый раунд» для реванша.";
+  }
+  el.result.innerHTML = txt + "<small>" + sub + "</small>";
+  el.result.hidden = false;
+}
+function newRound() {
+  board = Array(9).fill(EMPTY);
+  current = "X";
+  locked = false;
+  el.result.hidden = true;
+  [...el.board.children].forEach(c => c.classList.remove("win", "dim"));
+  render();
+  updateTurnStatus();
+}
+
+/* ---------- persistence ---------- */
+function loadStats() {
+  try { return JSON.parse(localStorage.getItem("ttt-stats") || "{}") || {}; }
+  catch (e) { return {}; }
+}
+function saveStats() {
+  try {
+    const key = "m" + (mode || "?") + "d" + (mode === "bot" ? botDiff : "");
+    stats[key] = scores;
+    localStorage.setItem("ttt-stats", JSON.stringify(stats));
+  } catch (e) {}
+}
+function restoreStats() {
+  if (!mode) return;
+  const key = "m" + mode + "d" + (mode === "bot" ? botDiff : "");
+  scores = stats[key] || { X: 0, O: 0, D: 0 };
+  renderScores();
+}
+
+/* ---------- mode selection ---------- */
+el.menu.querySelectorAll("[data-mode]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    haptic("tap");
+    mode = btn.dataset.mode;
+    if (mode === "friend") {
+      el.menu.classList.add("hidden");
+      startMode("друг против друга");
+    } else {
+      el.menu.classList.add("hidden");
+      el.diffMenu.classList.remove("hidden");
+    }
+  });
+});
+el.diffMenu.querySelectorAll("[data-diff]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    haptic("tap");
+    botDiff = +btn.dataset.diff;
+    el.diffMenu.classList.add("hidden");
+    startMode(["лёгкий бот", "средний бот", "жёсткий бот"][botDiff]);
+  });
+});
+function startMode(label) {
+  el.modeLabel.textContent = label;
+  restoreStats();
+  newRound();
+}
+el.restart.addEventListener("click", () => { haptic("tap"); newRound(); });
+el.menuBtn.addEventListener("click", () => { haptic("tap"); el.menu.classList.remove("hidden"); });
+
+/* ---------- boot ---------- */
+buildBoard();
+render();
+renderScores();
+// deep-link: ?mode=friend или ?mode=bot&diff=2 (для отладки и кнопок бота)
+const qs = new URLSearchParams(location.search);
+if (qs.get("mode") === "friend") { mode = "friend"; startMode("друг против друга"); }
+else if (qs.get("mode") === "bot") { mode = "bot"; botDiff = Math.min(2, Math.max(0, +qs.get("diff") || 0)); startMode(["лёгкий бот","средний бот","жёсткий бот"][botDiff]); }
+else { el.menu.classList.remove("hidden"); setStatus("Выбери режим игры"); }
+</script>
+</body>
+</html>
